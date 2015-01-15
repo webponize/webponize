@@ -125,6 +125,7 @@
 				C7E945F91A5FC9940024581F /* Sources */,
 				C7E945FA1A5FC9940024581F /* Frameworks */,
 				C7E945FB1A5FC9940024581F /* Resources */,
+				C715CEC11A67B6C4008AD6C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -208,6 +209,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C715CEC11A67B6C4008AD6C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git clone git@github.com:webmproject/libwebp.git\npushd libwebp\n./autogen.sh\n./configure\nmake";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7E945F91A5FC9940024581F /* Sources */ = {
@@ -405,6 +422,7 @@
 				C7E9461B1A5FC9940024581F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7E9461C1A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +431,7 @@
 				C7E9461E1A5FC9940024581F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -41,7 +41,19 @@ class DropView: NSView, NSDraggingDestination {
     }
     
     override func draggingEnded(sender: NSDraggingInfo?) {
-        println(sender)
+        println("draggingEnded")
     }
     
+    override func performDragOperation(sender: NSDraggingInfo) -> Bool {
+        
+        let pboard = sender.draggingPasteboard()
+        
+        println(pboard)
+        
+        let draggedFilePaths = pboard.propertyListForType(NSFilenamesPboardType) as NSArray
+        
+        println(draggedFilePaths)
+        
+        return true
+    }
 }
