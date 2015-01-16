@@ -1,3 +1,5 @@
+libwebp
+
 build/
 *.pbxuser
 !default.pbxuser

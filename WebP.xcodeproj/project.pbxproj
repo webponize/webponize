@@ -222,7 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git clone git@github.com:webmproject/libwebp.git\npushd libwebp\n./autogen.sh\n./configure\nmake";
+			shellScript = "git clone git@github.com:webmproject/libwebp.git\npushd libwebp\nsh ./autogen.sh\nsh ./configure\nmake";
 		};
 /* End PBXShellScriptBuildPhase section */
 
