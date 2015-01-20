@@ -9,14 +9,14 @@ class TableViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         // Do view setup here.
     }
     
-    func numberOfRowsInTableView() -> Int {
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         let numberOfRows: Int = getDataArray().count
         return numberOfRows
     }
     
-    func tableView(tableView: TableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
-        let headers: (AnyObject?) = getDataArray().objectAtIndex(row).objectForKey(tableColumn.identifier)
-        return headers
+    func tableView(tableView: NSTableView!, objectValueForTableColumn tableColumn: NSTableColumn!, row: Int) -> AnyObject! {
+        println("tableViewDelegate")
+        return getDataArray().objectAtIndex(row).objectForKey(tableColumn.identifier)
     }
     
     func getDataArray () -> NSArray{
@@ -27,7 +27,6 @@ class TableViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
             ["FirstName": "Jane", "LastName": "Doe"],
             ["FirstName": "Mary", "LastName": "Jane"]
         ];
-        println(dataArray);
         return dataArray;
     }
 }
