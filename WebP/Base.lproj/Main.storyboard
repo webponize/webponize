@@ -668,6 +668,7 @@
         <!--Split View Controller-->
         <scene sceneID="jws-C2-1zk">
             <objects>
+                <customObject id="rUK-tB-GpL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <splitViewController id="INi-oj-Drv" customClass="SplitViewController" customModule="WebP" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="0Hb-Q9-6od"/>
@@ -682,7 +683,6 @@
                         <segue destination="EGM-6B-HsO" kind="relationship" relationship="splitItems" id="gIf-iu-C4j"/>
                     </connections>
                 </splitViewController>
-                <customObject id="rUK-tB-GpL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="791"/>
         </scene>
@@ -706,7 +706,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dropView" destination="BZE-Zh-Mi9" id="nTy-Vb-pz8"/>
+                        <outlet property="dropView" destination="BZE-Zh-Mi9" id="kCa-DB-fMy"/>
                     </connections>
                 </viewController>
                 <customObject id="P2g-66-EdV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
