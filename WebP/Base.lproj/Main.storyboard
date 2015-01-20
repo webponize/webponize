@@ -668,12 +668,12 @@
         <!--Split View Controller-->
         <scene sceneID="jws-C2-1zk">
             <objects>
-                <splitViewController id="INi-oj-Drv" sceneMemberID="viewController">
+                <splitViewController id="INi-oj-Drv" customClass="SplitViewController" customModule="WebP" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="0Hb-Q9-6od"/>
                         <splitViewItem id="UlD-52-2pM"/>
                     </splitViewItems>
-                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="HHy-5g-4qK">
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="HHy-5g-4qK" customClass="SplitView" customModule="WebP" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
@@ -686,10 +686,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="791"/>
         </scene>
-        <!--View Controller-->
+        <!--Drop View Controller-->
         <scene sceneID="L1M-GU-WsF">
             <objects>
-                <viewController id="hGD-ce-gq3" sceneMemberID="viewController">
+                <viewController id="hGD-ce-gq3" customClass="DropViewController" customModule="WebP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="pI2-pa-BeZ">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -705,15 +705,18 @@
                             <constraint firstItem="BZE-Zh-Mi9" firstAttribute="top" secondItem="pI2-pa-BeZ" secondAttribute="top" constant="10" id="b1G-JT-uzo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dropView" destination="BZE-Zh-Mi9" id="nTy-Vb-pz8"/>
+                    </connections>
                 </viewController>
                 <customObject id="P2g-66-EdV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="635" y="615"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="Z6Q-DF-eLP">
             <objects>
-                <viewController id="EGM-6B-HsO" sceneMemberID="viewController">
+                <viewController id="EGM-6B-HsO" customClass="TableViewController" customModule="WebP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="IsQ-gZ-Chu">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -724,7 +727,7 @@
                                     <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="34" rowSizeStyle="automatic" headerView="xP0-m7-McX" viewBased="YES" id="mo3-DM-nLi">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="34" rowSizeStyle="automatic" headerView="xP0-m7-McX" viewBased="YES" id="mo3-DM-nLi" customClass="TableView" customModule="WebP" customModuleProvider="target">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -820,10 +823,13 @@
                             <constraint firstItem="1jl-Bx-NfD" firstAttribute="top" secondItem="IsQ-gZ-Chu" secondAttribute="top" constant="10" id="vzk-dg-aB9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="mo3-DM-nLi" id="BNj-Qh-4SF"/>
+                    </connections>
                 </viewController>
                 <customObject id="4AT-3P-anL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="1197"/>
+            <point key="canvasLocation" x="635" y="1183"/>
         </scene>
     </scenes>
 </document>
