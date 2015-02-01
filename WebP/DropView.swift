@@ -28,12 +28,8 @@ class DropView: NSView, NSDraggingDestination {
     }
     
     override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
-        println("DropView::draggingEntered")
+        // implementation when drag is entered
         return NSDragOperation.Copy
-    }
-    
-    override func draggingEnded(sender: NSDraggingInfo?) {
-        println("DropView::draggingEnded")
     }
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
@@ -41,7 +37,6 @@ class DropView: NSView, NSDraggingDestination {
         // get dragged file paths
         let pboard = sender.draggingPasteboard()
         let filePaths = pboard.propertyListForType(NSFilenamesPboardType) as NSArray
-        println(filePaths)
         
         // load dropped file using NSFileManager
         let manager = NSFileManager.defaultManager()
@@ -51,11 +46,18 @@ class DropView: NSView, NSDraggingDestination {
             let attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
             if error != nil {
                 println("エラーでましてん…")
+                println(filePath)
             } else {
+                println("データとれましてん")
+                println(filePath)
                 println(attributes)
             }
         }
         
         return true
+    }
+
+    override func draggingEnded(sender: NSDraggingInfo?) {
+        // implementation when drag is ended
     }
 }
