@@ -1,13 +1,28 @@
-//
-//  BinaryWrapper.swift
-//  WebP
-//
-//  Created by 1000ch on 2/1/15.
-//  Copyright (c) 2015 1000ch.net. All rights reserved.
-//
-
 import Cocoa
 
 class BinaryWrapper: NSObject {
+    
+    var binaryPath: String
+    var fileHandle: NSFileHandle
+    
+    init(name: String, ofType: String) {
+        let bundle = NSBundle.mainBundle()
+        self.binaryPath = bundle.pathForResource(name, ofType: ofType)!
+        self.fileHandle = NSFileHandle(forReadingAtPath: self.binaryPath)!
+    }
+    
+    func execute(#arguments: [String]) -> String {
 
+        let task = NSTask()
+        let pipe = NSPipe()
+
+        task.launchPath = self.binaryPath
+        task.arguments = arguments
+        task.standardOutput = pipe
+        task.launch()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        return NSString(data: data, encoding: NSUTF8StringEncoding)!
+    }
 }
+
