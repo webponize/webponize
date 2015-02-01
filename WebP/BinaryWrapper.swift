@@ -11,6 +11,17 @@ class BinaryWrapper: NSObject {
         self.fileHandle = NSFileHandle(forReadingAtPath: self.binaryPath)!
     }
     
+    func execute(arguments: Dictionary<String, String>) -> String {
+
+        var flatten: [String] = []
+        
+        for (key, value) in arguments {
+            flatten.append("\(key)=\(arguments[key])")
+        }
+        
+        return self.execute(arguments: flatten)
+    }
+    
     func execute(#arguments: [String]) -> String {
 
         let task = NSTask()

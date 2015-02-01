@@ -2,8 +2,14 @@ import Cocoa
 
 class DropView: NSView, NSDraggingDestination {
     
+    var cwebp: Cwebp = Cwebp()
+    
     override init(frame: NSRect) {
         super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
 
     override func awakeFromNib() {
@@ -15,10 +21,6 @@ class DropView: NSView, NSDraggingDestination {
         ])
         //NSImage.imagePasteboardTypes()
         println(self.registeredDraggedTypes)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
     }
     
     override func drawRect(dirtyRect: NSRect)  {
@@ -51,6 +53,7 @@ class DropView: NSView, NSDraggingDestination {
                 println("データとれましてん")
                 println(filePath)
                 println(attributes)
+                println(cwebp.execute(arguments: ["-o", "output.webp", filePath]))
             }
         }
         
