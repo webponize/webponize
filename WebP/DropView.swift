@@ -48,12 +48,17 @@ class DropView: NSView, NSDraggingDestination {
             let attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
             if error != nil {
                 println("エラーでましてん…")
-                println(filePath)
+                println(error)
             } else {
                 println("データとれましてん")
-                println(filePath)
-                println(attributes)
-                println(cwebp.execute(arguments: ["-o", "output.webp", filePath]))
+
+                let fileName: String = filePath.lastPathComponent
+                var saveName: String = fileName.stringByReplacingOccurrencesOfString("/(jpeg|jpg|png)/", withString: "webp", options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
+                
+                saveName = saveName.stringByReplacingOccurrencesOfString("png", withString: "webp", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+                saveName = saveName.stringByReplacingOccurrencesOfString("jpg", withString: "webp", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+
+                println(cwebp.execute(arguments: ["-o", saveName, filePath]))
             }
         }
         
