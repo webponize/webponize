@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13C4D3A91A7E44B2003F6A74 /* Cwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3A81A7E44B2003F6A74 /* Cwebp.swift */; };
+		13C4D3A91A7E44B2003F6A74 /* Compress2WebP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */; };
 		13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */; };
 		13C4D3B11A7E59BA003F6A74 /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = 13C4D3B01A7E59BA003F6A74 /* cwebp */; };
 		C7623B2E1A6E08E60046FC09 /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7623B2D1A6E08E60046FC09 /* DropViewController.swift */; };
@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13C4D3A81A7E44B2003F6A74 /* Cwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cwebp.swift; sourceTree = "<group>"; };
+		13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compress2WebP.swift; sourceTree = "<group>"; };
 		13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryWrapper.swift; sourceTree = "<group>"; };
 		13C4D3B01A7E59BA003F6A74 /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
 		C7623B2D1A6E08E60046FC09 /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				C7E9461F1A5FD5180024581F /* WindowController.swift */,
 				C7E946211A5FD68D0024581F /* DropView.swift */,
 				C7623B2D1A6E08E60046FC09 /* DropViewController.swift */,
-				13C4D3A81A7E44B2003F6A74 /* Cwebp.swift */,
+				13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */,
 				13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */,
 			);
 			path = WebP;
@@ -243,7 +243,7 @@
 			files = (
 				13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */,
 				C7E946221A5FD68D0024581F /* DropView.swift in Sources */,
-				13C4D3A91A7E44B2003F6A74 /* Cwebp.swift in Sources */,
+				13C4D3A91A7E44B2003F6A74 /* Compress2WebP.swift in Sources */,
 				C7E946201A5FD5180024581F /* WindowController.swift in Sources */,
 				C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */,
 				C7623B2E1A6E08E60046FC09 /* DropViewController.swift in Sources */,

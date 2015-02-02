@@ -2,7 +2,7 @@ import Cocoa
 
 class DropView: NSView, NSDraggingDestination {
     
-    var cwebp: Cwebp = Cwebp()
+    var cwebp: Compress2Webp = Compress2Webp()
     
     override init(frame: NSRect) {
         super.init(frame: frame)
