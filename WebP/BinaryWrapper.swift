@@ -3,32 +3,58 @@ import Cocoa
 class BinaryWrapper: NSObject {
     
     var binaryPath: String
+    var currentDirectoryPath: String
+    var arguments: [String]
     var fileHandle: NSFileHandle
     
     init(name: String, ofType: String) {
         let bundle = NSBundle.mainBundle()
         self.binaryPath = bundle.pathForResource(name, ofType: ofType)!
+        self.currentDirectoryPath = ""
+        self.arguments = []
         self.fileHandle = NSFileHandle(forReadingAtPath: self.binaryPath)!
     }
     
-    func execute(arguments: Dictionary<String, String>) -> String {
-
-        var flatten: [String] = []
+    func setCurrentDirectoryPath(currentDirectoryPath: String) {
         
-        for (key, value) in arguments {
-            flatten.append("\(key)=\(arguments[key])")
-        }
-        
-        return self.execute(arguments: flatten)
+        self.currentDirectoryPath = currentDirectoryPath
     }
     
-    func execute(#arguments: [String]) -> String {
+    func setArguments(arguments: Dictionary<String, String>) {
+
+        self.arguments.removeAll(keepCapacity: false)
+        for (key, value) in arguments {
+            self.arguments.append("\(key)=\(arguments[key])")
+        }
+    }
+
+    func setArguments(arguments: [String]) {
+
+        self.arguments = arguments
+    }
+
+    func execute(arguments: Dictionary<String, String>) -> String {
+
+        self.setArguments(arguments)
+        
+        return self.execute()
+    }
+    
+    func execute(arguments: [String]) -> String {
+        
+        self.setArguments(arguments)
+
+        return self.execute()
+    }
+    
+    func execute() -> String {
 
         let task = NSTask()
         let pipe = NSPipe()
 
         task.launchPath = self.binaryPath
-        task.arguments = arguments
+        task.currentDirectoryPath = self.currentDirectoryPath
+        task.arguments = self.arguments
         task.standardOutput = pipe
         task.launch()
         

@@ -47,18 +47,16 @@ class DropView: NSView, NSDraggingDestination {
         for filePath in filePaths as [String] {
             let attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
             if error != nil {
-                println("エラーでましてん…")
                 println(error)
             } else {
-                println("データとれましてん")
 
-                let fileName: String = filePath.lastPathComponent
-                var saveName: String = fileName.stringByReplacingOccurrencesOfString("/(jpeg|jpg|png)/", withString: "webp", options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
-                
-                saveName = saveName.stringByReplacingOccurrencesOfString("png", withString: "webp", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-                saveName = saveName.stringByReplacingOccurrencesOfString("jpg", withString: "webp", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+                let saveName: String = filePath.lastPathComponent.stringByReplacingOccurrencesOfString(filePath.pathExtension, withString: "webp", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+                let saveFolder: String = filePath.stringByReplacingOccurrencesOfString(filePath.lastPathComponent, withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
 
-                println(cwebp.execute(arguments: ["-o", saveName, filePath]))
+                cwebp.setCurrentDirectoryPath(saveFolder)
+                cwebp.setArguments(["-o", saveName, filePath])
+
+                println(cwebp.execute())
             }
         }
         
