@@ -66,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7717B641A80FBBE00EEC411 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				13C4D3B01A7E59BA003F6A74 /* cwebp */,
+			);
+			name = bin;
+			sourceTree = "<group>";
+		};
 		C7E945F41A5FC9940024581F = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +95,7 @@
 		C7E945FF1A5FC9940024581F /* WebP */ = {
 			isa = PBXGroup;
 			children = (
-				13C4D3B01A7E59BA003F6A74 /* cwebp */,
+				C7717B641A80FBBE00EEC411 /* bin */,
 				C7E946021A5FC9940024581F /* AppDelegate.swift */,
 				C7E946061A5FC9940024581F /* Images.xcassets */,
 				C7E946081A5FC9940024581F /* Main.storyboard */,
