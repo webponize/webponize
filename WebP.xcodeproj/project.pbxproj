@@ -11,6 +11,7 @@
 		13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */; };
 		13C4D3B11A7E59BA003F6A74 /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = 13C4D3B01A7E59BA003F6A74 /* cwebp */; };
 		C7623B2E1A6E08E60046FC09 /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7623B2D1A6E08E60046FC09 /* DropViewController.swift */; };
+		C7717B631A8091B000EEC411 /* DashedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7717B621A8091B000EEC411 /* DashedLine.swift */; };
 		C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946021A5FC9940024581F /* AppDelegate.swift */; };
 		C7E946071A5FC9940024581F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E946061A5FC9940024581F /* Images.xcassets */; };
 		C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E946081A5FC9940024581F /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryWrapper.swift; sourceTree = "<group>"; };
 		13C4D3B01A7E59BA003F6A74 /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
 		C7623B2D1A6E08E60046FC09 /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
+		C7717B621A8091B000EEC411 /* DashedLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashedLine.swift; sourceTree = "<group>"; };
 		C7E945FD1A5FC9940024581F /* WebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946011A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7E946021A5FC9940024581F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				C7623B2D1A6E08E60046FC09 /* DropViewController.swift */,
 				13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */,
 				13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */,
+				C7717B621A8091B000EEC411 /* DashedLine.swift */,
 			);
 			path = WebP;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				13C4D3A91A7E44B2003F6A74 /* Compress2WebP.swift in Sources */,
 				C7E946201A5FD5180024581F /* WindowController.swift in Sources */,
 				C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */,
+				C7717B631A8091B000EEC411 /* DashedLine.swift in Sources */,
 				C7623B2E1A6E08E60046FC09 /* DropViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

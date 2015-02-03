@@ -25,8 +25,6 @@ class DropView: NSView, NSDraggingDestination {
     
     override func drawRect(dirtyRect: NSRect)  {
         super.drawRect(dirtyRect)
-        NSColor.whiteColor().set()
-        NSRectFill(dirtyRect)
     }
     
     override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
