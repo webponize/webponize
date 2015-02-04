@@ -7,10 +7,15 @@ class BinaryWrapper: NSObject {
     var arguments: [String]
     var fileHandle: NSFileHandle
     
-    init(name: String, ofType: String) {
+    init(pathForResource name: String, ofType ext: String, inDirectory subpath: String?) {
 
         // initialize bundle resource
-        self.binaryPath = NSBundle.mainBundle().pathForResource(name, ofType: ofType)!
+        let bundle = NSBundle.mainBundle()
+        if subpath == nil {
+            self.binaryPath = bundle.pathForResource(name, ofType: ext)!
+        } else {
+            self.binaryPath = bundle.pathForResource(name, ofType: ext, inDirectory: subpath)!
+        }
         
         // set directory path to execute
         self.currentDirectoryPath = ""
