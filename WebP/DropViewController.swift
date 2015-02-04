@@ -18,7 +18,6 @@ class DropViewController: NSViewController {
         super.loadView()
         
         // load image and set it as view
-        var dropImage = NSImage(contentsOfFile: "img/drop-area.png")
-        self.dropAreaView.image = dropImage
+        self.dropAreaView.image = NSImage(named: "drop-area")
     }
 }
