@@ -14,13 +14,16 @@ class DropView: NSView, NSDraggingDestination {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        registerForDraggedTypes([
+
+        let acceptDragTypes = [
             NSPasteboardTypePNG,
             NSColorPboardType,
             NSFilenamesPboardType
-        ])
-        //NSImage.imagePasteboardTypes()
-        println(self.registeredDraggedTypes)
+            //NSImage.imagePasteboardTypes()
+        ]
+
+        registerForDraggedTypes(acceptDragTypes)
+        //println(self.registeredDraggedTypes)
     }
     
     override func drawRect(dirtyRect: NSRect)  {
@@ -34,11 +37,11 @@ class DropView: NSView, NSDraggingDestination {
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         
-        // get dragged file paths
+        // get dragged files' path
         let pboard = sender.draggingPasteboard()
         let filePaths = pboard.propertyListForType(NSFilenamesPboardType) as NSArray
         
-        // load dropped file using NSFileManager
+        // load dropped files using NSFileManager
         let manager = NSFileManager.defaultManager()
         var error: NSError?
 
@@ -48,13 +51,19 @@ class DropView: NSView, NSDraggingDestination {
                 println(error)
             } else {
 
-                let saveName: String = filePath.lastPathComponent.stringByReplacingOccurrencesOfString(filePath.pathExtension, withString: "webp", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
-                let saveFolder: String = filePath.stringByReplacingOccurrencesOfString(filePath.lastPathComponent, withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+                let fileName = filePath.lastPathComponent
+                let fileExtension = filePath.pathExtension
+
+                let saveName: String = fileName.stringByReplacingOccurrencesOfString(
+                    fileExtension, withString: "webp", options: .CaseInsensitiveSearch, range: nil)
+                let saveFolder: String = filePath.stringByReplacingOccurrencesOfString(
+                    fileName, withString: "", options: .CaseInsensitiveSearch, range: nil)
 
                 cwebp.setCurrentDirectoryPath(saveFolder)
                 cwebp.setArguments(["-o", saveName, filePath])
+                let standardOutput = cwebp.execute()
 
-                println(cwebp.execute())
+                //println(standardOutput)
             }
         }
         

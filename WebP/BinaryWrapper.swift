@@ -8,20 +8,23 @@ class BinaryWrapper: NSObject {
     var fileHandle: NSFileHandle
     
     init(name: String, ofType: String) {
-        let bundle = NSBundle.mainBundle()
-        self.binaryPath = bundle.pathForResource(name, ofType: ofType)!
+
+        // initialize bundle resource
+        self.binaryPath = NSBundle.mainBundle().pathForResource(name, ofType: ofType)!
+        
+        // set directory path to execute
         self.currentDirectoryPath = ""
+
+        // set arguments
         self.arguments = []
         self.fileHandle = NSFileHandle(forReadingAtPath: self.binaryPath)!
     }
     
     func setCurrentDirectoryPath(currentDirectoryPath: String) {
-        
         self.currentDirectoryPath = currentDirectoryPath
     }
     
     func setArguments(arguments: Dictionary<String, String>) {
-
         self.arguments.removeAll(keepCapacity: false)
         for (key, value) in arguments {
             self.arguments.append("\(key)=\(arguments[key])")
@@ -29,26 +32,20 @@ class BinaryWrapper: NSObject {
     }
 
     func setArguments(arguments: [String]) {
-
         self.arguments = arguments
     }
 
     func execute(arguments: Dictionary<String, String>) -> String {
-
         self.setArguments(arguments)
-        
         return self.execute()
     }
     
     func execute(arguments: [String]) -> String {
-        
         self.setArguments(arguments)
-
         return self.execute()
     }
     
     func execute() -> String {
-
         let task = NSTask()
         let pipe = NSPipe()
 

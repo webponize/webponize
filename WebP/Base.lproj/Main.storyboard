@@ -676,34 +676,18 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="LVA-l0-OWP" customClass="DropView" customModule="WebP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                                 <subviews>
-                                    <box horizontalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="77I-K9-02W" customClass="DashedLine" customModule="WebP" customModuleProvider="target">
-                                        <rect key="frame" x="140" y="140" width="5" height="200"/>
-                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <font key="titleFont" metaFont="system"/>
-                                    </box>
-                                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="08k-xA-Jbd" customClass="DashedLine" customModule="WebP" customModuleProvider="target">
-                                        <rect key="frame" x="140" y="340" width="200" height="5"/>
-                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <font key="titleFont" metaFont="system"/>
-                                    </box>
-                                    <box horizontalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-ot-5zk" customClass="DashedLine" customModule="WebP" customModuleProvider="target">
-                                        <rect key="frame" x="340" y="140" width="5" height="200"/>
-                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <font key="titleFont" metaFont="system"/>
-                                    </box>
-                                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="44Z-4z-l1s" customClass="DashedLine" customModule="WebP" customModuleProvider="target">
-                                        <rect key="frame" x="140" y="140" width="200" height="5"/>
-                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <font key="titleFont" metaFont="system"/>
-                                    </box>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aJN-WU-dgz" customClass="DropAreaView" customModule="WebP" customModuleProvider="target">
+                                        <rect key="frame" x="137" y="137" width="206" height="206"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="206" id="m1m-dz-OcF"/>
+                                            <constraint firstAttribute="height" constant="206" id="n4z-E8-Eat"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="VvT-PK-YyK"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="77I-K9-02W" firstAttribute="leading" secondItem="LVA-l0-OWP" secondAttribute="leading" constant="140" id="TTT-Lk-6EC"/>
-                                    <constraint firstItem="6XL-ot-5zk" firstAttribute="leading" secondItem="77I-K9-02W" secondAttribute="trailing" constant="200" id="VLa-Aq-orr"/>
+                                    <constraint firstItem="aJN-WU-dgz" firstAttribute="centerX" secondItem="LVA-l0-OWP" secondAttribute="centerX" id="5ns-kM-07m"/>
+                                    <constraint firstItem="aJN-WU-dgz" firstAttribute="centerY" secondItem="LVA-l0-OWP" secondAttribute="centerY" id="ggX-92-E7w"/>
                                 </constraints>
                             </customView>
                         </subviews>
