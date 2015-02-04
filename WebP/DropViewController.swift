@@ -12,12 +12,19 @@ class DropViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dropView.onDraggingEnteredHandler = { sender -> Void in
+            println(sender)
+        }
+        
+        self.dropView.onDraggingEndedHandler = { sender -> Void in
+            println(sender)
+        }
     }
 
     override func loadView() {
         super.loadView()
-        
-        // load image and set it as view
-        self.dropAreaView.image = NSImage(named: "drop-area")
     }
+    
+    
 }

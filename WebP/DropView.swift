@@ -30,8 +30,15 @@ class DropView: NSView, NSDraggingDestination {
         super.drawRect(dirtyRect)
     }
     
+    var onDraggingEnteredHandler: ((sender: NSDraggingInfo) -> Void)?
+
+    var onDraggingEndedHandler: ((sender: NSDraggingInfo) -> Void)?
+    
     override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
         // implementation when drag is entered
+        
+        self.onDraggingEnteredHandler?(sender: sender)
+        
         return NSDragOperation.Copy
     }
     
@@ -71,6 +78,9 @@ class DropView: NSView, NSDraggingDestination {
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
+        
+        self.onDraggingEndedHandler?(sender: sender!)
+        
         // implementation when drag is ended
     }
 }
