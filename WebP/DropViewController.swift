@@ -15,10 +15,12 @@ class DropViewController: NSViewController {
         
         self.dropView.onDraggingEnteredHandler = { sender -> Void in
             println(sender)
+            self.dropAreaView.addFilter()
         }
         
         self.dropView.onDraggingEndedHandler = { sender -> Void in
             println(sender)
+            self.dropAreaView.removeFilter()
         }
     }
 
