@@ -177,7 +177,7 @@
                     <window key="window" title="WebP" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="480"/>
+                        <rect key="contentRect" x="200" y="200" width="480" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="240" height="240"/>
                     </window>
@@ -231,10 +231,10 @@
         <scene sceneID="7Ti-BI-Kb8">
             <objects>
                 <windowController id="6Iu-oU-O4Z" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0" customClass="PreferenceWindow">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="-1117" y="199" width="480" height="270"/>
+                        <rect key="contentRect" x="200" y="200" width="480" height="270"/>
                         <rect key="screenRect" x="-1280" y="0.0" width="1280" height="777"/>
                     </window>
                     <connections>
@@ -265,6 +265,9 @@
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM">
                                                     <rect key="frame" x="165" y="166" width="254" height="21"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
+                                                    <connections>
+                                                        <action selector="onCompressionLevelChanged" target="5Li-iL-XEd" id="OFv-lL-gHd"/>
+                                                    </connections>
                                                 </slider>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-kX-hIh">
                                                     <rect key="frame" x="15" y="168" width="134" height="17"/>
@@ -280,6 +283,9 @@
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="onLosslessClicked" target="5Li-iL-XEd" id="Lzm-NM-AQf"/>
+                                                    </connections>
                                                 </button>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs">
                                                     <rect key="frame" x="15" y="124" width="300" height="18"/>
@@ -287,6 +293,9 @@
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="onNoAlphaClicked" target="5Li-iL-XEd" id="Evn-VI-WyW"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -295,6 +304,11 @@
                             </tabView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="compressionLevel" destination="7j6-b2-jRM" id="GZe-Gs-M9i"/>
+                        <outlet property="isLossless" destination="bHd-d4-JbM" id="Ad0-4A-B1h"/>
+                        <outlet property="isNoAlpha" destination="cTy-DU-6Rs" id="Gou-r8-6Xv"/>
+                    </connections>
                 </viewController>
                 <customObject id="zH1-wn-eMy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

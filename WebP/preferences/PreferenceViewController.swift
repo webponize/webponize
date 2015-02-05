@@ -2,19 +2,25 @@ import Cocoa
 
 class PreferenceViewController: NSViewController {
     
-    @IBOutlet weak var segmentControl: SegmentControl!
+    @IBOutlet weak var compressionLevel: NSSlider!
     
-    @IBOutlet weak var generalView: GeneralView!
-
-    @IBOutlet weak var cwebpView: CwebpView!
-
-    @IBOutlet weak var dwebpView: DwebpView!
+    @IBOutlet weak var isLossless: NSButton!
+    
+    @IBOutlet weak var isNoAlpha: NSButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func segmentIndexChanged(sender: SegmentedControl) {
+    @IBAction func onCompressionLevelChanged(sender: NSSlider) {
+        println(sender)
+    }
+    
+    @IBAction func onLosslessClicked(sender: NSButton) {
+        println(sender)
+    }
+    
+    @IBAction func onNoAlphaClicked(sender: NSButton) {
         println(sender)
     }
 }
