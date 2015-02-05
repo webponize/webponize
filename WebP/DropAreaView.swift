@@ -2,23 +2,21 @@ import Cocoa
 
 class DropAreaView: NSImageView {
     
-    var hoverFilter: CIFilter = CIFilter(name: "CIColorControls")
+    var dropImage = NSImage(named: "drop-area")
+    var dropImageHover = NSImage(named: "drop-area-hover")
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         // load image and set it as view
-        self.image = NSImage(named: "drop-area")
-        
-        // initialize filter
-        self.hoverFilter.setValue(1.0, forKey: "inputSaturation")
-        self.hoverFilter.setValue(0.5, forKey: "inputBrightness")
-        self.hoverFilter.setValue(3.0, forKey: "inputContrast")
+        self.image = self.dropImage
     }
     
-    func addFilter() {
-        self.hoverFilter.setValue(self.image, forKey: kCIInputImageKey)
+    func setHoverImage() {
+        self.image = self.dropImageHover
     }
     
-    func removeFilter() {}
+    func setImage() {
+        self.image = self.dropImage
+    }
 }

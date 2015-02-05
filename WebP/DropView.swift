@@ -26,22 +26,6 @@ class DropView: NSView, NSDraggingDestination {
         //println(self.registeredDraggedTypes)
     }
     
-    override func drawRect(dirtyRect: NSRect)  {
-        super.drawRect(dirtyRect)
-    }
-    
-    var onDraggingEnteredHandler: ((sender: NSDraggingInfo) -> Void)?
-
-    var onDraggingEndedHandler: ((sender: NSDraggingInfo) -> Void)?
-    
-    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
-        // implementation when drag is entered
-        
-        self.onDraggingEnteredHandler?(sender: sender)
-        
-        return NSDragOperation.Copy
-    }
-    
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         
         // get dragged files' path
@@ -76,11 +60,22 @@ class DropView: NSView, NSDraggingDestination {
         
         return true
     }
+    
+    var onDraggingEnteredHandler: ((sender: NSDraggingInfo) -> Void)?
+    
+    var onDraggingEndedHandler: ((sender: NSDraggingInfo) -> Void)?
+    
+    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
+        
+        // delegate to view controller
+        self.onDraggingEnteredHandler?(sender: sender)
+        
+        return NSDragOperation.Copy
+    }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
         
+        // delegate to view controller
         self.onDraggingEndedHandler?(sender: sender!)
-        
-        // implementation when drag is ended
     }
 }

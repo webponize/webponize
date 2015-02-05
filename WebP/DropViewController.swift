@@ -14,13 +14,11 @@ class DropViewController: NSViewController {
         super.viewDidLoad()
         
         self.dropView.onDraggingEnteredHandler = { sender -> Void in
-            println(sender)
-            self.dropAreaView.addFilter()
+            self.dropAreaView.setHoverImage()
         }
         
         self.dropView.onDraggingEndedHandler = { sender -> Void in
-            println(sender)
-            self.dropAreaView.removeFilter()
+            self.dropAreaView.setImage()
         }
     }
 
