@@ -21,7 +21,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="6Iu-oU-O4Z" kind="modal" id="29Z-kS-raa"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -222,6 +226,79 @@
                 <customObject id="tF2-KO-9td" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74" y="594"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="7Ti-BI-Kb8">
+            <objects>
+                <windowController id="6Iu-oU-O4Z" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="-1117" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="-1280" y="0.0" width="1280" height="777"/>
+                    </window>
+                    <connections>
+                        <segue destination="5Li-iL-XEd" kind="relationship" relationship="window.shadowedContentViewController" id="mev-dR-pvV"/>
+                    </connections>
+                </windowController>
+                <customObject id="nUA-kX-Wer" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="-65"/>
+        </scene>
+        <!--Preference View Controller-->
+        <scene sceneID="as5-Bh-pDA">
+            <objects>
+                <viewController id="5Li-iL-XEd" customClass="PreferenceViewController" sceneMemberID="viewController">
+                    <view key="view" id="t6h-Xh-3gC">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <tabView fixedFrame="YES" initialItem="17w-T3-byb" translatesAutoresizingMaskIntoConstraints="NO" id="5fd-Yc-9GO">
+                                <rect key="frame" x="13" y="10" width="454" height="254"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="General" identifier="1" id="17w-T3-byb">
+                                        <view key="view" id="Rde-Yx-54H">
+                                            <rect key="frame" x="10" y="33" width="434" height="208"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM">
+                                                    <rect key="frame" x="165" y="166" width="254" height="21"/>
+                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
+                                                </slider>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-kX-hIh">
+                                                    <rect key="frame" x="15" y="168" width="134" height="17"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Compression Level" id="Y15-va-wni">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM">
+                                                    <rect key="frame" x="15" y="144" width="300" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tLt-0K-ATH">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs">
+                                                    <rect key="frame" x="15" y="124" width="300" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Qpg-wO-08N">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="zH1-wn-eMy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="370"/>
         </scene>
     </scenes>
 </document>
