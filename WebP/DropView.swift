@@ -12,6 +12,7 @@ class DropView: NSView, NSDraggingDestination {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
+        // configure as default if not set
         config.setDefaultValues()
     }
 
@@ -31,19 +32,19 @@ class DropView: NSView, NSDraggingDestination {
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         
-        let compressionLevel: [String] = ["-q", "\(config.getCompressionLevel())"]
-        let isLossless: [String] = config.getIsLossless() ? ["-lossless"] : []
-        let isNoAlpha: [String] = config.getIsNoAlpha() ? ["-noalpha"] : []
+        let compressionLevel = ["-q", "\(config.getCompressionLevel())"]
+        let isLossless       = config.getIsLossless() ? ["-lossless"] : []
+        let isNoAlpha        = config.getIsNoAlpha() ? ["-noalpha"] : []
         
         // get dragged files' path
-        let pboard = sender.draggingPasteboard()
-        let filePaths = pboard.propertyListForType(NSFilenamesPboardType) as NSArray
+        let pboard: NSPasteboard = sender.draggingPasteboard()
+        let filePaths: [String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
         
         // load dropped files using NSFileManager
-        let manager = NSFileManager.defaultManager()
+        let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
 
-        for filePath in filePaths as [String] {
+        for filePath in filePaths {
             let attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
             if error != nil {
                 println(error)
