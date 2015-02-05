@@ -3,6 +3,7 @@ import Cocoa
 class DropView: NSView, NSDraggingDestination {
     
     var cwebp: Compress2Webp = Compress2Webp()
+    var config: ApplicationConfig = ApplicationConfig()
     
     override init(frame: NSRect) {
         super.init(frame: frame)
@@ -10,6 +11,8 @@ class DropView: NSView, NSDraggingDestination {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
+        config.setDefaultValues()
     }
 
     override func awakeFromNib() {
@@ -27,6 +30,10 @@ class DropView: NSView, NSDraggingDestination {
     }
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
+        
+        let compressionLevel: [String] = ["-q", "\(config.getCompressionLevel())"]
+        let isLossless: [String] = config.getIsLossless() ? ["-lossless"] : []
+        let isNoAlpha: [String] = config.getIsNoAlpha() ? ["-noalpha"] : []
         
         // get dragged files' path
         let pboard = sender.draggingPasteboard()
@@ -50,8 +57,16 @@ class DropView: NSView, NSDraggingDestination {
                 let saveFolder: String = filePath.stringByReplacingOccurrencesOfString(
                     fileName, withString: "", options: .CaseInsensitiveSearch, range: nil)
 
+                var arguments: [String] = []
+                arguments += compressionLevel
+                arguments += isLossless
+                arguments += isNoAlpha
+                arguments += [filePath, "-o", saveName]
+                
                 cwebp.setCurrentDirectoryPath(saveFolder)
-                cwebp.setArguments(["-o", saveName, filePath])
+                cwebp.setArguments(arguments)
+                
+                println(arguments)
                 let standardOutput = cwebp.execute()
 
                 //println(standardOutput)

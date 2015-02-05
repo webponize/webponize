@@ -230,7 +230,7 @@
         <!--Window Controller-->
         <scene sceneID="7Ti-BI-Kb8">
             <objects>
-                <windowController id="6Iu-oU-O4Z" sceneMemberID="viewController">
+                <windowController id="6Iu-oU-O4Z" customClass="PreferenceWindowController" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0" customClass="PreferenceWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -238,6 +238,7 @@
                         <rect key="screenRect" x="-1280" y="0.0" width="1280" height="777"/>
                     </window>
                     <connections>
+                        <outlet property="preferenceWindow" destination="AmF-Op-dF0" id="WaA-26-cw4"/>
                         <segue destination="5Li-iL-XEd" kind="relationship" relationship="window.shadowedContentViewController" id="mev-dR-pvV"/>
                     </connections>
                 </windowController>
@@ -262,7 +263,7 @@
                                             <rect key="frame" x="10" y="33" width="434" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM">
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM" customClass="CompressionLevelSlider">
                                                     <rect key="frame" x="165" y="166" width="254" height="21"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
                                                     <connections>
@@ -277,7 +278,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM">
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM" customClass="LosslessCheckBox">
                                                     <rect key="frame" x="15" y="144" width="300" height="18"/>
                                                     <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tLt-0K-ATH">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -287,7 +288,7 @@
                                                         <action selector="onLosslessClicked" target="5Li-iL-XEd" id="Lzm-NM-AQf"/>
                                                     </connections>
                                                 </button>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs">
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs" customClass="NoAlphaCheckBox">
                                                     <rect key="frame" x="15" y="124" width="300" height="18"/>
                                                     <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Qpg-wO-08N">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

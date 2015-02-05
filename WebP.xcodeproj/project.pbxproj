@@ -12,6 +12,8 @@
 		C7623B2E1A6E08E60046FC09 /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7623B2D1A6E08E60046FC09 /* DropViewController.swift */; };
 		C76FD9651A834A920036F4BA /* lib in Resources */ = {isa = PBXBuildFile; fileRef = C76FD9641A834A920036F4BA /* lib */; };
 		C76FD9711A834F9E0036F4BA /* preferences in Resources */ = {isa = PBXBuildFile; fileRef = C76FD9701A834F9E0036F4BA /* preferences */; };
+		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
+		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		C7D81D181A81CE57001877B6 /* DropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D81D171A81CE57001877B6 /* DropAreaView.swift */; };
 		C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946021A5FC9940024581F /* AppDelegate.swift */; };
 		C7E946071A5FC9940024581F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E946061A5FC9940024581F /* Images.xcassets */; };
@@ -37,6 +39,8 @@
 		C7623B2D1A6E08E60046FC09 /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
 		C76FD9641A834A920036F4BA /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		C76FD9701A834F9E0036F4BA /* preferences */ = {isa = PBXFileReference; lastKnownFileType = folder; path = preferences; sourceTree = "<group>"; };
+		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
 		C7D81D171A81CE57001877B6 /* DropAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropAreaView.swift; sourceTree = "<group>"; };
 		C7E945FD1A5FC9940024581F /* WebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946011A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */,
 				13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */,
 				C7D81D171A81CE57001877B6 /* DropAreaView.swift */,
+				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
+				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
 			);
 			path = WebP;
 			sourceTree = "<group>";
@@ -253,6 +259,8 @@
 				C7E946221A5FD68D0024581F /* DropView.swift in Sources */,
 				13C4D3A91A7E44B2003F6A74 /* Compress2WebP.swift in Sources */,
 				C7E946201A5FD5180024581F /* WindowController.swift in Sources */,
+				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
+				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,
 				C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */,
 				C7623B2E1A6E08E60046FC09 /* DropViewController.swift in Sources */,
 			);
