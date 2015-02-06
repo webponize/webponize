@@ -17,7 +17,7 @@ class DropViewController: NSViewController {
             self.dropAreaView.setHoverImage()
         }
         
-        self.dropView.onDraggingEndedHandler = { sender -> Void in
+        self.dropView.onDraggingExitedHandler = { sender -> Void in
             self.dropAreaView.setImage()
         }
     }

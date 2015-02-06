@@ -79,6 +79,8 @@ class DropView: NSView, NSDraggingDestination {
     
     var onDraggingEnteredHandler: ((sender: NSDraggingInfo) -> Void)?
     
+    var onDraggingExitedHandler: ((sender: NSDraggingInfo) -> Void)?
+    
     var onDraggingEndedHandler: ((sender: NSDraggingInfo) -> Void)?
     
     override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
@@ -87,6 +89,12 @@ class DropView: NSView, NSDraggingDestination {
         self.onDraggingEnteredHandler?(sender: sender)
         
         return NSDragOperation.Copy
+    }
+    
+    override func draggingExited(sender: NSDraggingInfo?) {
+        
+        // delegate to view controller
+        self.onDraggingExitedHandler?(sender: sender!)
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
