@@ -20,6 +20,10 @@ class DropViewController: NSViewController {
         self.dropView.onDraggingExitedHandler = { sender -> Void in
             self.dropAreaView.setImage()
         }
+        
+        self.dropView.onDraggingEndedHandler = { sender -> Void in
+            self.dropAreaView.setImage()
+        }
     }
 
     override func loadView() {
