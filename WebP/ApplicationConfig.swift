@@ -28,12 +28,24 @@ class ApplicationConfig: Preference {
         return self.getValue(PreferenceKey.compressionLevel.rawValue) as Int
     }
     
+    func setCompressionLevel(value: Int) {
+        self.setValue(PreferenceKey.compressionLevel.rawValue, value: value)
+    }
+    
     func getIsLossless() -> Bool {
         return self.getValue(PreferenceKey.isLossless.rawValue) as Bool
     }
     
+    func setIsLossless(value: Bool) {
+        self.setValue(PreferenceKey.isLossless.rawValue, value: value)
+    }
+    
     func getIsNoAlpha() -> Bool {
         return self.getValue(PreferenceKey.isNoAlpha.rawValue) as Bool
+    }
+    
+    func setIsNoAlpha(value: Bool) {
+        self.setValue(PreferenceKey.isNoAlpha.rawValue, value: value)
     }
     
     func getValues() -> Dictionary<String, AnyObject> {
