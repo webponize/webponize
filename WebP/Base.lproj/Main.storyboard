@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -230,7 +230,7 @@
         <!--Window Controller-->
         <scene sceneID="7Ti-BI-Kb8">
             <objects>
-                <windowController id="6Iu-oU-O4Z" customClass="PreferenceWindowController" sceneMemberID="viewController">
+                <windowController id="6Iu-oU-O4Z" customClass="PreferenceWindowController" customModule="WebP" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -245,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="648" y="-65"/>
         </scene>
-        <!--Preference View Controller-->
+        <!--View Controller-->
         <scene sceneID="as5-Bh-pDA">
             <objects>
-                <viewController id="5Li-iL-XEd" customClass="PreferenceViewController" sceneMemberID="viewController">
+                <viewController id="5Li-iL-XEd" sceneMemberID="viewController">
                     <view key="view" id="t6h-Xh-3gC">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -258,7 +258,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="General" identifier="1" id="17w-T3-byb">
-                                        <view key="view" ambiguous="YES" id="Rde-Yx-54H">
+                                        <view key="view" id="Rde-Yx-54H">
                                             <rect key="frame" x="10" y="33" width="434" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -270,18 +270,18 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM" customClass="CompressionLevelSlider">
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM">
                                                     <rect key="frame" x="165" y="166" width="254" height="21"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
                                                 </slider>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM" customClass="LosslessCheckBox">
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM">
                                                     <rect key="frame" x="15" y="144" width="300" height="18"/>
                                                     <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tLt-0K-ATH">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                 </button>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs" customClass="NoAlphaCheckBox">
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs">
                                                     <rect key="frame" x="15" y="124" width="300" height="18"/>
                                                     <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Qpg-wO-08N">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
