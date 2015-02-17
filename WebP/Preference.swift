@@ -9,10 +9,16 @@ class Preference: NSObject {
     }
     
     func setValue(key: String, value: AnyObject) {
-        CFPreferencesSetAppValue(key as CFString, value, applicationId)
+        
+        let key: CFString = key as CFString
+        
+        CFPreferencesSetAppValue(key, value, self.applicationId)
     }
     
     func getValue(key: String) -> CFPropertyList? {
-        return CFPreferencesCopyAppValue(key as CFString, applicationId)
+        
+        let key: CFString = key as CFString
+        
+        return CFPreferencesCopyAppValue(key, self.applicationId)
     }
 }
