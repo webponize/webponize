@@ -13,20 +13,36 @@ class PreferenceViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.compressionLevel.intValue = Int32(config.getCompressionLevel())
-        self.isLossless.intValue = config.getIsLossless() ? 1 : 0
-        self.isNoAlpha.intValue = config.getIsNoAlpha() ? 1 : 0
+        
+        // prepare variables from configuration for UIs
+        let compressionLevel: Int32 = Int32(config.getCompressionLevel())
+        let isLossless: Int32 = config.getIsLossless() ? 1 : 0
+        let isNoAlpha: Int32 = config.getIsNoAlpha() ? 1 : 0
+        
+        // set up default UI position
+        self.compressionLevel.intValue = compressionLevel
+        self.isLossless.intValue = isLossless
+        self.isNoAlpha.intValue = isNoAlpha
     }
     
     @IBAction func onCompressionLevelChanged(sender: CompressionLevelSlider) {
-        self.config.setCompressionLevel(Int(sender.intValue))
+        
+        let compressionLevel: Int = Int(sender.intValue)
+        
+        self.config.setCompressionLevel(compressionLevel)
     }
     
     @IBAction func onLosslessClicked(sender: LosslessCheckBox) {
-        self.config.setIsLossless(sender.intValue == 1 ? true: false)
+        
+        let isNoAlpha: Bool = sender.intValue == 1 ? true : false
+        
+        self.config.setIsLossless(isNoAlpha)
     }
     
     @IBAction func onNoAlphaClicked(sender: NoAlphaCheckBox) {
-        self.config.setIsNoAlpha(sender.intValue == 1 ? true: false)
+        
+        let isNoAlpha: Bool = sender.intValue == 1 ? true : false
+
+        self.config.setIsNoAlpha(isNoAlpha)
     }
 }
