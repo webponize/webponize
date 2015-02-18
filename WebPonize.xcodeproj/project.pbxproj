@@ -147,8 +147,7 @@
 				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
 				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
 			);
-			name = WebPonize;
-			path = WebP;
+			path = WebPonize;
 			sourceTree = "<group>";
 		};
 		C7E946001A5FC9940024581F /* Supporting Files */ = {
@@ -194,7 +193,7 @@
 			dependencies = (
 			);
 			name = WebPonize;
-			productName = WebP;
+			productName = WebPonize;
 			productReference = C7E945FD1A5FC9940024581F /* WebPonize.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -212,7 +211,7 @@
 				C7E946111A5FC9940024581F /* PBXTargetDependency */,
 			);
 			name = WebPonizeTests;
-			productName = WebPTests;
+			productName = WebPonizeTests;
 			productReference = C7E9460F1A5FC9940024581F /* WebPonizeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -377,10 +376,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.10;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -414,9 +413,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.10;
 			};
 			name = Release;
 		};
@@ -427,12 +426,12 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = WebP/Info.plist;
+				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.10;
 			};
 			name = Debug;
 		};
@@ -443,12 +442,12 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = WebP/Info.plist;
+				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.9;
+				SDKROOT = macosx10.10;
 			};
 			name = Release;
 		};
@@ -468,7 +467,7 @@
 				INFOPLIST_FILE = WebPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonizeTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebP.app/Contents/MacOS/WebP";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
 			};
 			name = Debug;
 		};
@@ -481,10 +480,10 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WebPTests/Info.plist;
+				INFOPLIST_FILE = WebPonizeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonizeTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebP.app/Contents/MacOS/WebP";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
 			};
 			name = Release;
 		};
