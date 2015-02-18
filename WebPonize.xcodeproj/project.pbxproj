@@ -25,7 +25,7 @@
 		C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946021A5FC9940024581F /* AppDelegate.swift */; };
 		C7E946071A5FC9940024581F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E946061A5FC9940024581F /* Images.xcassets */; };
 		C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E946081A5FC9940024581F /* Main.storyboard */; };
-		C7E946161A5FC9940024581F /* WebPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946151A5FC9940024581F /* WebPTests.swift */; };
+		C7E946161A5FC9940024581F /* WebPonizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946151A5FC9940024581F /* WebPonizeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,14 +54,14 @@
 		C7A61A511A846CEA00693007 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		C7A61A521A846CEA00693007 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		C7A61A531A846CEA00693007 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		C7E945FD1A5FC9940024581F /* WebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7E945FD1A5FC9940024581F /* WebPonize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebPonize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946011A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7E946021A5FC9940024581F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7E946061A5FC9940024581F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7E946091A5FC9940024581F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C7E9460F1A5FC9940024581F /* WebPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7E9460F1A5FC9940024581F /* WebPonizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebPonizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946141A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7E946151A5FC9940024581F /* WebPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPTests.swift; sourceTree = "<group>"; };
+		C7E946151A5FC9940024581F /* WebPonizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPonizeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 		C7E945F41A5FC9940024581F = {
 			isa = PBXGroup;
 			children = (
-				C7E945FF1A5FC9940024581F /* WebP */,
-				C7E946121A5FC9940024581F /* WebPTests */,
+				C7E945FF1A5FC9940024581F /* WebPonize */,
+				C7E946121A5FC9940024581F /* WebPonizeTests */,
 				C7E945FE1A5FC9940024581F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,13 +125,13 @@
 		C7E945FE1A5FC9940024581F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7E945FD1A5FC9940024581F /* WebP.app */,
-				C7E9460F1A5FC9940024581F /* WebPTests.xctest */,
+				C7E945FD1A5FC9940024581F /* WebPonize.app */,
+				C7E9460F1A5FC9940024581F /* WebPonizeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C7E945FF1A5FC9940024581F /* WebP */ = {
+		C7E945FF1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXGroup;
 			children = (
 				C7A61A421A846CE200693007 /* view */,
@@ -147,6 +147,7 @@
 				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
 				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
 			);
+			name = WebPonize;
 			path = WebP;
 			sourceTree = "<group>";
 		};
@@ -158,12 +159,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C7E946121A5FC9940024581F /* WebPTests */ = {
+		C7E946121A5FC9940024581F /* WebPonizeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C7E946151A5FC9940024581F /* WebPTests.swift */,
+				C7E946151A5FC9940024581F /* WebPonizeTests.swift */,
 				C7E946131A5FC9940024581F /* Supporting Files */,
 			);
+			name = WebPonizeTests;
 			path = WebPTests;
 			sourceTree = "<group>";
 		};
@@ -178,9 +180,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7E945FC1A5FC9940024581F /* WebP */ = {
+		C7E945FC1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7E946191A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebP" */;
+			buildConfigurationList = C7E946191A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPonize" */;
 			buildPhases = (
 				C7E945F91A5FC9940024581F /* Sources */,
 				C7E945FA1A5FC9940024581F /* Frameworks */,
@@ -191,14 +193,14 @@
 			);
 			dependencies = (
 			);
-			name = WebP;
+			name = WebPonize;
 			productName = WebP;
-			productReference = C7E945FD1A5FC9940024581F /* WebP.app */;
+			productReference = C7E945FD1A5FC9940024581F /* WebPonize.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C7E9460E1A5FC9940024581F /* WebPTests */ = {
+		C7E9460E1A5FC9940024581F /* WebPonizeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7E9461C1A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPTests" */;
+			buildConfigurationList = C7E9461C1A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPonizeTests" */;
 			buildPhases = (
 				C7E9460B1A5FC9940024581F /* Sources */,
 				C7E9460C1A5FC9940024581F /* Frameworks */,
@@ -209,9 +211,9 @@
 			dependencies = (
 				C7E946111A5FC9940024581F /* PBXTargetDependency */,
 			);
-			name = WebPTests;
+			name = WebPonizeTests;
 			productName = WebPTests;
-			productReference = C7E9460F1A5FC9940024581F /* WebPTests.xctest */;
+			productReference = C7E9460F1A5FC9940024581F /* WebPonizeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +235,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C7E945F81A5FC9940024581F /* Build configuration list for PBXProject "WebP" */;
+			buildConfigurationList = C7E945F81A5FC9940024581F /* Build configuration list for PBXProject "WebPonize" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -246,8 +248,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7E945FC1A5FC9940024581F /* WebP */,
-				C7E9460E1A5FC9940024581F /* WebPTests */,
+				C7E945FC1A5FC9940024581F /* WebPonize */,
+				C7E9460E1A5FC9940024581F /* WebPonizeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7E946161A5FC9940024581F /* WebPTests.swift in Sources */,
+				C7E946161A5FC9940024581F /* WebPonizeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +326,7 @@
 /* Begin PBXTargetDependency section */
 		C7E946111A5FC9940024581F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C7E945FC1A5FC9940024581F /* WebP */;
+			target = C7E945FC1A5FC9940024581F /* WebPonize */;
 			targetProxy = C7E946101A5FC9940024581F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,7 +430,7 @@
 				INFOPLIST_FILE = WebP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx10.9;
 			};
@@ -444,7 +446,7 @@
 				INFOPLIST_FILE = WebP/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx10.9;
 			};
@@ -465,7 +467,7 @@
 				);
 				INFOPLIST_FILE = WebPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WebPonizeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebP.app/Contents/MacOS/WebP";
 			};
 			name = Debug;
@@ -481,7 +483,7 @@
 				);
 				INFOPLIST_FILE = WebPTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WebPonizeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebP.app/Contents/MacOS/WebP";
 			};
 			name = Release;
@@ -489,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7E945F81A5FC9940024581F /* Build configuration list for PBXProject "WebP" */ = {
+		C7E945F81A5FC9940024581F /* Build configuration list for PBXProject "WebPonize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7E946171A5FC9940024581F /* Debug */,
@@ -498,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7E946191A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebP" */ = {
+		C7E946191A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPonize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7E9461A1A5FC9940024581F /* Debug */,
@@ -507,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7E9461C1A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPTests" */ = {
+		C7E9461C1A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPonizeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C7E9461D1A5FC9940024581F /* Debug */,

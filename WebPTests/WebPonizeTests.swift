@@ -1,7 +1,7 @@
 import Cocoa
 import XCTest
 
-class WebPTests: XCTestCase {
+class WebPonizeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
