@@ -164,8 +164,7 @@
 				C7E946151A5FC9940024581F /* WebPonizeTests.swift */,
 				C7E946131A5FC9940024581F /* Supporting Files */,
 			);
-			name = WebPonizeTests;
-			path = WebPTests;
+			path = WebPonizeTests;
 			sourceTree = "<group>";
 		};
 		C7E946131A5FC9940024581F /* Supporting Files */ = {
@@ -464,7 +463,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = WebPTests/Info.plist;
+				INFOPLIST_FILE = WebPonizeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonizeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
