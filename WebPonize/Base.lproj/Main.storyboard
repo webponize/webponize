@@ -232,7 +232,6 @@
                 <windowController id="6Iu-oU-O4Z" customClass="PreferenceWindowController" customModule="WebPonize" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="200" y="200" width="480" height="270"/>
                         <rect key="screenRect" x="-1280" y="0.0" width="1280" height="777"/>
                     </window>
