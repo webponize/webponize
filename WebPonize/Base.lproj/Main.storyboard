@@ -257,10 +257,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="General" identifier="1" id="17w-T3-byb">
                                         <view key="view" id="Rde-Yx-54H" customClass="GeneralView" customModule="WebPonize" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="33" width="434" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-kX-hIh">
-                                                    <rect key="frame" x="15" y="-40" width="134" height="17"/>
+                                                    <rect key="frame" x="15" y="168" width="134" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Compression Level" id="Y15-va-wni">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -268,14 +269,14 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM" customClass="CompressionLevelSlider" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="165" y="-42" width="254" height="21"/>
+                                                    <rect key="frame" x="195" y="166" width="224" height="21"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
                                                     <connections>
                                                         <action selector="onCompressionLevelChanged:" target="5Li-iL-XEd" id="F1o-nc-L81"/>
                                                     </connections>
                                                 </slider>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM" customClass="LosslessCheckBox" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="-64" width="300" height="18"/>
+                                                    <rect key="frame" x="15" y="144" width="300" height="18"/>
                                                     <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tLt-0K-ATH">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -285,7 +286,7 @@
                                                     </connections>
                                                 </button>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs" customClass="NoAlphaCheckBox" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="-84" width="300" height="18"/>
+                                                    <rect key="frame" x="15" y="124" width="300" height="18"/>
                                                     <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Qpg-wO-08N">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -294,6 +295,27 @@
                                                         <action selector="onNoAlphaClicked:" target="5Li-iL-XEd" id="3ot-Cg-FZz"/>
                                                     </connections>
                                                 </button>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AB-KR-HNp" customClass="CompressionLevelTextField" customModule="WebPonize" customModuleProvider="target">
+                                                    <rect key="frame" x="149" y="165" width="40" height="22"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JUH-SW-jDu">
+                                                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="IgT-lr-AJf">
+                                                            <real key="minimum" value="0.0"/>
+                                                            <real key="maximum" value="100"/>
+                                                            <metadata>
+                                                                <real key="inspectorSampleValue" value="1"/>
+                                                            </metadata>
+                                                        </numberFormatter>
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <allowedInputSourceLocales>
+                                                            <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                        </allowedInputSourceLocales>
+                                                    </textFieldCell>
+                                                    <connections>
+                                                        <action selector="onCompressionLevelTextChanged:" target="5Li-iL-XEd" id="3r8-6h-X8H"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
@@ -309,6 +331,7 @@
                     </view>
                     <connections>
                         <outlet property="compressionLevel" destination="7j6-b2-jRM" id="lIk-Bj-Mil"/>
+                        <outlet property="compressionLevelText" destination="4AB-KR-HNp" id="LfI-aU-dLC"/>
                         <outlet property="isLossless" destination="bHd-d4-JbM" id="j7H-H3-bYt"/>
                         <outlet property="isNoAlpha" destination="cTy-DU-6Rs" id="xeZ-f1-ENr"/>
                     </connections>
