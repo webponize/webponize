@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */; };
+		13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86511AA768D3007E68D0 /* MainWindow.swift */; };
 		13C4D3A91A7E44B2003F6A74 /* Compress2WebP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */; };
 		13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */; };
 		C76FD9651A834A920036F4BA /* lib in Resources */ = {isa = PBXBuildFile; fileRef = C76FD9641A834A920036F4BA /* lib */; };
@@ -22,7 +24,7 @@
 		C7A61A541A846CEA00693007 /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A501A846CEA00693007 /* DropViewController.swift */; };
 		C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A511A846CEA00693007 /* PreferenceViewController.swift */; };
 		C7A61A561A846CEA00693007 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A521A846CEA00693007 /* PreferenceWindowController.swift */; };
-		C7A61A571A846CEA00693007 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A531A846CEA00693007 /* WindowController.swift */; };
+		C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A531A846CEA00693007 /* MainWindowController.swift */; };
 		C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946021A5FC9940024581F /* AppDelegate.swift */; };
 		C7E946071A5FC9940024581F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E946061A5FC9940024581F /* Images.xcassets */; };
 		C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E946081A5FC9940024581F /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
+		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		13C4D3A81A7E44B2003F6A74 /* Compress2WebP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compress2WebP.swift; sourceTree = "<group>"; };
 		13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryWrapper.swift; sourceTree = "<group>"; };
 		C76FD9641A834A920036F4BA /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
@@ -56,7 +60,7 @@
 		C7A61A501A846CEA00693007 /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
 		C7A61A511A846CEA00693007 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		C7A61A521A846CEA00693007 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
-		C7A61A531A846CEA00693007 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		C7A61A531A846CEA00693007 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		C7E945FD1A5FC9940024581F /* WebPonize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebPonize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946011A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7E946021A5FC9940024581F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,13 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13AE864E1AA76859007E68D0 /* window */ = {
+			isa = PBXGroup;
+			children = (
+				13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */,
+				13AE86511AA768D3007E68D0 /* MainWindow.swift */,
+			);
+			path = window;
+			sourceTree = "<group>";
+		};
 		C7A61A401A846C1200693007 /* controller */ = {
 			isa = PBXGroup;
 			children = (
 				C7A61A501A846CEA00693007 /* DropViewController.swift */,
 				C7A61A511A846CEA00693007 /* PreferenceViewController.swift */,
 				C7A61A521A846CEA00693007 /* PreferenceWindowController.swift */,
-				C7A61A531A846CEA00693007 /* WindowController.swift */,
+				C7A61A531A846CEA00693007 /* MainWindowController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -139,6 +152,7 @@
 		C7E945FF1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXGroup;
 			children = (
+				13AE864E1AA76859007E68D0 /* window */,
 				C7A61A421A846CE200693007 /* view */,
 				C7A61A411A846CD900693007 /* utility */,
 				C7A61A401A846C1200693007 /* controller */,
@@ -301,14 +315,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A61A491A846CE200693007 /* CompressionLevelSlider.swift in Sources */,
-				C7A61A571A846CEA00693007 /* WindowController.swift in Sources */,
+				C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */,
 				C7A61A4B1A846CE200693007 /* DropView.swift in Sources */,
 				13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */,
 				13C4D3A91A7E44B2003F6A74 /* Compress2WebP.swift in Sources */,
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C7A61A4E1A846CE200693007 /* NoAlphaCheckBox.swift in Sources */,
 				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,
+				13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */,
 				C7A61A4C1A846CE200693007 /* GeneralView.swift in Sources */,
+				13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */,
 				C7A61A561A846CEA00693007 /* PreferenceWindowController.swift in Sources */,
 				C7A61A4A1A846CE200693007 /* DropAreaView.swift in Sources */,
 				C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */,
