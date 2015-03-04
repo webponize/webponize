@@ -2,7 +2,7 @@ import Cocoa
 
 class DropView: NSView, NSDraggingDestination {
     
-    var cwebp: Compress2Webp = Compress2Webp()
+    var cwebp: Cwebp = Cwebp()
     var config: ApplicationConfig = ApplicationConfig()
     
     override init(frame: NSRect) {
@@ -14,6 +14,13 @@ class DropView: NSView, NSDraggingDestination {
         
         // configure as default if not set
         config.setDefaultValues()
+    }
+    
+    override func drawRect(dirtyRect: NSRect) {
+        
+        //NSColor(calibratedWhite: 255.0, alpha: 0.8).set()
+        //NSRectFillUsingOperation(dirtyRect, NSCompositingOperation.CompositeSourceOver)
+        //super.drawRect(dirtyRect)
     }
 
     override func awakeFromNib() {
@@ -27,7 +34,6 @@ class DropView: NSView, NSDraggingDestination {
         ]
 
         registerForDraggedTypes(acceptDragTypes)
-        //println(self.registeredDraggedTypes)
     }
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {

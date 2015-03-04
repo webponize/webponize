@@ -1,6 +1,6 @@
 import Cocoa
 
-class Compress2Webp: BinaryWrapper {
+class Cwebp: BinaryWrapper {
     init() {
         super.init(pathForResource: "cwebp", ofType: "", inDirectory: "lib")
     }
