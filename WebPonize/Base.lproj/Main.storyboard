@@ -269,7 +269,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM" customClass="CompressionLevelSlider" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="195" y="166" width="224" height="21"/>
+                                                    <rect key="frame" x="195" y="166" width="224" height="20"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
                                                     <connections>
                                                         <action selector="onCompressionLevelChanged:" target="5Li-iL-XEd" id="F1o-nc-L81"/>
@@ -295,15 +295,12 @@
                                                         <action selector="onNoAlphaClicked:" target="5Li-iL-XEd" id="3ot-Cg-FZz"/>
                                                     </connections>
                                                 </button>
-                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AB-KR-HNp" customClass="CompressionLevelTextField" customModule="WebPonize" customModuleProvider="target">
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJq-RZ-hGO" customClass="CompressionLevelTextField" customModule="WebPonize" customModuleProvider="target">
                                                     <rect key="frame" x="149" y="165" width="40" height="22"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JUH-SW-jDu">
-                                                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="IgT-lr-AJf">
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="7SG-iH-82h">
+                                                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="WFT-cx-7fz">
                                                             <real key="minimum" value="0.0"/>
                                                             <real key="maximum" value="100"/>
-                                                            <metadata>
-                                                                <real key="inspectorSampleValue" value="1"/>
-                                                            </metadata>
                                                         </numberFormatter>
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -313,7 +310,7 @@
                                                         </allowedInputSourceLocales>
                                                     </textFieldCell>
                                                     <connections>
-                                                        <action selector="onCompressionLevelTextChanged:" target="5Li-iL-XEd" id="3r8-6h-X8H"/>
+                                                        <action selector="onCompressionLevelTextChanged:" target="5Li-iL-XEd" id="79r-oD-ez0"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -331,7 +328,7 @@
                     </view>
                     <connections>
                         <outlet property="compressionLevel" destination="7j6-b2-jRM" id="lIk-Bj-Mil"/>
-                        <outlet property="compressionLevelText" destination="4AB-KR-HNp" id="LfI-aU-dLC"/>
+                        <outlet property="compressionLevelText" destination="oJq-RZ-hGO" id="qbz-J2-2XU"/>
                         <outlet property="isLossless" destination="bHd-d4-JbM" id="j7H-H3-bYt"/>
                         <outlet property="isNoAlpha" destination="cTy-DU-6Rs" id="xeZ-f1-ENr"/>
                     </connections>
