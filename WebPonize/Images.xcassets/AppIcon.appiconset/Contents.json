@@ -3,60 +3,61 @@
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-16-1x.png",
+      "filename" : "webponize-16.png",
       "scale" : "1x"
     },
     {
       "size" : "16x16",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-16-2x.png",
+      "filename" : "webponize-32.png",
       "scale" : "2x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-32-1x.png",
+      "filename" : "webponize-32-1.png",
       "scale" : "1x"
     },
     {
       "size" : "32x32",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-32-2x.png",
+      "filename" : "webponize-64.png",
       "scale" : "2x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-128-1x.png",
+      "filename" : "webponize-128.png",
       "scale" : "1x"
     },
     {
       "size" : "128x128",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-128-2x.png",
+      "filename" : "webponize-256.png",
       "scale" : "2x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-256-1x.png",
+      "filename" : "webponize-256-1.png",
       "scale" : "1x"
     },
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-256-2x.png",
+      "filename" : "webponize-512.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "coffeecup-icon-512-1x.png",
+      "filename" : "webponize-512-1.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "webponize-1024.png",
       "scale" : "2x"
     }
   ],
