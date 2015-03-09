@@ -14,7 +14,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="WebPonize" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About WebP" id="5kV-Vb-QxS">
+                                        <menuItem title="About WebPonize" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
