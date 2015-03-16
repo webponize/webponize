@@ -12,6 +12,8 @@
 		13AE86541AA77372007E68D0 /* Cwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86531AA77372007E68D0 /* Cwebp.swift */; };
 		13C4D3A91A7E44B2003F6A74 /* ProcessQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */; };
 		13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */; };
+		13E7B9571AB6F3B7003A3AFB /* cwebp.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9561AB6F3B7003A3AFB /* cwebp.entitlements */; };
+		13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */; };
 		C76FD9651A834A920036F4BA /* lib in Resources */ = {isa = PBXBuildFile; fileRef = C76FD9641A834A920036F4BA /* lib */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
@@ -44,12 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1317C6441AADD566009E02E3 /* WebPonize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WebPonize.entitlements; sourceTree = "<group>"; };
 		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		13AE86531AA77372007E68D0 /* Cwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cwebp.swift; sourceTree = "<group>"; };
 		13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessQueue.swift; sourceTree = "<group>"; };
 		13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryWrapper.swift; sourceTree = "<group>"; };
+		13E7B9561AB6F3B7003A3AFB /* cwebp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cwebp.entitlements; sourceTree = "<group>"; };
+		13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WebPonize.entitlements; sourceTree = "<group>"; };
 		C76FD9641A834A920036F4BA /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
@@ -155,7 +158,8 @@
 		C7E945FF1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXGroup;
 			children = (
-				1317C6441AADD566009E02E3 /* WebPonize.entitlements */,
+				13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */,
+				13E7B9561AB6F3B7003A3AFB /* cwebp.entitlements */,
 				13AE864E1AA76859007E68D0 /* window */,
 				C7A61A421A846CE200693007 /* view */,
 				C7A61A411A846CD900693007 /* utility */,
@@ -245,7 +249,7 @@
 		C7E945F51A5FC9940024581F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = 1000ch.net;
 				TargetAttributes = {
 					C7E945FC1A5FC9940024581F = {
@@ -289,6 +293,8 @@
 			files = (
 				C7E946071A5FC9940024581F /* Images.xcassets in Resources */,
 				C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */,
+				13E7B9571AB6F3B7003A3AFB /* cwebp.entitlements in Resources */,
+				13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */,
 				C76FD9651A834A920036F4BA /* lib in Resources */,
 				C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */,
 			);
@@ -393,7 +399,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Shogo Sensui (NZR22QGKNQ)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -413,7 +419,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -435,7 +441,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Shogo Sensui (NZR22QGKNQ)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -449,7 +455,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -465,7 +472,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -481,7 +488,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
