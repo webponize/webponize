@@ -52,7 +52,7 @@ class libwebp: NSObject {
         }
     }
 
-    func encodeRGB() {
+    func encode(compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
         
         let image = getCGImage(self.inputImage)
         let provider: CGDataProviderRef = CGImageGetDataProvider(image);
@@ -62,39 +62,24 @@ class libwebp: NSObject {
         let width: Int32 = Int32(self.inputImage.size.width)
         let height: Int32 = Int32(self.inputImage.size.height)
         let stride: Int32 = Int32(CGImageGetBytesPerRow(image))
-        let qualityFactor: Float = 0.0
+        let qualityFactor: Float = Float(compressionLevel)
 
         var webp: NSData
         var output: UnsafeMutablePointer<UInt8> = nil
         
-        let size: size_t = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
+        var size: size_t
+        if isNoAlpha {
+            size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
+        } else {
+            size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
+        }
+
         webp = NSData(bytes: output, length: Int(size))
         webp.writeToFile(self.saveFilePath, atomically: true)
         free(output)
     }
 
-    func encodeRGBA() {
-        
-        let image = getCGImage(self.inputImage)
-        let provider: CGDataProviderRef = CGImageGetDataProvider(image);
-        let bitmap: CFDataRef = CGDataProviderCopyData(provider);
-
-        let rgb: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmap)
-        let width: Int32 = Int32(self.inputImage.size.width)
-        let height: Int32 = Int32(self.inputImage.size.height)
-        let stride: Int32 = Int32(CGImageGetBytesPerRow(image))
-        let qualityFactor: Float = 0.0
-
-        var webp: NSData
-        var output: UnsafeMutablePointer<UInt8> = nil
-
-        let size: size_t = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
-        webp = NSData(bytes: output, length: Int(size))
-        webp.writeToFile(self.saveFilePath, atomically: true)
-        free(output)
-    }
-    
-    private func decodeRGB() {
+    private func decode() {
         
         var data: UInt8 = 0
         var dataSize: size_t = 0
@@ -102,14 +87,5 @@ class libwebp: NSObject {
         var height: Int32 = 0
         
         WebPDecodeRGB(&data, dataSize, &width, &height)
-    }
-
-    private func decodeRGBA() {
-        var data: UInt8 = 0
-        var dataSize: size_t = 0
-        var width: Int32 = 0
-        var height: Int32 = 0
-        
-        WebPDecodeRGBA(&data, dataSize, &width, &height)
     }
 }

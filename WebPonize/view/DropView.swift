@@ -38,9 +38,9 @@ class DropView: NSView, NSDraggingDestination {
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         
-        let compressionLevel = ["-q", "\(config.getCompressionLevel())"]
-        let isLossless       = config.getIsLossless() ? ["-lossless"] : []
-        let isNoAlpha        = config.getIsNoAlpha() ? ["-noalpha"] : []
+        let compressionLevel: Int = config.getCompressionLevel()
+        let isLossless: Bool = config.getIsLossless()
+        let isNoAlpha: Bool = config.getIsNoAlpha()
         
         // get dragged files' path
         let pboard: NSPasteboard = sender.draggingPasteboard()
@@ -51,33 +51,8 @@ class DropView: NSView, NSDraggingDestination {
         var error: NSError?
 
         for filePath in filePaths {
-            let attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
-            if error != nil {
-                println(error)
-            } else {
-
-                let fileName = filePath.lastPathComponent
-                let fileExtension = filePath.pathExtension
-
-                let saveName: String = fileName.stringByReplacingOccurrencesOfString(
-                    fileExtension, withString: "webp", options: .CaseInsensitiveSearch, range: nil)
-                let saveFolder: String = filePath.stringByReplacingOccurrencesOfString(
-                    fileName, withString: "", options: .CaseInsensitiveSearch, range: nil)
-
-                var arguments: [String] = []
-                arguments += compressionLevel
-                arguments += isLossless
-                arguments += isNoAlpha
-                arguments += [filePath, "-o", saveName]
-                
-                cwebp.setCurrentDirectoryPath(saveFolder)
-                cwebp.setArguments(arguments)
-                
-                println(arguments)
-                let standardOutput = cwebp.execute()
-
-                //println(standardOutput)
-            }
+            let converter = libwebp(filePath: filePath)
+            converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha);
         }
         
         return true
