@@ -67,9 +67,10 @@ class libwebp: NSObject {
         var webp: NSData
         var output: UnsafeMutablePointer<UInt8> = nil
         
-        WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
-        webp = NSData(bytes: output, length: sizeofValue(output))
+        let size: size_t = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
+        webp = NSData(bytes: output, length: Int(size))
         webp.writeToFile(self.saveFilePath, atomically: true)
+        free(output)
     }
 
     func encodeRGBA() {
@@ -87,9 +88,10 @@ class libwebp: NSObject {
         var webp: NSData
         var output: UnsafeMutablePointer<UInt8> = nil
 
-        WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
-        webp = NSData(bytes: output, length: sizeofValue(output))
+        let size: size_t = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
+        webp = NSData(bytes: output, length: Int(size))
         webp.writeToFile(self.saveFilePath, atomically: true)
+        free(output)
     }
     
     private func decodeRGB() {
