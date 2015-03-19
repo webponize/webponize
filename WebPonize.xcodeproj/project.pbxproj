@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */; };
 		13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86511AA768D3007E68D0 /* MainWindow.swift */; };
-		13AE86541AA77372007E68D0 /* Cwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86531AA77372007E68D0 /* Cwebp.swift */; };
 		13C4D3A91A7E44B2003F6A74 /* ProcessQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */; };
-		13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */; };
-		13E7B9571AB6F3B7003A3AFB /* cwebp.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9561AB6F3B7003A3AFB /* cwebp.entitlements */; };
 		13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */; };
 		13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */; };
 		13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
@@ -49,10 +46,7 @@
 /* Begin PBXFileReference section */
 		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
-		13AE86531AA77372007E68D0 /* Cwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cwebp.swift; sourceTree = "<group>"; };
 		13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessQueue.swift; sourceTree = "<group>"; };
-		13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryWrapper.swift; sourceTree = "<group>"; };
-		13E7B9561AB6F3B7003A3AFB /* cwebp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cwebp.entitlements; sourceTree = "<group>"; };
 		13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WebPonize.entitlements; sourceTree = "<group>"; };
 		13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libwebp.swift; sourceTree = "<group>"; };
 		13E7B95E1AB9BD48003A3AFB /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
@@ -177,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */,
-				13E7B9561AB6F3B7003A3AFB /* cwebp.entitlements */,
 				13AE864E1AA76859007E68D0 /* window */,
 				C7A61A421A846CE200693007 /* view */,
 				C7A61A411A846CD900693007 /* utility */,
@@ -188,10 +181,8 @@
 				C7E946081A5FC9940024581F /* Main.storyboard */,
 				C7E946001A5FC9940024581F /* Supporting Files */,
 				13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */,
-				13C4D3AA1A7E4594003F6A74 /* BinaryWrapper.swift */,
 				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
 				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
-				13AE86531AA77372007E68D0 /* Cwebp.swift */,
 				13E7B9631AB9BDD6003A3AFB /* libwebp.h */,
 				13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */,
 			);
@@ -313,7 +304,6 @@
 			files = (
 				C7E946071A5FC9940024581F /* Images.xcassets in Resources */,
 				C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */,
-				13E7B9571AB6F3B7003A3AFB /* cwebp.entitlements in Resources */,
 				13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */,
 				C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */,
 			);
@@ -352,7 +342,6 @@
 				C7A61A491A846CE200693007 /* CompressionLevelSlider.swift in Sources */,
 				C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */,
 				C7A61A4B1A846CE200693007 /* DropView.swift in Sources */,
-				13C4D3AB1A7E4594003F6A74 /* BinaryWrapper.swift in Sources */,
 				13C4D3A91A7E44B2003F6A74 /* ProcessQueue.swift in Sources */,
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C7A61A4E1A846CE200693007 /* NoAlphaCheckBox.swift in Sources */,
@@ -365,7 +354,6 @@
 				13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */,
 				C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */,
 				C7A61A4D1A846CE200693007 /* LosslessCheckBox.swift in Sources */,
-				13AE86541AA77372007E68D0 /* Cwebp.swift in Sources */,
 				C77E80921AA72D290055287B /* CompressionLevelTextField.swift in Sources */,
 				C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */,
 				C7A61A541A846CEA00693007 /* DropViewController.swift in Sources */,
