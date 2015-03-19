@@ -2,7 +2,7 @@ import Cocoa
 
 class libwebp: NSObject {
 
-    var attributes: [NSObject : AnyObject]
+    var attributes: [NSObject : AnyObject]?
 
     var inputFilePath: String
     var inputFileName: String
@@ -32,7 +32,7 @@ class libwebp: NSObject {
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
         
-        self.attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)!
+        self.attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
         
         if error != nil {
             println(error)
@@ -43,10 +43,13 @@ class libwebp: NSObject {
         super.init()
     }
     
-    private func getCGImage(image: NSImage) -> CGImage! {
-        let imageData = image.TIFFRepresentation
-        let source = CGImageSourceCreateWithData(imageData as CFDataRef, nil)
-        return CGImageSourceCreateImageAtIndex(source, UInt(0), nil)
+    private func getCGImage(image: NSImage) -> CGImage? {
+        if let imageData = image.TIFFRepresentation {
+            let source = CGImageSourceCreateWithData(imageData as CFDataRef, nil)
+            return CGImageSourceCreateImageAtIndex(source, UInt(0), nil)
+        } else {
+            return nil
+        }
     }
 
     func encodeRGB() {
