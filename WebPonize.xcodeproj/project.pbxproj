@@ -16,7 +16,6 @@
 		13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */; };
 		13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */; };
 		13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
-		C76FD9651A834A920036F4BA /* lib in Resources */ = {isa = PBXBuildFile; fileRef = C76FD9641A834A920036F4BA /* lib */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		C77E80921AA72D290055287B /* CompressionLevelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E80911AA72D290055287B /* CompressionLevelTextField.swift */; };
@@ -61,7 +60,6 @@
 		13E7B9601AB9BD48003A3AFB /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 		13E7B9611AB9BD48003A3AFB /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		13E7B9631AB9BDD6003A3AFB /* libwebp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libwebp.h; sourceTree = "<group>"; };
-		C76FD9641A834A920036F4BA /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
 		C77E80911AA72D290055287B /* CompressionLevelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressionLevelTextField.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				C7A61A421A846CE200693007 /* view */,
 				C7A61A411A846CD900693007 /* utility */,
 				C7A61A401A846C1200693007 /* controller */,
-				C76FD9641A834A920036F4BA /* lib */,
 				13E7B95D1AB9BD48003A3AFB /* libwebp */,
 				C7E946021A5FC9940024581F /* AppDelegate.swift */,
 				C7E946061A5FC9940024581F /* Images.xcassets */,
@@ -318,7 +315,6 @@
 				C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */,
 				13E7B9571AB6F3B7003A3AFB /* cwebp.entitlements in Resources */,
 				13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */,
-				C76FD9651A834A920036F4BA /* lib in Resources */,
 				C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
