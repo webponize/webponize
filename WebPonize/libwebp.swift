@@ -68,7 +68,7 @@ class libwebp: NSObject {
         var output: UnsafeMutablePointer<UInt8> = nil
         
         WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
-        webp = NSData(bytes: output, length: 0)
+        webp = NSData(bytes: output, length: sizeofValue(output))
         webp.writeToFile(self.saveFilePath, atomically: true)
     }
 
@@ -88,7 +88,7 @@ class libwebp: NSObject {
         var output: UnsafeMutablePointer<UInt8> = nil
 
         WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
-        webp = NSData(bytes: output, length: 0)
+        webp = NSData(bytes: output, length: sizeofValue(output))
         webp.writeToFile(self.saveFilePath, atomically: true)
     }
     
