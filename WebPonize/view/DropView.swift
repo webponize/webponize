@@ -47,11 +47,12 @@ class DropView: NSView, NSDraggingDestination {
         
         // load dropped files using NSFileManager
         let manager: NSFileManager = NSFileManager.defaultManager()
-        var error: NSError?
+        var queue = NSOperationQueue()
+        queue.maxConcurrentOperationCount = 1
 
         for filePath in filePaths {
-            let converter = libwebp(filePath: filePath)
-            converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha);
+            let operation = ConvertOperation(filePath, compressionLevel: compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
+            queue.addOperation(operation)
         }
         
         return true

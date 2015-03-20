@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */; };
 		13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86511AA768D3007E68D0 /* MainWindow.swift */; };
-		13C4D3A91A7E44B2003F6A74 /* ProcessQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */; };
 		13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */; };
 		13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */; };
 		13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
@@ -26,6 +25,7 @@
 		C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A511A846CEA00693007 /* PreferenceViewController.swift */; };
 		C7A61A561A846CEA00693007 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A521A846CEA00693007 /* PreferenceWindowController.swift */; };
 		C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A531A846CEA00693007 /* MainWindowController.swift */; };
+		C7D4C1471ABBAC27006254DA /* ConvertOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D4C1461ABBAC27006254DA /* ConvertOperation.swift */; };
 		C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946021A5FC9940024581F /* AppDelegate.swift */; };
 		C7E946071A5FC9940024581F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E946061A5FC9940024581F /* Images.xcassets */; };
 		C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E946081A5FC9940024581F /* Main.storyboard */; };
@@ -46,7 +46,6 @@
 /* Begin PBXFileReference section */
 		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
-		13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessQueue.swift; sourceTree = "<group>"; };
 		13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WebPonize.entitlements; sourceTree = "<group>"; };
 		13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libwebp.swift; sourceTree = "<group>"; };
 		13E7B95E1AB9BD48003A3AFB /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		C7A61A511A846CEA00693007 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		C7A61A521A846CEA00693007 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		C7A61A531A846CEA00693007 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		C7D4C1461ABBAC27006254DA /* ConvertOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertOperation.swift; sourceTree = "<group>"; };
 		C7E945FD1A5FC9940024581F /* WebPonize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebPonize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946011A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7E946021A5FC9940024581F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,11 +180,11 @@
 				C7E946061A5FC9940024581F /* Images.xcassets */,
 				C7E946081A5FC9940024581F /* Main.storyboard */,
 				C7E946001A5FC9940024581F /* Supporting Files */,
-				13C4D3A81A7E44B2003F6A74 /* ProcessQueue.swift */,
 				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
 				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
 				13E7B9631AB9BDD6003A3AFB /* libwebp.h */,
 				13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */,
+				C7D4C1461ABBAC27006254DA /* ConvertOperation.swift */,
 			);
 			path = WebPonize;
 			sourceTree = "<group>";
@@ -342,11 +342,11 @@
 				C7A61A491A846CE200693007 /* CompressionLevelSlider.swift in Sources */,
 				C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */,
 				C7A61A4B1A846CE200693007 /* DropView.swift in Sources */,
-				13C4D3A91A7E44B2003F6A74 /* ProcessQueue.swift in Sources */,
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C7A61A4E1A846CE200693007 /* NoAlphaCheckBox.swift in Sources */,
 				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,
 				13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */,
+				C7D4C1471ABBAC27006254DA /* ConvertOperation.swift in Sources */,
 				C7A61A4C1A846CE200693007 /* GeneralView.swift in Sources */,
 				13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */,
 				C7A61A561A846CEA00693007 /* PreferenceWindowController.swift in Sources */,
@@ -473,8 +473,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WebPonize/WebPonize.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Shogo Sensui (NZR22QGKNQ)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application: Shogo Sensui (NZR22QGKNQ)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -495,8 +495,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WebPonize/WebPonize.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Shogo Sensui (NZR22QGKNQ)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application: Shogo Sensui (NZR22QGKNQ)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
