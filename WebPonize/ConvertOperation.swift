@@ -12,16 +12,17 @@ class ConvertOperation: NSOperation {
         self.compressionLevel = compressionLevel
         self.isLossless = isLossless
         self.isNoAlpha = isNoAlpha
+        super.init()
         
         self.queuePriority = NSOperationQueuePriority.Normal
     }
 
     override func main() {
-        
+
         if self.cancelled {
             return
         }
-        
+
         let converter = libwebp(filePath: self.filePath)
         converter.encode(self.compressionLevel, isLossless: self.isLossless, isNoAlpha: self.isNoAlpha);
     }

@@ -51,9 +51,8 @@ class DropView: NSView, NSDraggingDestination {
         queue.maxConcurrentOperationCount = 1
 
         for filePath in filePaths {
-            let operation = ConvertOperation(filePath, compressionLevel: compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
-            queue.addOperation(operation)
-        }
+            let operation = ConvertOperation(filePath: filePath, compressionLevel: compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
+            queue.addOperation(operation)        }
         
         return true
     }
