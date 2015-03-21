@@ -24,6 +24,10 @@ class ConvertOperation: NSOperation {
         }
 
         let converter = libwebp(filePath: self.filePath)
-        converter.encode(self.compressionLevel, isLossless: self.isLossless, isNoAlpha: self.isNoAlpha);
+        converter.encode(
+            self.compressionLevel,
+            isLossless: self.isLossless,
+            isNoAlpha: self.isNoAlpha
+        )
     }
 }

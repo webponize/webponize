@@ -14,13 +14,6 @@ class DropView: NSView, NSDraggingDestination {
         // configure as default if not set
         config.setDefaultValues()
     }
-    
-    override func drawRect(dirtyRect: NSRect) {
-        
-        //NSColor(calibratedWhite: 255.0, alpha: 0.8).set()
-        //NSRectFillUsingOperation(dirtyRect, NSCompositingOperation.CompositeSourceOver)
-        //super.drawRect(dirtyRect)
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,14 +38,20 @@ class DropView: NSView, NSDraggingDestination {
         let pboard: NSPasteboard = sender.draggingPasteboard()
         let filePaths: [String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
         
-        // load dropped files using NSFileManager
-        let manager: NSFileManager = NSFileManager.defaultManager()
+        // create operation & add into queue
         var queue = NSOperationQueue()
         queue.maxConcurrentOperationCount = 1
 
         for filePath in filePaths {
-            let operation = ConvertOperation(filePath: filePath, compressionLevel: compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
-            queue.addOperation(operation)        }
+
+            let operation = ConvertOperation(
+                filePath: filePath,
+                compressionLevel: compressionLevel,
+                isLossless: isLossless,
+                isNoAlpha: isNoAlpha)
+
+            queue.addOperation(operation)
+        }
         
         return true
     }

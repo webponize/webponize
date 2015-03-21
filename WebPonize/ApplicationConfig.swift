@@ -10,22 +10,28 @@ class ApplicationConfig: Preference {
     }
 
     init() {
-        super.init(applicationId: "net.1000ch.WebP")
+        super.init(applicationId: "net.1000ch.WebPonize")
     }
     
     func setDefaultValues() {
-        if self.getValue(PreferenceKey.isInitialized.rawValue) == nil {
-            
-            self.setValue(PreferenceKey.isInitialized.rawValue, value: true)
-            
-            self.setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
-            self.setValue(PreferenceKey.isLossless.rawValue, value: false)
-            self.setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
+
+        if self.getValue(PreferenceKey.isInitialized.rawValue) != nil {
+            return
         }
+        
+        self.setValue(PreferenceKey.isInitialized.rawValue, value: true)
+        self.setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
+        self.setValue(PreferenceKey.isLossless.rawValue, value: false)
+        self.setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
     }
     
     func getCompressionLevel() -> Int {
-        return self.getValue(PreferenceKey.compressionLevel.rawValue) as Int
+        
+        var rawValue: CFPropertyList?
+
+        rawValue = self.getValue(PreferenceKey.compressionLevel.rawValue)
+        
+        return rawValue as Int
     }
     
     func setCompressionLevel(value: Int) {
@@ -33,7 +39,12 @@ class ApplicationConfig: Preference {
     }
     
     func getIsLossless() -> Bool {
-        return self.getValue(PreferenceKey.isLossless.rawValue) as Bool
+        
+        var rawValue: CFPropertyList?
+        
+        rawValue = self.getValue(PreferenceKey.isLossless.rawValue)
+        
+        return rawValue as Bool
     }
     
     func setIsLossless(value: Bool) {
@@ -41,7 +52,12 @@ class ApplicationConfig: Preference {
     }
     
     func getIsNoAlpha() -> Bool {
-        return self.getValue(PreferenceKey.isNoAlpha.rawValue) as Bool
+        
+        var rawValue: CFPropertyList?
+        
+        rawValue = self.getValue(PreferenceKey.isNoAlpha.rawValue)
+        
+        return rawValue as Bool
     }
     
     func setIsNoAlpha(value: Bool) {
@@ -49,7 +65,7 @@ class ApplicationConfig: Preference {
     }
     
     func getValues() -> Dictionary<String, AnyObject> {
-        var values: Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        var values = Dictionary<String, AnyObject>()
 
         values["compressionLevel"] = self.getCompressionLevel()
         values["isLossless"] = self.getIsLossless()

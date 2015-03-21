@@ -24,9 +24,18 @@ class libwebp: NSObject {
         self.inputFileExtension = filePath.pathExtension
 
         self.saveFileName = self.inputFileName.stringByReplacingOccurrencesOfString(
-            self.inputFileExtension, withString: "webp", options: .CaseInsensitiveSearch, range: nil)
+            self.inputFileExtension,
+            withString: "webp",
+            options: .CaseInsensitiveSearch,
+            range: nil
+        )
+
         self.saveFolder = filePath.stringByReplacingOccurrencesOfString(
-            self.inputFileName, withString: "", options: .CaseInsensitiveSearch, range: nil)
+            self.inputFileName,
+            withString: "",
+            options: .CaseInsensitiveSearch,
+            range: nil
+        )
         
         
         let manager: NSFileManager = NSFileManager.defaultManager()
