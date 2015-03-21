@@ -7,7 +7,12 @@ class libwebp: NSObject {
     var inputFilePath: String
     var inputFileName: String
     var inputFileExtension: String
-    var inputImage: NSImage
+    var inputData: NSData
+    var inputImage: NSImage {
+        get {
+            return NSImage(data: self.inputData)!
+        }
+    }
     
     var saveFileName: String
     var saveFolder: String
@@ -15,6 +20,14 @@ class libwebp: NSObject {
         get {
             return self.saveFolder + self.saveFileName
         }
+    }
+    
+    private enum ImageType: String {
+        case PNG = "image/png"
+        case JPEG = "image/jpeg"
+        case GIF = "image/gif"
+        case TIFF = "image/tiff"
+        case UNKNOWN = ""
     }
 
     init(filePath: String) {
@@ -47,12 +60,34 @@ class libwebp: NSObject {
             println(error)
         }
 
-        self.inputImage = NSImage(contentsOfFile: self.inputFilePath)!
+        self.inputData = NSData(contentsOfFile: self.inputFilePath)!
         
         super.init()
     }
     
+    private func contentTypeForImageData(data: NSData) -> ImageType {
+        
+        var c: UInt8 = 0
+        data.getBytes(&c, length: 1)
+        
+        switch c {
+        case 0xFF:
+            return ImageType.JPEG
+        case 0x89:
+            return ImageType.PNG
+        case 0x47:
+            return ImageType.GIF
+        case 0x49:
+            return ImageType.TIFF
+        case 0x4D:
+            return ImageType.TIFF
+        default:
+            return ImageType.UNKNOWN
+        }
+    }
+    
     private func getCGImage(image: NSImage) -> CGImage? {
+
         if let imageData = image.TIFFRepresentation {
             let source = CGImageSourceCreateWithData(imageData as CFDataRef, nil)
             return CGImageSourceCreateImageAtIndex(source, UInt(0), nil)
@@ -63,10 +98,12 @@ class libwebp: NSObject {
 
     func encode(compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
         
-        let image = getCGImage(self.inputImage)
-        let provider: CGDataProviderRef = CGImageGetDataProvider(image);
-        let bitmap: CFDataRef = CGDataProviderCopyData(provider);
-        
+        let image: CGImage? = getCGImage(self.inputImage)
+        let imageType: ImageType = self.contentTypeForImageData(self.inputData)
+
+        let provider: CGDataProviderRef = CGImageGetDataProvider(image)
+        let bitmap: CFDataRef = CGDataProviderCopyData(provider)
+    
         let rgb: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmap)
         let width: Int32 = Int32(self.inputImage.size.width)
         let height: Int32 = Int32(self.inputImage.size.height)
@@ -75,14 +112,25 @@ class libwebp: NSObject {
 
         var webp: NSData
         var output: UnsafeMutablePointer<UInt8> = nil
-        
         var size: size_t
-        if isNoAlpha {
-            size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
-        } else {
-            size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
-        }
 
+        switch imageType {
+        case ImageType.JPEG:
+            size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
+        case ImageType.PNG, ImageType.GIF, ImageType.TIFF:
+            if isNoAlpha {
+                size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
+            } else {
+                size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
+            }
+        default:
+            if isNoAlpha {
+                size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
+            } else {
+                size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
+            }
+        }
+        
         webp = NSData(bytes: output, length: Int(size))
         webp.writeToFile(self.saveFilePath, atomically: true)
         free(output)
