@@ -486,7 +486,7 @@
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/1000ch/workspace/webponize/WebPonize/libwebp.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WebPonize/libwebp.h";
 			};
 			name = Debug;
 		};
@@ -508,7 +508,7 @@
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/1000ch/workspace/webponize/WebPonize/libwebp.h;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WebPonize/libwebp.h";
 			};
 			name = Release;
 		};
