@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="648" y="-65"/>
         </scene>
-        <!--Preference View Controller-->
+        <!--Preferences-->
         <scene sceneID="as5-Bh-pDA">
             <objects>
-                <viewController id="5Li-iL-XEd" customClass="PreferenceViewController" customModule="WebPonize" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Preferences" id="5Li-iL-XEd" customClass="PreferenceViewController" customModule="WebPonize" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="t6h-Xh-3gC">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -257,10 +257,11 @@
                                 <tabViewItems>
                                     <tabViewItem label="General" identifier="1" id="17w-T3-byb">
                                         <view key="view" id="Rde-Yx-54H" customClass="GeneralView" customModule="WebPonize" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="33" width="434" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMP-kX-hIh">
-                                                    <rect key="frame" x="15" y="-40" width="134" height="17"/>
+                                                    <rect key="frame" x="15" y="168" width="134" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Compression Level" id="Y15-va-wni">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -268,34 +269,14 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM" customClass="CompressionLevelSlider" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="195" y="-42" width="224" height="20"/>
+                                                    <rect key="frame" x="195" y="166" width="224" height="20"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="above" sliderType="linear" id="lcA-j3-tIY"/>
                                                     <connections>
                                                         <action selector="onCompressionLevelChanged:" target="5Li-iL-XEd" id="F1o-nc-L81"/>
                                                     </connections>
                                                 </slider>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHd-d4-JbM" customClass="LosslessCheckBox" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="-64" width="300" height="18"/>
-                                                    <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="tLt-0K-ATH">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="onLosslessClicked:" target="5Li-iL-XEd" id="Tj2-5j-Mcj"/>
-                                                    </connections>
-                                                </button>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cTy-DU-6Rs" customClass="NoAlphaCheckBox" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="-84" width="300" height="18"/>
-                                                    <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Qpg-wO-08N">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="onNoAlphaClicked:" target="5Li-iL-XEd" id="3ot-Cg-FZz"/>
-                                                    </connections>
-                                                </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJq-RZ-hGO" customClass="CompressionLevelTextField" customModule="WebPonize" customModuleProvider="target">
-                                                    <rect key="frame" x="149" y="-43" width="40" height="22"/>
+                                                    <rect key="frame" x="149" y="165" width="40" height="22"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="7SG-iH-82h">
                                                         <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" minimumIntegerDigits="0" maximumIntegerDigits="42" id="WFT-cx-7fz">
                                                             <real key="minimum" value="0.0"/>
@@ -319,6 +300,28 @@
                                         <view key="view" id="YWg-RD-7JR">
                                             <rect key="frame" x="10" y="33" width="434" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQK-dd-9Fv" customClass="LosslessCheckBox" customModule="WebPonize" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="170" width="300" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="rWZ-9F-XRF">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="onLosslessClicked:" target="5Li-iL-XEd" id="CBe-8v-sMG"/>
+                                                    </connections>
+                                                </button>
+                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xg9-UF-VgH" customClass="NoAlphaCheckBox" customModule="WebPonize" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="150" width="300" height="18"/>
+                                                    <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="gVz-Gh-4SJ">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="onNoAlphaClicked:" target="5Li-iL-XEd" id="VLT-JQ-afF"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
@@ -328,8 +331,8 @@
                     <connections>
                         <outlet property="compressionLevel" destination="7j6-b2-jRM" id="lIk-Bj-Mil"/>
                         <outlet property="compressionLevelText" destination="oJq-RZ-hGO" id="qbz-J2-2XU"/>
-                        <outlet property="isLossless" destination="bHd-d4-JbM" id="j7H-H3-bYt"/>
-                        <outlet property="isNoAlpha" destination="cTy-DU-6Rs" id="xeZ-f1-ENr"/>
+                        <outlet property="isLossless" destination="VQK-dd-9Fv" id="hPX-Ne-qEj"/>
+                        <outlet property="isNoAlpha" destination="xg9-UF-VgH" id="H7C-6c-mAN"/>
                     </connections>
                 </viewController>
                 <customObject id="zH1-wn-eMy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
