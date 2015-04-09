@@ -2,17 +2,19 @@ import Cocoa
 
 class DropView: NSView, NSDraggingDestination {
     
-    var config: ApplicationConfig = ApplicationConfig()
-    
+    let delegate: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
+    var config: ApplicationConfig
+        
     override init(frame: NSRect) {
+
+        self.config = self.delegate.config
         super.init(frame: frame)
     }
 
     required init?(coder: NSCoder) {
+
+        self.config = self.delegate.config
         super.init(coder: coder)
-        
-        // configure as default if not set
-        config.setDefaultValues()
     }
 
     override func awakeFromNib() {
@@ -30,9 +32,9 @@ class DropView: NSView, NSDraggingDestination {
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         
-        let compressionLevel: Int = config.getCompressionLevel()
-        let isLossless: Bool = config.getIsLossless()
-        let isNoAlpha: Bool = config.getIsNoAlpha()
+        let compressionLevel: Int = self.config.getCompressionLevel()
+        let isLossless: Bool = self.config.getIsLossless()
+        let isNoAlpha: Bool = self.config.getIsNoAlpha()
         
         // get dragged files' path
         let pboard: NSPasteboard = sender.draggingPasteboard()

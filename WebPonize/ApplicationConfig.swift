@@ -11,18 +11,18 @@ class ApplicationConfig: Preference {
 
     init() {
         super.init(applicationId: "net.1000ch.WebPonize")
+        self.setDefaultValues()
     }
     
     func setDefaultValues() {
 
-        if self.getValue(PreferenceKey.isInitialized.rawValue) != nil {
-            return
+        if self.getValue(PreferenceKey.isInitialized.rawValue) == nil {
+
+            self.setValue(PreferenceKey.isInitialized.rawValue, value: true)
+            self.setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
+            self.setValue(PreferenceKey.isLossless.rawValue, value: false)
+            self.setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
         }
-        
-        self.setValue(PreferenceKey.isInitialized.rawValue, value: true)
-        self.setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
-        self.setValue(PreferenceKey.isLossless.rawValue, value: false)
-        self.setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
     }
     
     func getCompressionLevel() -> Int {
@@ -30,7 +30,7 @@ class ApplicationConfig: Preference {
         var rawValue: CFPropertyList?
 
         rawValue = self.getValue(PreferenceKey.compressionLevel.rawValue)
-        
+
         return rawValue as Int
     }
     
