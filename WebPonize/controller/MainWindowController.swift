@@ -34,10 +34,13 @@ class MainWindowController: NSWindowController {
         panel.beginSheetModalForWindow(self.window!, completionHandler: {(result: Int) in
             if result == NSModalResponseOK {
 
-                for filePath in panel.URLs {
+                for url in panel.URLs {
+                    
+                    var filePath = url.absoluteString as String!
+                    filePath = filePath.stringByReplacingOccurrencesOfString("file://", withString: "")
                     
                     let operation = ConvertOperation(
-                        filePath: filePath.absoluteString as String!,
+                        filePath: filePath,
                         compressionLevel: compressionLevel,
                         isLossless: isLossless,
                         isNoAlpha: isNoAlpha

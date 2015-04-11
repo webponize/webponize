@@ -4,9 +4,10 @@ class libwebp: NSObject {
 
     var attributes: [NSObject : AnyObject]?
 
-    var inputFilePath: String
     var inputFileName: String
     var inputFileExtension: String
+    var inputFileURL: NSURL
+    
     var inputData: NSData
     var inputImage: NSImage {
         get {
@@ -16,10 +17,14 @@ class libwebp: NSObject {
     
     var saveFileName: String
     var saveFolder: String
-    var saveFilePath: NSURL {
+    var saveFilePath: String {
         get {
-            let fullPath: String = self.saveFolder + self.saveFileName
-            return NSURL(fileURLWithPath: fullPath)!
+            return self.saveFolder + self.saveFileName
+        }
+    }
+    var saveFileURL: NSURL {
+        get {
+            return NSURL.fileURLWithPath(self.saveFilePath)!
         }
     }
     
@@ -33,7 +38,7 @@ class libwebp: NSObject {
 
     init(filePath: String) {
 
-        self.inputFilePath = filePath
+        self.inputFileURL = NSURL.fileURLWithPath(filePath)!
         self.inputFileName = filePath.lastPathComponent
         self.inputFileExtension = filePath.pathExtension
 
@@ -53,14 +58,16 @@ class libwebp: NSObject {
         
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
+        
+        println(self.inputFileURL.path)
 
-        self.attributes = manager.attributesOfFileSystemForPath(filePath, error: &error)
+        self.attributes = manager.attributesOfFileSystemForPath(self.inputFileURL.path!, error: &error)
         
         if error != nil {
             println(error)
         }
 
-        self.inputData = NSData(contentsOfFile: self.inputFilePath)!
+        self.inputData = NSData(contentsOfURL: self.inputFileURL)!
         
         super.init()
     }
@@ -132,7 +139,7 @@ class libwebp: NSObject {
         }
         
         webp = NSData(bytes: output, length: Int(size))
-        webp.writeToURL(self.saveFilePath, atomically: true)
+        webp.writeToURL(self.saveFileURL, atomically: true)
         free(output)
     }
 
