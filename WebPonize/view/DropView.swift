@@ -2,18 +2,17 @@ import Cocoa
 
 class DropView: NSView, NSDraggingDestination {
     
-    let delegate: AppDelegate = NSApplication.sharedApplication().delegate as AppDelegate
     var config: ApplicationConfig
         
     override init(frame: NSRect) {
 
-        self.config = self.delegate.config
+        self.config = AppDelegate.getAppDelegate().config
         super.init(frame: frame)
     }
 
     required init?(coder: NSCoder) {
 
-        self.config = self.delegate.config
+        self.config = AppDelegate.getAppDelegate().config
         super.init(coder: coder)
     }
 
@@ -23,8 +22,8 @@ class DropView: NSView, NSDraggingDestination {
         let acceptDragTypes = [
             NSPasteboardTypePNG,
             NSColorPboardType,
-            NSFilenamesPboardType
-            //NSImage.imagePasteboardTypes()
+            NSFilenamesPboardType,
+            NSImage.imagePasteboardTypes()
         ]
 
         registerForDraggedTypes(acceptDragTypes)
