@@ -58,8 +58,6 @@ class libwebp: NSObject {
         
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
-        
-        println(self.inputFileURL.path)
 
         self.attributes = manager.attributesOfFileSystemForPath(self.inputFileURL.path!, error: &error)
         
