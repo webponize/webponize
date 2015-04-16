@@ -3,6 +3,7 @@ import Cocoa
 class MainWindowController: NSWindowController {
 
     var config: ApplicationConfig
+    var outputDirectory: String?
 
     required init?(coder: NSCoder) {
 
@@ -13,6 +14,11 @@ class MainWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+        config.getOutputDirectory(self.window!) { [weak self] (directory: String, completion: (Void -> Void)) in
+            self?.outputDirectory = directory
+            completion()
+        }
     }
     
     @IBAction func openDocument(sender: AnyObject?) {
@@ -40,6 +46,7 @@ class MainWindowController: NSWindowController {
                     filePath = filePath.stringByReplacingOccurrencesOfString("file://", withString: "")
                     
                     let operation = ConvertOperation(
+                        outputDir: self.outputDirectory!,
                         filePath: filePath,
                         compressionLevel: compressionLevel,
                         isLossless: isLossless,

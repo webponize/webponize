@@ -30,28 +30,35 @@ class DropView: NSView, NSDraggingDestination {
     }
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
+        self.config.getOutputDirectory(self.window!) { (dir: String, completion: (Void -> Void)) in
         
-        let compressionLevel: Int = self.config.getCompressionLevel()
-        let isLossless: Bool = self.config.getIsLossless()
-        let isNoAlpha: Bool = self.config.getIsNoAlpha()
-        
-        // get dragged files' path
-        let pboard: NSPasteboard = sender.draggingPasteboard()
-        let filePaths: [String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
-        
-        // create operation & add into queue
-        var queue = NSOperationQueue()
-        queue.maxConcurrentOperationCount = 1
+            let compressionLevel: Int = self.config.getCompressionLevel()
+            let isLossless: Bool = self.config.getIsLossless()
+            let isNoAlpha: Bool = self.config.getIsNoAlpha()
+            
+            // get dragged files' path
+            let pboard: NSPasteboard = sender.draggingPasteboard()
+            let filePaths: [String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
+            
+            // create operation & add into queue
+            var queue = NSOperationQueue()
+            queue.maxConcurrentOperationCount = 1
 
-        for filePath in filePaths {
+            for filePath in filePaths {
 
-            let operation = ConvertOperation(
-                filePath: filePath,
-                compressionLevel: compressionLevel,
-                isLossless: isLossless,
-                isNoAlpha: isNoAlpha)
+                let operation = ConvertOperation(
+                    outputDir: dir,
+                    filePath: filePath,
+                    compressionLevel: compressionLevel,
+                    isLossless: isLossless,
+                    isNoAlpha: isNoAlpha)
+                
+                // Find a way to make this called after all operations are complete.
+                // Otherwise, the way it is now, we can only save 1 file before we give up access to our directory.
+                operation.completion = completion
 
-            queue.addOperation(operation)
+                queue.addOperation(operation)
+            }
         }
         
         return true
