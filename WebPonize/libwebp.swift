@@ -8,8 +8,6 @@ class libwebp: NSObject {
     var inputFileExtension: String
     var inputFileURL: NSURL
     
-    var outputDirectory: String
-    
     var inputData: NSData
     var inputImage: NSImage {
         get {
@@ -38,8 +36,8 @@ class libwebp: NSObject {
         case UNKNOWN = ""
     }
 
-    init(outputDirectory: String, filePath: String) {
-        self.outputDirectory = outputDirectory
+    init(filePath: String) {
+
         self.inputFileURL = NSURL.fileURLWithPath(filePath)!
         self.inputFileName = filePath.lastPathComponent
         self.inputFileExtension = filePath.pathExtension
@@ -51,13 +49,12 @@ class libwebp: NSObject {
             range: nil
         )
 
-        self.saveFolder = self.outputDirectory
-//        self.saveFolder = filePath.stringByReplacingOccurrencesOfString(
-//            self.inputFileName,
-//            withString: "",
-//            options: .CaseInsensitiveSearch,
-//            range: nil
-//        )
+        self.saveFolder = filePath.stringByReplacingOccurrencesOfString(
+            self.inputFileName,
+            withString: "",
+            options: .CaseInsensitiveSearch,
+            range: nil
+        )
         
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
@@ -139,11 +136,8 @@ class libwebp: NSObject {
             }
         }
         
-        let outputURL = self.saveFileURL
         webp = NSData(bytes: output, length: Int(size))
-        var error: NSError?
-        let success = webp.writeToFile(self.saveFilePath, options: NSDataWritingOptions.DataWritingAtomic, error: &error)
-//        let succes = webp.writeToURL(outputURL, options: NSDataWritingOptions.DataWritingAtomic, error: &error)
+        webp.writeToURL(self.saveFileURL, atomically: true)
         free(output)
     }
 
