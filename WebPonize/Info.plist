@@ -7,7 +7,7 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://1000ch.github.io/webponize/WebPonize/appcast.xml</string>
+	<string>https://1000ch.github.io/webponize/appcast.xml</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
