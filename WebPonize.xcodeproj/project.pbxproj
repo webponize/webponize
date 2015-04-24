@@ -12,6 +12,8 @@
 		13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */; };
 		13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */; };
 		13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
+		13EF4E4D1AEA500C003DED37 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; };
+		13EF4E4F1AEA50B8003DED37 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		C77E80921AA72D290055287B /* CompressionLevelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E80911AA72D290055287B /* CompressionLevelTextField.swift */; };
@@ -43,6 +45,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		13EF4E4E1AEA5092003DED37 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				13EF4E4F1AEA50B8003DED37 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
@@ -53,6 +68,7 @@
 		13E7B9601AB9BD48003A3AFB /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 		13E7B9611AB9BD48003A3AFB /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		13E7B9631AB9BDD6003A3AFB /* libwebp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libwebp.h; sourceTree = "<group>"; };
+		13EF4E4C1AEA500C003DED37 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
 		C77E80911AA72D290055287B /* CompressionLevelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressionLevelTextField.swift; sourceTree = "<group>"; };
@@ -84,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */,
+				13EF4E4D1AEA500C003DED37 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +187,7 @@
 		C7E945FF1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXGroup;
 			children = (
+				13EF4E4C1AEA500C003DED37 /* Sparkle.framework */,
 				13E7B9581AB6FBD5003A3AFB /* WebPonize.entitlements */,
 				13AE864E1AA76859007E68D0 /* window */,
 				C7A61A421A846CE200693007 /* view */,
@@ -226,6 +244,7 @@
 				C7E945FA1A5FC9940024581F /* Frameworks */,
 				C7E945FB1A5FC9940024581F /* Resources */,
 				C715CEC11A67B6C4008AD6C7 /* ShellScript */,
+				13EF4E4E1AEA5092003DED37 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -475,6 +494,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WebPonize",
+				);
 				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -482,6 +506,7 @@
 					"$(PROJECT_DIR)/WebPonize/libwebp",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -495,6 +520,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WebPonize",
+				);
 				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -502,6 +532,7 @@
 					"$(PROJECT_DIR)/WebPonize/libwebp",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
