@@ -7,10 +7,10 @@ WebPonize is a Mac OS App for converting images into [WebP](https://developers.g
 
 ## Usage
 
-1. Download [WebPonize.tar.gz](https://raw.githubusercontent.com/1000ch/webponize/master/webponize.tar.gz).
+1. Download [WebPonize.tar.gz](https://1000ch.github.io/webponize/webponize.tar.gz).
 2. Extract it and move WebPonize.app to Application folder (`/Applications`).
-3. Start WebPonize and drop your images (PNG or JPEG) into it.
+3. Start WebPonize.app and drop your images (PNG or JPEG) into it.
 
 ## Feedback
 
-WebPonize is still **alpha** version. Please send me feedbacks!
+WebPonize is still **alpha** version. Please [give me feedbacks](https://github.com/1000ch/webponize/issues)!
