@@ -7,6 +7,13 @@
         <language>en</language>
         <item>
             <title>Version 1.0.5</title>
+            <description>
+              <![CDATA[
+                <ul>
+                  <li>Support for Mac OS X Mavericks (10.9)!</li>
+                </ul>
+              ]]>
+            </description>
             <sparkle:releaseNotesLink>https://github.com/1000ch/webponize/</sparkle:releaseNotesLink>
             <pubDate>Fri, 24 Apr 2015 23:29:11 +0900</pubDate>
             <enclosure
