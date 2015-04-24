@@ -6,15 +6,15 @@
         <description>WebPonize updates</description>
         <language>en</language>
         <item>
-            <title>Version 1.0.4</title>
+            <title>Version 1.0.5</title>
             <sparkle:releaseNotesLink>https://github.com/1000ch/webponize/</sparkle:releaseNotesLink>
-            <pubDate>Wed, 09 Jan 2006 19:20:11 +0000</pubDate>
+            <pubDate>Fri, 24 Apr 2015 23:29:11 +0900</pubDate>
             <enclosure
                 url="http://1000ch.github.io/webponize/webponize.tar.gz"
-                sparkle:version="1.0.4"
-                length="2813521"
+                sparkle:version="1.0.5"
+                length="2825613"
                 type="application/octet-stream" />
-            <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
+            <sparkle:minimumSystemVersion>10.9.0</sparkle:minimumSystemVersion>
         </item>
     </channel>
 </rss>
