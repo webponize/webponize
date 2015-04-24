@@ -14,7 +14,6 @@
 		13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
 		13EF4E4D1AEA500C003DED37 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; };
 		13EF4E4F1AEA50B8003DED37 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		13EF4E551AEA5DC6003DED37 /* appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 13EF4E541AEA5DC6003DED37 /* appcast.xml */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		C77E80921AA72D290055287B /* CompressionLevelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E80911AA72D290055287B /* CompressionLevelTextField.swift */; };
@@ -70,7 +69,6 @@
 		13E7B9611AB9BD48003A3AFB /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		13E7B9631AB9BDD6003A3AFB /* libwebp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libwebp.h; sourceTree = "<group>"; };
 		13EF4E4C1AEA500C003DED37 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		13EF4E541AEA5DC6003DED37 /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
 		C77E80911AA72D290055287B /* CompressionLevelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompressionLevelTextField.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			children = (
 				C7E946011A5FC9940024581F /* Info.plist */,
 				C7F4ADB61AA720A100F9A696 /* Credits.html */,
-				13EF4E541AEA5DC6003DED37 /* appcast.xml */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13EF4E551AEA5DC6003DED37 /* appcast.xml in Resources */,
 				C7E946071A5FC9940024581F /* Images.xcassets in Resources */,
 				C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */,
 				13E7B9591AB6FBD5003A3AFB /* WebPonize.entitlements in Resources */,
