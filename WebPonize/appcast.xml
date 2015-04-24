@@ -3,7 +3,7 @@
     <sparkle:releaseNotesLink>https://github.com/1000ch/webponize/</sparkle:releaseNotesLink>
     <pubDate>Wed, 09 Jan 2006 19:20:11 +0000</pubDate>
     <enclosure
-        url="https://raw.githubusercontent.com/1000ch/webponize/master/WebPonize.app.tbz"
+        url="https://raw.githubusercontent.com/1000ch/webponize/master/WebPonize.tar.gz"
         sparkle:version="1.0.4"
         length="1623481"
         type="application/octet-stream" />
