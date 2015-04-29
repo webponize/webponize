@@ -13,4 +13,4 @@ WebPonize is a Mac OS App for converting images into [WebP](https://developers.g
 
 ## Feedback
 
-WebPonize is still **alpha** version. Please [give me feedbacks](https://github.com/1000ch/webponize/issues)!
+WebPonize is still **alpha** version. Please [give me feedbacks](https://github.com/1000ch/webponize/issues/new)!
