@@ -20,7 +20,7 @@
                 url="https://1000ch.github.io/webponize/webponize.tar.gz"
                 sparkle:version="1.0.6"
                 length="2825902"
-                type="application/octet-stream" />
+                type="application/gzip" />
             <sparkle:minimumSystemVersion>10.9.0</sparkle:minimumSystemVersion>
         </item>
     </channel>
