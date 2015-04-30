@@ -17,7 +17,7 @@
             <sparkle:releaseNotesLink>https://github.com/1000ch/webponize/</sparkle:releaseNotesLink>
             <pubDate>Thu, 30 Apr 2015 11:30:00 +0900</pubDate>
             <enclosure
-                url="http://1000ch.github.io/webponize/webponize.tar.gz"
+                url="https://1000ch.github.io/webponize/webponize.tar.gz"
                 sparkle:version="1.0.6"
                 length="2825902"
                 type="application/octet-stream" />
