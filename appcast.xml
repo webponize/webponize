@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
-    <channel>
-        <title>WebPonize</title>
-        <link>https://1000ch.github.io/webponize/appcast.xml</link>
-        <description>WebPonize updates</description>
-        <language>en</language>
-        <item>
-            <title>Version 1.0.6</title>
-            <description>
-              <![CDATA[
-                <ul>
-                  <li>Support for Mac OS X Mavericks (10.9)!</li>
-                </ul>
-              ]]>
-            </description>
-            <sparkle:releaseNotesLink>https://github.com/1000ch/webponize/</sparkle:releaseNotesLink>
-            <pubDate>Thu, 30 Apr 2015 11:30:00 +0900</pubDate>
-            <enclosure
-                url="https://1000ch.github.io/webponize/webponize.tar.gz"
-                sparkle:version="1.0.6"
-                length="2825902"
-                type="application/gzip" />
-            <sparkle:minimumSystemVersion>10.9.0</sparkle:minimumSystemVersion>
-        </item>
-    </channel>
+  <channel>
+    <title>WebPonize</title>
+    <link>https://1000ch.github.io/webponize/appcast.xml</link>
+    <description>WebPonize updates</description>
+    <language>en</language>
+    <item>
+      <title>Version 1.0.7</title>
+      <description><![CDATA[
+        <ul>
+          <li>Minor fixes.</li>
+        </ul>
+      ]]></description>
+      <sparkle:releaseNotesLink>https://github.com/1000ch/webponize/</sparkle:releaseNotesLink>
+      <pubDate>Thu, 30 Apr 2015 22:30:00 +0900</pubDate>
+      <enclosure
+        url="https://1000ch.github.io/webponize/webponize.tar.gz"
+        sparkle:version="1.0.7"
+        length="2815882"
+        type="application/gzip" />
+      <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
+    </item>
+  </channel>
 </rss>
