@@ -91,6 +91,16 @@ class libwebp: NSObject {
         }
     }
     
+    private func hasTransparencyForImageData(data: NSData) -> Bool {
+        
+        var c: UInt8 = 0
+        var range: NSRange = NSRange(location: 25, length: 1)
+
+        data.getBytes(&c, range: range)
+        
+        return (c == 6);
+    }
+    
     private func getCGImage(image: NSImage) -> CGImage? {
 
         if let imageData = image.TIFFRepresentation {
