@@ -32,22 +32,24 @@ class MainWindowController: NSWindowController {
         panel.allowedFileTypes = ["jpg", "png", "gif"]
         
         panel.beginSheetModalForWindow(self.window!, completionHandler: {(result: Int) in
-            if result == NSModalResponseOK {
 
-                for url in panel.URLs {
+            if result != NSModalResponseOK {
+                return
+            }
+
+            for url in panel.URLs {
                     
-                    var filePath = url.absoluteString as String!
-                    filePath = filePath.stringByReplacingOccurrencesOfString("file://", withString: "")
+                var filePath = url.absoluteString as String!
+                filePath = filePath.stringByReplacingOccurrencesOfString("file://", withString: "")
                     
-                    let operation = ConvertOperation(
-                        filePath: filePath,
-                        compressionLevel: compressionLevel,
-                        isLossless: isLossless,
-                        isNoAlpha: isNoAlpha
-                    )
-                    
-                    queue.addOperation(operation)
-                }
+                let operation = ConvertOperation(
+                    filePath: filePath,
+                    compressionLevel: compressionLevel,
+                    isLossless: isLossless,
+                    isNoAlpha: isNoAlpha
+                )
+                
+                queue.addOperation(operation)
             }
         })
     }

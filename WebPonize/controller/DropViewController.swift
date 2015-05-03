@@ -29,6 +29,4 @@ class DropViewController: NSViewController {
     override func loadView() {
         super.loadView()
     }
-    
-    
 }
