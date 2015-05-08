@@ -5,26 +5,20 @@ class MainWindowController: NSWindowController {
     var config: ApplicationConfig
 
     required init?(coder: NSCoder) {
-
-        // configure as default if not set
-        self.config = AppDelegate.getAppDelegate().config
+        config = AppDelegate.getAppDelegate().config
         super.init(coder: coder)
-    }
-
-    override func windowDidLoad() {
-        super.windowDidLoad()
     }
     
     @IBAction func openDocument(sender: AnyObject?) {
         
-        let compressionLevel: Int = self.config.getCompressionLevel()
-        let isLossless: Bool = self.config.getIsLossless()
-        let isNoAlpha: Bool = self.config.getIsNoAlpha()
+        let compressionLevel = self.config.getCompressionLevel()
+        let isLossless = self.config.getIsLossless()
+        let isNoAlpha = self.config.getIsNoAlpha()
         
         var queue = NSOperationQueue()
         queue.maxConcurrentOperationCount = 1
 
-        let panel: NSOpenPanel = NSOpenPanel()
+        var panel = NSOpenPanel()
         panel.canChooseDirectories = false
         panel.canCreateDirectories = false
         panel.canChooseFiles = true

@@ -9,14 +9,14 @@ class DropAreaView: NSImageView {
         super.init(coder: coder)
 
         // load image and set it as view
-        self.image = self.dropImage
+        self.image = dropImage
     }
     
     func setHoverImage() {
-        self.image = self.dropImageHover
+        self.image = dropImageHover
     }
     
     func setImage() {
-        self.image = self.dropImage
+        self.image = dropImage
     }
 }

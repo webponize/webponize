@@ -5,14 +5,12 @@ class DropView: NSView, NSDraggingDestination {
     var config: ApplicationConfig
         
     override init(frame: NSRect) {
-
-        self.config = AppDelegate.getAppDelegate().config
+        config = AppDelegate.getAppDelegate().config
         super.init(frame: frame)
     }
 
     required init?(coder: NSCoder) {
-
-        self.config = AppDelegate.getAppDelegate().config
+        config = AppDelegate.getAppDelegate().config
         super.init(coder: coder)
     }
 
@@ -31,13 +29,13 @@ class DropView: NSView, NSDraggingDestination {
     
     override func performDragOperation(sender: NSDraggingInfo) -> Bool {
         
-        let compressionLevel: Int = self.config.getCompressionLevel()
-        let isLossless: Bool = self.config.getIsLossless()
-        let isNoAlpha: Bool = self.config.getIsNoAlpha()
+        let compressionLevel = config.getCompressionLevel()
+        let isLossless = config.getIsLossless()
+        let isNoAlpha = config.getIsNoAlpha()
         
         // get dragged files' path
-        let pboard: NSPasteboard = sender.draggingPasteboard()
-        let filePaths: [String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
+        let pboard = sender.draggingPasteboard()
+        let filePaths = pboard.propertyListForType(NSFilenamesPboardType) as [String]
         
         // create operation & add into queue
         var queue = NSOperationQueue()
@@ -64,22 +62,18 @@ class DropView: NSView, NSDraggingDestination {
     var onDraggingEndedHandler: ((sender: NSDraggingInfo) -> Void)?
     
     override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
-        
         // delegate to view controller
-        self.onDraggingEnteredHandler?(sender: sender)
-        
+        onDraggingEnteredHandler?(sender: sender)
         return NSDragOperation.Copy
     }
     
     override func draggingExited(sender: NSDraggingInfo?) {
-        
         // delegate to view controller
-        self.onDraggingExitedHandler?(sender: sender!)
+        onDraggingExitedHandler?(sender: sender!)
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
-        
         // delegate to view controller
-        self.onDraggingEndedHandler?(sender: sender!)
+        onDraggingEndedHandler?(sender: sender!)
     }
 }

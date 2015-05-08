@@ -2,23 +2,19 @@ import Cocoa
 
 class Preference: NSObject {
     
-    let applicationId: CFString
-    
+    var applicationId: CFString
+
     init(applicationId: String) {
         self.applicationId = applicationId as CFString
     }
     
     func setValue(key: String, value: AnyObject) {
-        
-        let key: CFString = key as CFString
-        
-        CFPreferencesSetAppValue(key, value, self.applicationId)
+        let key = key as CFString
+        CFPreferencesSetAppValue(key, value, applicationId)
     }
     
     func getValue(key: String) -> CFPropertyList? {
-        
-        let key: CFString = key as CFString
-        
-        return CFPreferencesCopyAppValue(key, self.applicationId)
+        let key = key as CFString
+        return CFPreferencesCopyAppValue(key, applicationId)
     }
 }

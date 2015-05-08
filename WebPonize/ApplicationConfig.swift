@@ -11,13 +11,11 @@ class ApplicationConfig: Preference {
 
     init() {
         super.init(applicationId: "net.1000ch.WebPonize")
-        self.setDefaultValues()
+        setDefaultValues()
     }
     
     func setDefaultValues() {
-
         if self.getValue(PreferenceKey.isInitialized.rawValue) == nil {
-
             self.setValue(PreferenceKey.isInitialized.rawValue, value: true)
             self.setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
             self.setValue(PreferenceKey.isLossless.rawValue, value: false)
@@ -26,12 +24,8 @@ class ApplicationConfig: Preference {
     }
     
     func getCompressionLevel() -> Int {
-        
-        var rawValue: CFPropertyList?
-
-        rawValue = self.getValue(PreferenceKey.compressionLevel.rawValue)
-
-        return rawValue as Int
+        var value: CFPropertyList? = getValue(PreferenceKey.compressionLevel.rawValue)
+        return value as Int
     }
     
     func setCompressionLevel(value: Int) {
@@ -39,12 +33,8 @@ class ApplicationConfig: Preference {
     }
     
     func getIsLossless() -> Bool {
-        
-        var rawValue: CFPropertyList?
-        
-        rawValue = self.getValue(PreferenceKey.isLossless.rawValue)
-        
-        return rawValue as Bool
+        var value: CFPropertyList? = getValue(PreferenceKey.isLossless.rawValue)
+        return value as Bool
     }
     
     func setIsLossless(value: Bool) {
@@ -52,12 +42,8 @@ class ApplicationConfig: Preference {
     }
     
     func getIsNoAlpha() -> Bool {
-        
-        var rawValue: CFPropertyList?
-        
-        rawValue = self.getValue(PreferenceKey.isNoAlpha.rawValue)
-        
-        return rawValue as Bool
+        var value: CFPropertyList? = getValue(PreferenceKey.isNoAlpha.rawValue)
+        return value as Bool
     }
     
     func setIsNoAlpha(value: Bool) {
@@ -66,11 +52,9 @@ class ApplicationConfig: Preference {
     
     func getValues() -> Dictionary<String, AnyObject> {
         var values = Dictionary<String, AnyObject>()
-
-        values["compressionLevel"] = self.getCompressionLevel()
-        values["isLossless"] = self.getIsLossless()
-        values["isNoAlpha"] = self.getIsNoAlpha()
-        
+        values["compressionLevel"] = getCompressionLevel()
+        values["isLossless"] = getIsLossless()
+        values["isNoAlpha"] = getIsNoAlpha()
         return values
     }
 }

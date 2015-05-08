@@ -8,16 +8,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     class func getAppDelegate() -> AppDelegate {
         return NSApplication.sharedApplication().delegate! as AppDelegate
     }
-
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-
-    }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-
-    }
-    
-    func applicationWillFinishLaunching(notification: NSNotification) {
-        
-    }
 }
