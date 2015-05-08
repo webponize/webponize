@@ -11,7 +11,7 @@ class libwebp: NSObject {
     var inputData: NSData
     var inputImage: NSImage {
         get {
-            return NSImage(data: self.inputData)!
+            return NSImage(data: inputData)!
         }
     }
     
@@ -19,12 +19,12 @@ class libwebp: NSObject {
     var saveFolder: String
     var saveFilePath: String {
         get {
-            return self.saveFolder + self.saveFileName
+            return saveFolder + saveFileName
         }
     }
     var saveFileURL: NSURL {
         get {
-            return NSURL.fileURLWithPath(self.saveFilePath)!
+            return NSURL.fileURLWithPath(saveFilePath)!
         }
     }
     
@@ -38,19 +38,19 @@ class libwebp: NSObject {
 
     init(filePath: String) {
 
-        self.inputFileURL = NSURL.fileURLWithPath(filePath)!
-        self.inputFileName = filePath.lastPathComponent
-        self.inputFileExtension = filePath.pathExtension
+        inputFileURL = NSURL.fileURLWithPath(filePath)!
+        inputFileName = filePath.lastPathComponent
+        inputFileExtension = filePath.pathExtension
 
-        self.saveFileName = self.inputFileName.stringByReplacingOccurrencesOfString(
-            self.inputFileExtension,
+        saveFileName = inputFileName.stringByReplacingOccurrencesOfString(
+            inputFileExtension,
             withString: "webp",
             options: .CaseInsensitiveSearch,
             range: nil
         )
 
-        self.saveFolder = filePath.stringByReplacingOccurrencesOfString(
-            self.inputFileName,
+        saveFolder = filePath.stringByReplacingOccurrencesOfString(
+            inputFileName,
             withString: "",
             options: .CaseInsensitiveSearch,
             range: nil
@@ -59,13 +59,13 @@ class libwebp: NSObject {
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
 
-        self.attributes = manager.attributesOfFileSystemForPath(self.inputFileURL.path!, error: &error)
+        attributes = manager.attributesOfFileSystemForPath(inputFileURL.path!, error: &error)
         
         if error != nil {
             println(error)
         }
 
-        self.inputData = NSData(contentsOfURL: self.inputFileURL)!
+        inputData = NSData(contentsOfURL: inputFileURL)!
         
         super.init()
     }
@@ -113,15 +113,15 @@ class libwebp: NSObject {
 
     func encode(compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
         
-        let image: CGImage? = getCGImage(self.inputImage)
-        let imageType: ImageType = self.contentTypeForImageData(self.inputData)
+        let image: CGImage? = getCGImage(inputImage)
+        let imageType: ImageType = contentTypeForImageData(inputData)
 
         let provider: CGDataProviderRef = CGImageGetDataProvider(image)
         let bitmap: CFDataRef = CGDataProviderCopyData(provider)
     
         let rgb: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmap)
-        let width: Int32 = Int32(self.inputImage.size.width)
-        let height: Int32 = Int32(self.inputImage.size.height)
+        let width: Int32 = Int32(inputImage.size.width)
+        let height: Int32 = Int32(inputImage.size.height)
         let stride: Int32 = Int32(CGImageGetBytesPerRow(image))
         let qualityFactor: Float = Float(compressionLevel)
 
@@ -147,7 +147,7 @@ class libwebp: NSObject {
         }
         
         webp = NSData(bytes: output, length: Int(size))
-        webp.writeToURL(self.saveFileURL, atomically: true)
+        webp.writeToURL(saveFileURL, atomically: true)
         free(output)
     }
 
