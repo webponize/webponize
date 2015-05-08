@@ -15,11 +15,11 @@ class ApplicationConfig: Preference {
     }
     
     func setDefaultValues() {
-        if self.getValue(PreferenceKey.isInitialized.rawValue) == nil {
-            self.setValue(PreferenceKey.isInitialized.rawValue, value: true)
-            self.setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
-            self.setValue(PreferenceKey.isLossless.rawValue, value: false)
-            self.setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
+        if getValue(PreferenceKey.isInitialized.rawValue) == nil {
+            setValue(PreferenceKey.isInitialized.rawValue, value: true)
+            setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
+            setValue(PreferenceKey.isLossless.rawValue, value: false)
+            setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
         }
     }
     
@@ -29,7 +29,7 @@ class ApplicationConfig: Preference {
     }
     
     func setCompressionLevel(value: Int) {
-        self.setValue(PreferenceKey.compressionLevel.rawValue, value: value)
+        setValue(PreferenceKey.compressionLevel.rawValue, value: value)
     }
     
     func getIsLossless() -> Bool {
@@ -47,7 +47,7 @@ class ApplicationConfig: Preference {
     }
     
     func setIsNoAlpha(value: Bool) {
-        self.setValue(PreferenceKey.isNoAlpha.rawValue, value: value)
+        setValue(PreferenceKey.isNoAlpha.rawValue, value: value)
     }
     
     func getValues() -> Dictionary<String, AnyObject> {

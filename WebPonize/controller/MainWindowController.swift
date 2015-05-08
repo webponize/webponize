@@ -11,9 +11,9 @@ class MainWindowController: NSWindowController {
     
     @IBAction func openDocument(sender: AnyObject?) {
         
-        let compressionLevel = self.config.getCompressionLevel()
-        let isLossless = self.config.getIsLossless()
-        let isNoAlpha = self.config.getIsNoAlpha()
+        let compressionLevel = config.getCompressionLevel()
+        let isLossless = config.getIsLossless()
+        let isNoAlpha = config.getIsNoAlpha()
         
         var queue = NSOperationQueue()
         queue.maxConcurrentOperationCount = 1
@@ -25,7 +25,7 @@ class MainWindowController: NSWindowController {
         panel.allowsMultipleSelection = true
         panel.allowedFileTypes = ["jpg", "png", "gif"]
         
-        panel.beginSheetModalForWindow(self.window!, completionHandler: {(result: Int) in
+        panel.beginSheetModalForWindow(window!, completionHandler: {(result: Int) in
 
             if result != NSModalResponseOK {
                 return
