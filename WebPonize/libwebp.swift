@@ -105,7 +105,8 @@ class libwebp: NSObject {
 
         if let imageData = image.TIFFRepresentation {
             let source = CGImageSourceCreateWithData(imageData as CFDataRef, nil)
-            return CGImageSourceCreateImageAtIndex(source, UInt(0), nil)
+            let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as CFDictionary
+            return CGImageSourceCreateImageAtIndex(source, 0, properties)
         } else {
             return nil
         }

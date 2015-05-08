@@ -21,8 +21,8 @@ class DropView: NSView, NSDraggingDestination {
             NSPasteboardTypePNG,
             NSColorPboardType,
             NSFilenamesPboardType,
-            NSImage.imagePasteboardTypes()
-        ]
+            NSImage.imageTypes()
+        ] as [AnyObject]
 
         registerForDraggedTypes(acceptDragTypes)
     }
@@ -35,7 +35,7 @@ class DropView: NSView, NSDraggingDestination {
         
         // get dragged files' path
         let pboard = sender.draggingPasteboard()
-        let filePaths = pboard.propertyListForType(NSFilenamesPboardType) as [String]
+        let filePaths = pboard.propertyListForType(NSFilenamesPboardType) as! [String]
         
         // create operation & add into queue
         var queue = NSOperationQueue()

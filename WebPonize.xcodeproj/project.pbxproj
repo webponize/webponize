@@ -264,7 +264,7 @@
 		C7E945F51A5FC9940024581F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = 1000ch.net;
 				TargetAttributes = {
 					C7E945FC1A5FC9940024581F = {
@@ -428,7 +428,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -465,7 +465,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -490,7 +490,7 @@
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WebPonize/libwebp.h";
 			};
 			name = Debug;
@@ -516,7 +516,7 @@
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WebPonize/libwebp.h";
 			};
 			name = Release;

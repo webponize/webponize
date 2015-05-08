@@ -7,8 +7,6 @@ class DropAreaView: NSImageView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-        // load image and set it as view
         self.image = dropImage
     }
     

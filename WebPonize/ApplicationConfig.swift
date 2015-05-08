@@ -25,7 +25,7 @@ class ApplicationConfig: Preference {
     
     func getCompressionLevel() -> Int {
         var value: CFPropertyList? = getValue(PreferenceKey.compressionLevel.rawValue)
-        return value as Int
+        return value as! Int
     }
     
     func setCompressionLevel(value: Int) {
@@ -34,7 +34,7 @@ class ApplicationConfig: Preference {
     
     func getIsLossless() -> Bool {
         var value: CFPropertyList? = getValue(PreferenceKey.isLossless.rawValue)
-        return value as Bool
+        return value as! Bool
     }
     
     func setIsLossless(value: Bool) {
@@ -43,7 +43,7 @@ class ApplicationConfig: Preference {
     
     func getIsNoAlpha() -> Bool {
         var value: CFPropertyList? = getValue(PreferenceKey.isNoAlpha.rawValue)
-        return value as Bool
+        return value as! Bool
     }
     
     func setIsNoAlpha(value: Bool) {
