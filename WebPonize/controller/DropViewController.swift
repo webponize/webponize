@@ -25,8 +25,4 @@ class DropViewController: NSViewController {
             self.dropAreaView.setImage()
         }
     }
-
-    override func loadView() {
-        super.loadView()
-    }
 }
