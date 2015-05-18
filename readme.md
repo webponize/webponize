@@ -16,4 +16,4 @@ How images of web front-end affect web performance? Details to see "[We should o
 
 ## Feedback
 
-WebPonize is still in **alpha** , So i'm waiting your [feedbacks](https://github.com/1000ch/webponize/issues/new)!
+WebPonize is still in **alpha** , so I'm waiting your [feedback](https://github.com/1000ch/webponize/issues/new)!
