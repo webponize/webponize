@@ -2,7 +2,7 @@ import Cocoa
 
 class PreferenceViewController: NSViewController {
     
-    var config: ApplicationConfig = ApplicationConfig()
+    var config: ApplicationConfig
     
     @IBOutlet weak var compressionLevelText: NSTextField!
     
@@ -11,6 +11,11 @@ class PreferenceViewController: NSViewController {
     @IBOutlet weak var isLossless: NSButton!
     
     @IBOutlet weak var isNoAlpha: NSButton!
+    
+    required init?(coder: NSCoder) {
+        config = AppDelegate.getAppDelegate().config
+        super.init(coder: coder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
