@@ -6,17 +6,18 @@
     <description>WebPonize updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.0.10</title>
+      <title>Version 1.0.11</title>
       <description><![CDATA[
         <ul>
-          <li>Build with Xcode 6.3.1.</li>
+          <li>Build with Xcode 6.3.2</li>
+          <li>Various tweaks</li>
         </ul>
       ]]></description>
-      <pubDate>Sat, 9 May 2015 12:00:00 +0900</pubDate>
+      <pubDate>Wed, 20 May 2015 12:00:00 +0900</pubDate>
       <enclosure
         url="https://1000ch.github.io/webponize/webponize.tar.gz"
-        sparkle:version="1.0.10"
-        length="2615323"
+        sparkle:version="1.0.11"
+        length="2615392"
         type="application/gzip" />
       <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
     </item>
