@@ -12,6 +12,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         AppDelegate.operationQueue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
     }
 
@@ -22,6 +23,18 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return AppDelegate.fileStatusList.count
+    }
+    
+    func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
+
+        var textFieldCell = cell as! NSTextFieldCell
+        
+        textFieldCell.drawsBackground = true
+        if row % 2 == 1 {
+            textFieldCell.backgroundColor = NSColor.whiteColor()
+        } else {
+            textFieldCell.backgroundColor = NSColor(white: 0.95, alpha: 1.0)
+        }
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
@@ -48,7 +61,8 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         super.viewDidLoad()
         
         scrollView.hidden = true
-        
+        tableView.intercellSpacing = NSSize(width: 0, height: 0)
+
         //set in storyboard
         //tableView.setDataSource(self)
         //tableView.setDelegate(self)
