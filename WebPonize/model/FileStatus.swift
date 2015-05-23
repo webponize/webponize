@@ -12,7 +12,12 @@ class FileStatus: NSObject {
     var fileURL: NSURL
     var fileName: String {
         get {
-            return fileURL.lastPathComponent!
+            return fileURL.lastPathComponent!.stringByReplacingOccurrencesOfString(
+                fileURL.path!.pathExtension,
+                withString: "webp",
+                options: .CaseInsensitiveSearch,
+                range: nil
+            )
         }
     }
     var beforeByteLength: Int = 0
