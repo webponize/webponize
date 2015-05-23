@@ -3,9 +3,14 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var config: ApplicationConfig = ApplicationConfig()
+    static var appConfig = ApplicationConfig()
+
+    static var fileStatusList: [FileStatus] = []
     
-    class func getAppDelegate() -> AppDelegate {
-        return NSApplication.sharedApplication().delegate! as! AppDelegate
+    static var operationQueue = NSOperationQueue()
+    
+    override init() {
+        super.init()
+        AppDelegate.operationQueue.maxConcurrentOperationCount = 1
     }
 }

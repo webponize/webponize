@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */; };
 		13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86511AA768D3007E68D0 /* MainWindow.swift */; };
+		13CB33721B1007BE005BB607 /* FileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* FileStatus.swift */; };
 		13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */; };
 		13E7B9621AB9BD48003A3AFB /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
 		13EF4E4D1AEA500C003DED37 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		13CB33711B1007BE005BB607 /* FileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileStatus.swift; path = model/FileStatus.swift; sourceTree = "<group>"; };
 		13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libwebp.swift; sourceTree = "<group>"; };
 		13E7B95E1AB9BD48003A3AFB /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
 		13E7B95F1AB9BD48003A3AFB /* encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = encode.h; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 				13AE86511AA768D3007E68D0 /* MainWindow.swift */,
 			);
 			path = window;
+			sourceTree = "<group>";
+		};
+		13CB33701B1006EB005BB607 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				13CB33711B1007BE005BB607 /* FileStatus.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		13E7B95D1AB9BD48003A3AFB /* libwebp */ = {
@@ -173,6 +183,7 @@
 		C7E945FF1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXGroup;
 			children = (
+				13CB33701B1006EB005BB607 /* model */,
 				13EF4E4C1AEA500C003DED37 /* Sparkle.framework */,
 				13AE864E1AA76859007E68D0 /* window */,
 				C7A61A421A846CE200693007 /* view */,
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */,
+				13CB33721B1007BE005BB607 /* FileStatus.swift in Sources */,
 				C7A61A4B1A846CE200693007 /* DropView.swift in Sources */,
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,

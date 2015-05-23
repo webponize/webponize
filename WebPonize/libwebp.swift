@@ -3,23 +3,51 @@ import Cocoa
 class libwebp: NSObject {
 
     var attributes: [NSObject : AnyObject]?
-
-    var inputFileName: String
-    var inputFileExtension: String
-    var inputFileURL: NSURL
     
+    var inputFileURL: NSURL
     var inputData: NSData
+    
+    var inputFileName: String {
+        get {
+            return inputFileURL.path!.lastPathComponent
+        }
+    }
+    var inputFolder: String {
+        get {
+            return inputFileURL.path!.stringByDeletingLastPathComponent
+        }
+    }
+    var inputFilePath: String {
+        get {
+            return inputFolder.stringByAppendingPathComponent(inputFileName)
+        }
+    }
+
     var inputImage: NSImage {
         get {
             return NSImage(data: inputData)!
         }
     }
     
-    var saveFileName: String
-    var saveFolder: String
+    var saveFileName: String {
+        get {
+            return inputFileName.stringByReplacingOccurrencesOfString(
+                inputFileURL.path!.pathExtension,
+                withString: "webp",
+                options: .CaseInsensitiveSearch,
+                range: nil
+            )
+
+        }
+    }
+    var saveFolder: String {
+        get {
+            return inputFileURL.path!.stringByDeletingLastPathComponent
+        }
+    }
     var saveFilePath: String {
         get {
-            return saveFolder + saveFileName
+            return saveFolder.stringByAppendingPathComponent(saveFileName)
         }
     }
     var saveFileURL: NSURL {
@@ -28,6 +56,9 @@ class libwebp: NSObject {
         }
     }
     
+    var beforeByteLength: Int = 0
+    var afterByteLength: Int = 0
+    
     private enum ImageType: String {
         case PNG = "image/png"
         case JPEG = "image/jpeg"
@@ -35,37 +66,25 @@ class libwebp: NSObject {
         case TIFF = "image/tiff"
         case UNKNOWN = ""
     }
+    
+    convenience init(filePath: String) {
+        self.init(fileURL: NSURL.fileURLWithPath(filePath)!)
+    }
 
-    init(filePath: String) {
-
-        inputFileURL = NSURL.fileURLWithPath(filePath)!
-        inputFileName = filePath.lastPathComponent
-        inputFileExtension = filePath.pathExtension
-
-        saveFileName = inputFileName.stringByReplacingOccurrencesOfString(
-            inputFileExtension,
-            withString: "webp",
-            options: .CaseInsensitiveSearch,
-            range: nil
-        )
-
-        saveFolder = filePath.stringByReplacingOccurrencesOfString(
-            inputFileName,
-            withString: "",
-            options: .CaseInsensitiveSearch,
-            range: nil
-        )
+    init(fileURL: NSURL) {
+        
+        inputFileURL = fileURL
+        inputData = NSData(contentsOfURL: inputFileURL)!
+        beforeByteLength = inputData.length
         
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
-
+        
         attributes = manager.attributesOfFileSystemForPath(inputFileURL.path!, error: &error)
         
         if error != nil {
             println(error)
         }
-
-        inputData = NSData(contentsOfURL: inputFileURL)!
         
         super.init()
     }
@@ -147,7 +166,8 @@ class libwebp: NSObject {
             }
         }
         
-        webp = NSData(bytes: output, length: Int(size))
+        afterByteLength = Int(size)
+        webp = NSData(bytes: output, length: afterByteLength)
         webp.writeToURL(saveFileURL, atomically: true)
         free(output)
     }

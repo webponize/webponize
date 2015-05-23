@@ -2,21 +2,11 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
 
-    var config: ApplicationConfig
-
     required init?(coder: NSCoder) {
-        config = AppDelegate.getAppDelegate().config
         super.init(coder: coder)
     }
     
     @IBAction func openDocument(sender: AnyObject?) {
-        
-        let compressionLevel = config.getCompressionLevel()
-        let isLossless = config.getIsLossless()
-        let isNoAlpha = config.getIsNoAlpha()
-        
-        var queue = NSOperationQueue()
-        queue.maxConcurrentOperationCount = 1
 
         var panel = NSOpenPanel()
         panel.canChooseDirectories = false
@@ -30,20 +20,35 @@ class MainWindowController: NSWindowController {
             if result != NSModalResponseOK {
                 return
             }
+            
+            let appConfig = AppDelegate.appConfig
+            let compressionLevel = appConfig.getCompressionLevel()
+            let isLossless = appConfig.getIsLossless()
+            let isNoAlpha = appConfig.getIsNoAlpha()
 
-            for url in panel.URLs {
-                    
-                var filePath = url.absoluteString as String!
-                filePath = filePath.stringByReplacingOccurrencesOfString("file://", withString: "")
-                    
-                let operation = ConvertOperation(
-                    filePath: filePath,
-                    compressionLevel: compressionLevel,
-                    isLossless: isLossless,
-                    isNoAlpha: isNoAlpha
+            for item in panel.URLs {
+
+                let fileURL = NSURL(string: item.absoluteString as String!)!
+                let uuid = NSUUID().UUIDString
+
+                AppDelegate.fileStatusList.append(
+                    FileStatus(
+                        uuid: uuid,
+                        status: FileStatusType.Idle,
+                        fileURL: fileURL,
+                        beforeByteLength: 0,
+                        afterByteLength: 0
+                    )
                 )
                 
-                queue.addOperation(operation)
+                let operation = ConvertOperation(
+                    uuid: uuid,
+                    fileURL: fileURL,
+                    compressionLevel: compressionLevel,
+                    isLossless: isLossless,
+                    isNoAlpha: isNoAlpha)
+                
+                AppDelegate.operationQueue.addOperation(operation)
             }
         })
     }
