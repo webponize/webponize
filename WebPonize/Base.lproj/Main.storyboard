@@ -215,7 +215,7 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="LVA-l0-OWP" customClass="DropView" customModule="WebPonize" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-hJ-Ee1">
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-hJ-Ee1">
                                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                                         <clipView key="contentView" id="Ibl-Tc-Z55">
                                             <rect key="frame" x="1" y="17" width="238" height="117"/>
@@ -224,7 +224,6 @@
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="6Xb-Kh-Qdv" id="Jcr-tG-Dg5">
                                                     <rect key="frame" x="0.0" y="0.0" width="480" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
@@ -376,7 +375,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7j6-b2-jRM">
-                                                    <rect key="frame" x="15" y="-74" width="404" height="27"/>
+                                                    <rect key="frame" x="15" y="-74" width="404" height="25"/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="below" numberOfTickMarks="21" allowsTickMarkValuesOnly="YES" sliderType="linear" id="lcA-j3-tIY"/>
                                                     <connections>
                                                         <action selector="onCompressionLevelChanged:" target="5Li-iL-XEd" id="F1o-nc-L81"/>
