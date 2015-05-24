@@ -12,7 +12,6 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         AppDelegate.operationQueue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
     }
 
@@ -28,7 +27,6 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
 
         var textFieldCell = cell as! NSTextFieldCell
-        
         textFieldCell.drawsBackground = true
         if row % 2 == 1 {
             textFieldCell.backgroundColor = NSColor.whiteColor()
@@ -103,7 +101,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
             let fileURL = NSURL.fileURLWithPath(filePath)!
             let uuid = NSUUID().UUIDString
             
-             AppDelegate.fileStatusList.append(
+            AppDelegate.fileStatusList.append(
                 FileStatus(
                     uuid: uuid,
                     status: FileStatusType.Idle,
