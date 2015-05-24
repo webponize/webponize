@@ -21,10 +21,9 @@ class MainWindowController: NSWindowController {
                 return
             }
             
-            let appConfig = AppDelegate.appConfig
-            let compressionLevel = appConfig.getCompressionLevel()
-            let isLossless = appConfig.getIsLossless()
-            let isNoAlpha = appConfig.getIsNoAlpha()
+            let compressionLevel = AppDelegate.appConfig.compressionLevel
+            let isLossless = AppDelegate.appConfig.isLossless
+            let isNoAlpha = AppDelegate.appConfig.isNoAlpha
 
             for item in panel.URLs {
 

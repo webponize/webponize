@@ -17,45 +17,40 @@ class PreferenceViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appConfig = AppDelegate.appConfig
-        let compressionLevel: Int32 = Int32(appConfig.getCompressionLevel())
-        let isLossless: Int32 = appConfig.getIsLossless() ? 1 : 0
-        let isNoAlpha: Int32 = appConfig.getIsNoAlpha() ? 1 : 0
-        
-        self.compressionLevelText.intValue = compressionLevel
-        self.compressionLevel.intValue = compressionLevel
-        self.isLossless.intValue = isLossless
-        self.isNoAlpha.intValue = isNoAlpha
+        compressionLevelText.intValue = Int32(AppDelegate.appConfig.compressionLevel)
+        compressionLevel.intValue = Int32(AppDelegate.appConfig.compressionLevel)
+        isLossless.intValue = AppDelegate.appConfig.isLossless ? 1 : 0
+        isNoAlpha.intValue = AppDelegate.appConfig.isNoAlpha ? 1 : 0
     }
     
     @IBAction func onCompressionLevelTextChanged(sender: NSTextField) {
-        let compressionLevel = Int(sender.intValue)
-        self.compressionLevel.intValue = Int32(compressionLevel)
-        AppDelegate.appConfig.setCompressionLevel(compressionLevel)
+        let value = Int(sender.intValue)
+        compressionLevel.intValue = Int32(value)
+        AppDelegate.appConfig.compressionLevel = value
     }
     
     override func controlTextDidChange(obj: NSNotification) {
-        if obj.object as? NSTextField != self.compressionLevelText {
+        if obj.object as? NSTextField != compressionLevelText {
             return
         }
-        let compressionLevel = Int(self.compressionLevelText.intValue)
-        self.compressionLevel.intValue = Int32(compressionLevel)
-        AppDelegate.appConfig.setCompressionLevel(compressionLevel)
+        let value = Int(self.compressionLevelText.intValue)
+        compressionLevel.intValue = Int32(value)
+        AppDelegate.appConfig.compressionLevel = value
     }
     
     @IBAction func onCompressionLevelChanged(sender: NSSlider) {
-        let compressionLevel = Int(sender.intValue)
-        self.compressionLevelText.intValue = Int32(compressionLevel)
-        AppDelegate.appConfig.setCompressionLevel(compressionLevel)
+        let value = Int(sender.intValue)
+        compressionLevelText.intValue = Int32(value)
+        AppDelegate.appConfig.compressionLevel = value
     }
     
     @IBAction func onLosslessClicked(sender: NSButton) {
-        let isNoAlpha = Bool(sender.intValue == 1)
-        AppDelegate.appConfig.setIsLossless(isNoAlpha)
+        let value = Bool(sender.intValue == 1)
+        AppDelegate.appConfig.isLossless = value
     }
     
     @IBAction func onNoAlphaClicked(sender: NSButton) {
-        let isNoAlpha = Bool(sender.intValue == 1)
-        AppDelegate.appConfig.setIsNoAlpha(isNoAlpha)
+        let value = Bool(sender.intValue == 1)
+        AppDelegate.appConfig.isNoAlpha = value
     }
 }
