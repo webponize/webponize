@@ -11,8 +11,7 @@ class ApplicationConfig: Preference {
     
     var compressionLevel: Int {
         get {
-            var value: CFPropertyList? = getValue(PreferenceKey.compressionLevel.rawValue)
-            return value as! Int
+            return getIntValue(PreferenceKey.compressionLevel.rawValue)!
         }
         set {
             setValue(PreferenceKey.compressionLevel.rawValue, value: newValue)
@@ -21,8 +20,7 @@ class ApplicationConfig: Preference {
     
     var isLossless: Bool {
         get {
-            var value: CFPropertyList? = getValue(PreferenceKey.isLossless.rawValue)
-            return value as! Bool
+            return getBoolValue(PreferenceKey.isLossless.rawValue)!
         }
         set {
             self.setValue(PreferenceKey.isLossless.rawValue, value: newValue)
@@ -31,8 +29,7 @@ class ApplicationConfig: Preference {
     
     var isNoAlpha: Bool {
         get {
-            var value: CFPropertyList? = getValue(PreferenceKey.isNoAlpha.rawValue)
-            return value as! Bool
+            return getBoolValue(PreferenceKey.isNoAlpha.rawValue)!
         }
         set {
             setValue(PreferenceKey.isNoAlpha.rawValue, value: newValue)

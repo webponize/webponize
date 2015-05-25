@@ -17,4 +17,16 @@ class Preference: NSObject {
         let key = key as CFString
         return CFPreferencesCopyAppValue(key, applicationId)
     }
+    
+    func getStringValue(key: String) -> String? {
+        return getValue(key) as? String
+    }
+    
+    func getIntValue(key: String) -> Int? {
+        return getValue(key) as? Int
+    }
+    
+    func getBoolValue(key: String) -> Bool? {
+        return getValue(key) as? Bool
+    }
 }
