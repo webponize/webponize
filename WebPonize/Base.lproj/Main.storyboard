@@ -222,12 +222,12 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="6Xb-Kh-Qdv" id="Jcr-tG-Dg5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="480" height="19"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="468" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn identifier="fileName" width="237" minWidth="120" maxWidth="1000" id="9uh-20-02X">
+                                                        <tableColumn identifier="fileName" width="240" minWidth="120" maxWidth="1000" id="9uh-20-02X">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Saved File Name">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -240,7 +240,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
-                                                        <tableColumn identifier="beforeByteLength" width="77" minWidth="40" maxWidth="80" id="GWc-sU-eLy">
+                                                        <tableColumn identifier="beforeByteLength" width="80" minWidth="40" maxWidth="80" id="GWc-sU-eLy">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Before Bytes">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -253,7 +253,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
-                                                        <tableColumn identifier="afterByteLength" width="77" minWidth="40" maxWidth="80" id="PFt-g4-TKc">
+                                                        <tableColumn identifier="afterByteLength" width="80" minWidth="40" maxWidth="80" id="PFt-g4-TKc">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="After Bytes">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -266,7 +266,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
-                                                        <tableColumn identifier="savings" width="77" minWidth="40" maxWidth="80" id="Vm0-g3-WSk">
+                                                        <tableColumn identifier="savings" width="80" minWidth="40" maxWidth="80" id="Vm0-g3-WSk">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Savings">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

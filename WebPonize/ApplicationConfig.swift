@@ -48,7 +48,7 @@ class ApplicationConfig: Preference {
         if getValue(PreferenceKey.isInitialized.rawValue) == nil {
             setValue(PreferenceKey.isInitialized.rawValue, value: true)
             setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
-            setValue(PreferenceKey.isLossless.rawValue, value: false)
+            setValue(PreferenceKey.isLossless.rawValue, value: true)
             setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
         }
     }
