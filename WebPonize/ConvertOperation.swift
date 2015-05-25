@@ -25,13 +25,16 @@ class ConvertOperation: NSOperation {
         }
 
         let converter = libwebp(fileURL: self.fileURL)
-        converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
+        var fileStatus: FileStatus?
 
-        for item in AppDelegate.fileStatusList {
-            if item.uuid == self.name {
-                item.beforeByteLength = converter.beforeByteLength
-                item.afterByteLength = converter.afterByteLength
+        for fs in AppDelegate.fileStatusList {
+            if fs.uuid == self.name {
+                fileStatus = fs
             }
         }
+
+        fileStatus?.beforeByteLength = converter.beforeByteLength
+        converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
+        fileStatus?.afterByteLength = converter.afterByteLength
     }
 }
