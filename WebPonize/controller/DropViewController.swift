@@ -16,8 +16,13 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     }
 
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        scrollView.hidden = false
-        tableView.reloadData()
+        
+        let delay = 0.2 * Double(NSEC_PER_SEC)
+        let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), { [weak self] in
+            self?.scrollView.hidden = false
+            self?.tableView.reloadData()
+        })
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -28,7 +33,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
 
         var textFieldCell = cell as! NSTextFieldCell
         textFieldCell.drawsBackground = true
-        if row % 2 == 1 {
+        if row % 2 == 0 {
             textFieldCell.backgroundColor = NSColor.whiteColor()
         } else {
             textFieldCell.backgroundColor = NSColor(white: 0.95, alpha: 1.0)
