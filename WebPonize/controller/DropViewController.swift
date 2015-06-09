@@ -16,10 +16,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     }
 
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-        
-        let delay = 0.2 * Double(NSEC_PER_SEC)
-        let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), { [weak self] in
+        dispatch_async(dispatch_get_main_queue(), { [weak self] in
             self?.scrollView.hidden = false
             self?.tableView.reloadData()
         })
