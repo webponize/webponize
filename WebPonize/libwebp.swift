@@ -171,14 +171,4 @@ class libwebp: NSObject {
         webp.writeToURL(saveFileURL, atomically: true)
         free(output)
     }
-
-    private func decode() {
-        
-        var data: UInt8 = 0
-        var dataSize: size_t = 0
-        var width: Int32 = 0
-        var height: Int32 = 0
-        
-        WebPDecodeRGB(&data, dataSize, &width, &height)
-    }
 }
