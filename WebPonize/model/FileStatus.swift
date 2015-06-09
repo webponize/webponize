@@ -31,7 +31,7 @@ class FileStatus: NSObject {
         }
         var percent = 100 * Float(afterByteLength) / Float(beforeByteLength)
 
-        return String(format:"%.1f％", percent)
+        return String(format:"%.1f％", 100.0 - percent)
     }
     
     init(uuid: String, status: FileStatusType, fileURL: NSURL, beforeByteLength: Int, afterByteLength: Int) {
