@@ -6,7 +6,7 @@
     <description>WebPonize updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.1.4</title>
+      <title>Version 1.1.5</title>
       <description><![CDATA[
         <ul>
           <li>Display table for checking before/after</li>
@@ -16,11 +16,11 @@
           <li>Update table successively</li>
         </ul>
       ]]></description>
-      <pubDate>Tue, 2 Jun 2015 21:00:00 +0900</pubDate>
+      <pubDate>Tue, 9 Jun 2015 21:00:00 +0900</pubDate>
       <enclosure
         url="https://1000ch.github.io/webponize/webponize.tar.gz"
-        sparkle:version="1.1.4"
-        length="2637271"
+        sparkle:version="1.1.5"
+        length="2637369"
         type="application/gzip" />
       <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
     </item>
