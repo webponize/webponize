@@ -6,6 +6,8 @@ class libwebp: NSObject {
     
     var inputFileURL: NSURL
     var inputData: NSData
+    var inputImage: NSImage
+    var inputBitmap: NSBitmapImageRep
     
     var inputFileName: String {
         get {
@@ -22,10 +24,14 @@ class libwebp: NSObject {
             return inputFolder.stringByAppendingPathComponent(inputFileName)
         }
     }
-
-    var inputImage: NSImage {
+    var inputImageWidth: Int {
         get {
-            return NSImage(data: inputData)!
+            return inputBitmap.pixelsWide
+        }
+    }
+    var inputImageHeight: Int {
+        get {
+            return inputBitmap.pixelsHigh
         }
     }
     
@@ -56,7 +62,11 @@ class libwebp: NSObject {
         }
     }
     
-    var beforeByteLength: Int = 0
+    var beforeByteLength: Int {
+        get {
+            return inputData.length
+        }
+    }
     var afterByteLength: Int = 0
     
     private enum ImageType: String {
@@ -75,7 +85,8 @@ class libwebp: NSObject {
         
         inputFileURL = fileURL
         inputData = NSData(contentsOfURL: inputFileURL)!
-        beforeByteLength = inputData.length
+        inputImage = NSImage(data: inputData)!
+        inputBitmap = NSBitmapImageRep(data: inputData)!
         
         let manager: NSFileManager = NSFileManager.defaultManager()
         var error: NSError?
@@ -140,8 +151,8 @@ class libwebp: NSObject {
         let bitmap: CFDataRef = CGDataProviderCopyData(provider)
     
         let rgb: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmap)
-        let width: Int32 = Int32(inputImage.size.width)
-        let height: Int32 = Int32(inputImage.size.height)
+        let width: Int32 = Int32(inputImageWidth)
+        let height: Int32 = Int32(inputImageHeight)
         let stride: Int32 = Int32(CGImageGetBytesPerRow(image))
         let qualityFactor: Float = Float(compressionLevel)
 
