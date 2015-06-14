@@ -28,14 +28,19 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     
     func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
         
+        var color: NSColor
+        if row % 2 == 0 {
+            color = NSColor.whiteColor()
+        } else {
+            color = NSColor(white: 0.95, alpha: 1.0)
+        }
+        
         if cell is NSTextFieldCell {
-            var tableCell = cell as? NSTextFieldCell
-            tableCell?.drawsBackground = true
-            if row % 2 == 0 {
-                tableCell?.backgroundColor = NSColor.whiteColor()
-            } else {
-                tableCell?.backgroundColor = NSColor(white: 0.95, alpha: 1.0)
-            }
+            var textCell = cell as! NSTextFieldCell
+            textCell.drawsBackground = true
+            textCell.backgroundColor = color
+        } else if cell is NSImageCell {
+            var imageCell = cell as! NSImageCell
         }
     }
     
