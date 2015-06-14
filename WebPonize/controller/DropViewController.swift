@@ -27,13 +27,15 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     }
     
     func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
-
-        var textFieldCell = cell as! NSTextFieldCell
-        textFieldCell.drawsBackground = true
-        if row % 2 == 0 {
-            textFieldCell.backgroundColor = NSColor.whiteColor()
-        } else {
-            textFieldCell.backgroundColor = NSColor(white: 0.95, alpha: 1.0)
+        
+        if cell is NSTextFieldCell {
+            var tableCell = cell as? NSTextFieldCell
+            tableCell?.drawsBackground = true
+            if row % 2 == 0 {
+                tableCell?.backgroundColor = NSColor.whiteColor()
+            } else {
+                tableCell?.backgroundColor = NSColor(white: 0.95, alpha: 1.0)
+            }
         }
     }
     
@@ -42,6 +44,19 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         let data: FileStatus =  AppDelegate.fileStatusList[rowIndex]
         
         switch tableColumn!.identifier {
+        case "status":
+            var image: NSImage?
+            switch data.status {
+            case FileStatusType.Idle:
+                image = NSImage(named: "progress")
+            case FileStatusType.Processing:
+                image = NSImage(named: "progress")
+            case FileStatusType.Finished:
+                image = NSImage(named: "ok")
+            case FileStatusType.Error:
+                image = NSImage(named: "error")
+            }
+            return image
         case "filePath":
             return data.fileURL.path
         case "fileName":

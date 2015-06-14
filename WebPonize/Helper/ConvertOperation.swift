@@ -34,7 +34,12 @@ class ConvertOperation: NSOperation {
         }
 
         fileStatus?.beforeByteLength = converter.beforeByteLength
-        converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
+        let result = converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
         fileStatus?.afterByteLength = converter.afterByteLength
+        if result != 0 {
+            fileStatus?.status = FileStatusType.Finished
+        } else {
+            fileStatus?.status = FileStatusType.Error
+        }
     }
 }

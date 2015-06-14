@@ -4,6 +4,7 @@ enum FileStatusType: Int {
     case Idle
     case Processing
     case Finished
+    case Error
 }
 
 class FileStatus: NSObject {

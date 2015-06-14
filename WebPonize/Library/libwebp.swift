@@ -142,7 +142,7 @@ class libwebp: NSObject {
         }
     }
 
-    func encode(compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
+    func encode(compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) -> Int {
         
         let image: CGImage? = getCGImage(inputImage)
         let imageType: ImageType = contentTypeForImageData(inputData)
@@ -181,5 +181,7 @@ class libwebp: NSObject {
         webp = NSData(bytes: output, length: afterByteLength)
         webp.writeToURL(saveFileURL, atomically: true)
         free(output)
+        
+        return Int(size)
     }
 }
