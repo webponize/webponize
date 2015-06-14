@@ -6,22 +6,17 @@
     <description>WebPonize updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.1.6</title>
+      <title>Version 1.1.7</title>
       <description><![CDATA[
         <ul>
-          <li>Display table for checking before/after</li>
-          <li>Re-open window by clicking dock icon</li>
-          <li>Fix menu labels</li>
-          <li>Fix license</li>
-          <li>Update table successively</li>
-          <li>Fix bugs</li>
+          <li>Various tweaks</li>
         </ul>
       ]]></description>
-      <pubDate>Wed, 10 Jun 2015 15:00:00 +0900</pubDate>
+      <pubDate>Sun, 14 Jun 2015 22:00:00 +0900</pubDate>
       <enclosure
         url="https://1000ch.github.io/webponize/webponize.tar.gz"
-        sparkle:version="1.1.6"
-        length="2636269"
+        sparkle:version="1.1.7"
+        length="2638449"
         type="application/gzip" />
       <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
     </item>
