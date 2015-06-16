@@ -17,7 +17,7 @@
       <enclosure
         url="https://1000ch.github.io/webponize/webponize.tar.gz"
         sparkle:version="1.1.8"
-        length="2637797"
+        length="2637729"
         type="application/gzip" />
       <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
     </item>
