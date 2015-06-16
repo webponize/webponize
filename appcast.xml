@@ -6,17 +6,18 @@
     <description>WebPonize updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.1.7</title>
+      <title>Version 1.1.8</title>
       <description><![CDATA[
         <ul>
           <li>Various tweaks</li>
+          <li>Highlight table row</li>
         </ul>
       ]]></description>
       <pubDate>Sun, 14 Jun 2015 22:00:00 +0900</pubDate>
       <enclosure
         url="https://1000ch.github.io/webponize/webponize.tar.gz"
-        sparkle:version="1.1.7"
-        length="2638449"
+        sparkle:version="1.1.8"
+        length="2638987"
         type="application/gzip" />
       <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
     </item>
