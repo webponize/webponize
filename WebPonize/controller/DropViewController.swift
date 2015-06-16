@@ -25,25 +25,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return AppDelegate.fileStatusList.count
     }
-    
-    func tableView(tableView: NSTableView, willDisplayCell cell: AnyObject, forTableColumn tableColumn: NSTableColumn?, row: Int) {
         
-        var color: NSColor
-        if row % 2 == 0 {
-            color = NSColor.whiteColor()
-        } else {
-            color = NSColor(white: 0.95, alpha: 1.0)
-        }
-        
-        if cell is NSTextFieldCell {
-            var textCell = cell as! NSTextFieldCell
-            textCell.drawsBackground = true
-            textCell.backgroundColor = color
-        } else if cell is NSImageCell {
-            var imageCell = cell as! NSImageCell
-        }
-    }
-    
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
         
         let data: FileStatus =  AppDelegate.fileStatusList[rowIndex]
