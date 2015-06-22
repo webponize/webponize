@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130281771B33A6CE004B5237 /* libwebpdemux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 130281741B33A6CE004B5237 /* libwebpdemux.a */; };
+		130281781B33A6CE004B5237 /* libwebpmux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 130281751B33A6CE004B5237 /* libwebpmux.a */; };
 		13AE86501AA7688C007E68D0 /* PreferenceWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */; };
 		13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86511AA768D3007E68D0 /* MainWindow.swift */; };
+		13BA11E31B384C9A0014AD0C /* gif2webp in Resources */ = {isa = PBXBuildFile; fileRef = 13BA11E21B384C9A0014AD0C /* gif2webp */; };
+		13BA11E51B384CBA0014AD0C /* gif2webp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA11E41B384CBA0014AD0C /* gif2webp.swift */; };
 		13C91AA41B270828008681BA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; };
 		13C91AA51B27083A008681BA /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
 		13CB33721B1007BE005BB607 /* FileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* FileStatus.swift */; };
@@ -55,8 +59,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		130281721B33A62B004B5237 /* mux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mux.h; sourceTree = "<group>"; };
+		130281731B33A6CE004B5237 /* demux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = demux.h; sourceTree = "<group>"; };
+		130281741B33A6CE004B5237 /* libwebpdemux.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebpdemux.a; sourceTree = "<group>"; };
+		130281751B33A6CE004B5237 /* libwebpmux.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebpmux.a; sourceTree = "<group>"; };
+		130281761B33A6CE004B5237 /* mux_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mux_types.h; sourceTree = "<group>"; };
 		13AE864F1AA7688C007E68D0 /* PreferenceWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceWindow.swift; sourceTree = "<group>"; };
 		13AE86511AA768D3007E68D0 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		13BA11E21B384C9A0014AD0C /* gif2webp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = gif2webp; sourceTree = "<group>"; };
+		13BA11E41B384CBA0014AD0C /* gif2webp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gif2webp.swift; sourceTree = "<group>"; };
 		13CB33711B1007BE005BB607 /* FileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStatus.swift; sourceTree = "<group>"; };
 		13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libwebp.swift; sourceTree = "<group>"; };
 		13E7B95E1AB9BD48003A3AFB /* decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decode.h; sourceTree = "<group>"; };
@@ -91,7 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130281771B33A6CE004B5237 /* libwebpdemux.a in Frameworks */,
 				13C91AA51B27083A008681BA /* libwebp.a in Frameworks */,
+				130281781B33A6CE004B5237 /* libwebpmux.a in Frameworks */,
 				13C91AA41B270828008681BA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +145,7 @@
 				13EF4E4C1AEA500C003DED37 /* Sparkle.framework */,
 				13E7B9631AB9BDD6003A3AFB /* libwebp.h */,
 				13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */,
+				13BA11E41B384CBA0014AD0C /* gif2webp.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -147,10 +161,16 @@
 		13E7B95D1AB9BD48003A3AFB /* libwebp */ = {
 			isa = PBXGroup;
 			children = (
+				13BA11E21B384C9A0014AD0C /* gif2webp */,
+				130281731B33A6CE004B5237 /* demux.h */,
+				130281741B33A6CE004B5237 /* libwebpdemux.a */,
+				130281751B33A6CE004B5237 /* libwebpmux.a */,
+				130281761B33A6CE004B5237 /* mux_types.h */,
 				13E7B95E1AB9BD48003A3AFB /* decode.h */,
 				13E7B95F1AB9BD48003A3AFB /* encode.h */,
 				13E7B9601AB9BD48003A3AFB /* libwebp.a */,
 				13E7B9611AB9BD48003A3AFB /* types.h */,
+				130281721B33A62B004B5237 /* mux.h */,
 			);
 			path = libwebp;
 			sourceTree = "<group>";
@@ -328,6 +348,7 @@
 			files = (
 				C7E946071A5FC9940024581F /* Images.xcassets in Resources */,
 				C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */,
+				13BA11E31B384C9A0014AD0C /* gif2webp in Resources */,
 				C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +398,7 @@
 				C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */,
 				C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */,
 				C7A61A541A846CEA00693007 /* DropViewController.swift in Sources */,
+				13BA11E51B384CBA0014AD0C /* gif2webp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
