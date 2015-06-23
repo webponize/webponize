@@ -528,7 +528,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WebPonize/Library/libwebp",
-					"$(PROJECT_DIR)/WebPonize/libwebp/WebPonize/Library/libwebp",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
@@ -556,7 +555,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WebPonize/Library/libwebp",
-					"$(PROJECT_DIR)/WebPonize/libwebp/WebPonize/Library/libwebp",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
