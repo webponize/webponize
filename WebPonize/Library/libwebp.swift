@@ -163,12 +163,18 @@ class libwebp: NSObject {
         switch imageType {
         case ImageType.JPEG:
             size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
-        case ImageType.PNG, ImageType.GIF, ImageType.TIFF:
+        case ImageType.PNG, ImageType.TIFF:
             if isNoAlpha {
                 size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
             } else {
                 size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
             }
+        case ImageType.GIF:
+            var gifConverter = gif2webp()
+            gifConverter.currentDirectoryPath = saveFolder
+            gifConverter.arguments = [inputFilePath, "-o", saveFilePath]
+            gifConverter.execute()
+            size = NSData(contentsOfFile: saveFilePath)!.length
         default:
             if isNoAlpha {
                 size = WebPEncodeRGB(rgb, width, height, stride, qualityFactor, &output)
@@ -176,11 +182,14 @@ class libwebp: NSObject {
                 size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
             }
         }
-        
+
         afterByteLength = Int(size)
-        webp = NSData(bytes: output, length: afterByteLength)
-        webp.writeToURL(saveFileURL, atomically: true)
-        free(output)
+        
+        if imageType != ImageType.GIF {
+            webp = NSData(bytes: output, length: afterByteLength)
+            webp.writeToURL(saveFileURL, atomically: true)
+            free(output)
+        }
         
         return Int(size)
     }
