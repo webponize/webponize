@@ -1,6 +1,6 @@
 import Cocoa
 
-class DropView: NSView, NSDraggingDestination {
+class DropView: NSView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -13,7 +13,7 @@ class DropView: NSView, NSDraggingDestination {
             NSPasteboardTypePNG,
             NSColorPboardType,
             NSFilenamesPboardType
-        ] as [AnyObject]
+        ] as [String]
 
         registerForDraggedTypes(acceptDragTypes)
     }
@@ -30,7 +30,9 @@ class DropView: NSView, NSDraggingDestination {
         onPerformDragOperation?(sender: sender)
         return true
     }
-    
+}
+
+extension DropView {
     override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
         onDraggingEnteredHandler?(sender: sender)
         return NSDragOperation.Copy

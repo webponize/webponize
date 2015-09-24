@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        mainWindow = NSApplication.sharedApplication().windows[0] as! NSWindow
+        mainWindow = NSApplication.sharedApplication().windows[0] 
     }
     
     func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

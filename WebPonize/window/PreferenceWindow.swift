@@ -1,5 +1,3 @@
 import Cocoa
 
-class PreferenceWindow: NSWindow {
-
-}
+class PreferenceWindow: NSWindow {}

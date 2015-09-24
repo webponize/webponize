@@ -23,6 +23,16 @@ class PreferenceViewController: NSViewController {
         isNoAlpha.intValue = AppDelegate.appConfig.isNoAlpha ? 1 : 0
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        guard let window = view.window else {
+            return
+        }
+        
+        window.styleMask = window.styleMask & ~NSResizableWindowMask
+    }
+    
     @IBAction func onCompressionLevelTextChanged(sender: NSTextField) {
         let value = Int(sender.intValue)
         compressionLevel.intValue = Int32(value)

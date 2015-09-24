@@ -15,7 +15,7 @@ class gif2webp: NSObject {
     
     func execute(arguments: Dictionary<String, String>) -> String {
         self.arguments.removeAll(keepCapacity: false)
-        for (key, value) in arguments {
+        for (key, _) in arguments {
             self.arguments.append("\(key)=\(arguments[key])")
         }
         return self.execute()

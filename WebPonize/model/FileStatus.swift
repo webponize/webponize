@@ -14,7 +14,7 @@ class FileStatus: NSObject {
     var fileName: String {
         get {
             return fileURL.lastPathComponent!.stringByReplacingOccurrencesOfString(
-                fileURL.path!.pathExtension,
+                fileURL.pathExtension!,
                 withString: "webp",
                 options: .CaseInsensitiveSearch,
                 range: nil
@@ -30,7 +30,7 @@ class FileStatus: NSObject {
         if afterByteLength == 0 {
             return ""
         }
-        var percent = 100 * Float(afterByteLength) / Float(beforeByteLength)
+        let percent = 100 * Float(afterByteLength) / Float(beforeByteLength)
 
         return String(format:"%.1f％", 100.0 - percent)
     }

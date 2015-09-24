@@ -15,7 +15,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         AppDelegate.operationQueue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
     }
 
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         dispatch_async(dispatch_get_main_queue(), { [weak self] in
             self?.scrollView.hidden = false
             self?.tableView.reloadData()
@@ -51,6 +51,9 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         case "beforeByteLength":
             return data.beforeByteLength
         case "afterByteLength":
+            if data.afterByteLength == 0 {
+                return ""
+            }
             return data.afterByteLength
         case "savings":
             return data.savings
@@ -69,7 +72,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         //tableView.setDelegate(self)
         
         dropView.onPerformDragOperation = { sender -> Void in
-            var filePaths = self.getDraggedFiles(sender)
+            let filePaths = self.getDraggedFiles(sender)
             self.convertFiles(filePaths)
         }
         
@@ -100,7 +103,7 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         
         for filePath in filePaths {
             
-            let fileURL = NSURL.fileURLWithPath(filePath)!
+            let fileURL = NSURL.fileURLWithPath(filePath)
             let uuid = NSUUID().UUIDString
             
             AppDelegate.fileStatusList.append(
