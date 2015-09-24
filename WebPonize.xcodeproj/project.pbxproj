@@ -303,7 +303,9 @@
 		C7E945F51A5FC9940024581F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = 1000ch.net;
 				TargetAttributes = {
 					C7E945FC1A5FC9940024581F = {
@@ -453,6 +455,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -531,6 +534,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -558,6 +562,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -582,6 +587,7 @@
 				);
 				INFOPLIST_FILE = WebPonizeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
@@ -601,6 +607,7 @@
 				);
 				INFOPLIST_FILE = WebPonizeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
