@@ -14,10 +14,8 @@ clean: webponize.tar.gz
 build:
 	@xcodebuild build
 
-archive: ./build/Release/WebPonize.app
-	@cp -r ./build/Release/WebPonize.app ./WebPonize.app
+archive: ./WebPonize.app
 	@tar zcvf webponize.tar.gz ./WebPonize.app
-	@rm -r ./WebPonize.app
 
 epilogue:
 	@echo ""
