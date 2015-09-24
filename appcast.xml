@@ -6,17 +6,17 @@
     <description>WebPonize updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.2.1</title>
+      <title>Version 1.2.2</title>
       <description><![CDATA[
         <ul>
           <li>Support GIF convert (including animation)</li>
         </ul>
       ]]></description>
-      <pubDate>Tue, 23 Jun 2015 10:00:00 +0900</pubDate>
+      <pubDate>Thu, 24 Sep 2015 23:00:00 +0900</pubDate>
       <enclosure
         url="https://1000ch.github.io/webponize/webponize.tar.gz"
-        sparkle:version="1.2.1"
-        length="2845920"
+        sparkle:version="1.2.2"
+        length="3331507"
         type="application/gzip" />
       <sparkle:minimumSystemVersion>10.10.0</sparkle:minimumSystemVersion>
     </item>
