@@ -8,7 +8,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func openDocument(sender: AnyObject?) {
 
-        var panel = NSOpenPanel()
+        let panel = NSOpenPanel()
         panel.canChooseDirectories = false
         panel.canCreateDirectories = false
         panel.canChooseFiles = true
