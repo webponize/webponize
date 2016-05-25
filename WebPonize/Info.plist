@@ -38,5 +38,10 @@
 	<true/>
 	<key>SUFeedURL</key>
 	<string>https://1000ch.github.io/webponize/appcast.xml</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

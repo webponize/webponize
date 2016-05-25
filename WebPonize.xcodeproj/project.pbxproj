@@ -13,11 +13,10 @@
 		13AE86521AA768D3007E68D0 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AE86511AA768D3007E68D0 /* MainWindow.swift */; };
 		13BA11E31B384C9A0014AD0C /* gif2webp in Resources */ = {isa = PBXBuildFile; fileRef = 13BA11E21B384C9A0014AD0C /* gif2webp */; };
 		13BA11E51B384CBA0014AD0C /* gif2webp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA11E41B384CBA0014AD0C /* gif2webp.swift */; };
-		13C91AA41B270828008681BA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; };
 		13C91AA51B27083A008681BA /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
 		13CB33721B1007BE005BB607 /* FileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* FileStatus.swift */; };
 		13E7B95B1AB9BBB0003A3AFB /* libwebp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */; };
-		13EF4E4F1AEA50B8003DED37 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13EF4E4C1AEA500C003DED37 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95DF0F4B17C1B1CCC4FE3AB3 /* Pods_WebPonize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BB569A9661E56342770D66 /* Pods_WebPonize.framework */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		C7A61A4A1A846CE200693007 /* DropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A441A846CE200693007 /* DropAreaView.swift */; };
@@ -52,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				13EF4E4F1AEA50B8003DED37 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +73,9 @@
 		13E7B9601AB9BD48003A3AFB /* libwebp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebp.a; sourceTree = "<group>"; };
 		13E7B9611AB9BD48003A3AFB /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		13E7B9631AB9BDD6003A3AFB /* libwebp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libwebp.h; sourceTree = "<group>"; };
-		13EF4E4C1AEA500C003DED37 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		2277E1B554E3D7F6EA699881 /* Pods-WebPonize.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebPonize.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebPonize/Pods-WebPonize.release.xcconfig"; sourceTree = "<group>"; };
+		94BB569A9661E56342770D66 /* Pods_WebPonize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebPonize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AEDEA96D399E38255BC3AB /* Pods-WebPonize.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebPonize.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebPonize/Pods-WebPonize.debug.xcconfig"; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
 		C7A61A441A846CE200693007 /* DropAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropAreaView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				130281771B33A6CE004B5237 /* libwebpdemux.a in Frameworks */,
 				13C91AA51B27083A008681BA /* libwebp.a in Frameworks */,
 				130281781B33A6CE004B5237 /* libwebpmux.a in Frameworks */,
-				13C91AA41B270828008681BA /* Sparkle.framework in Frameworks */,
+				95DF0F4B17C1B1CCC4FE3AB3 /* Pods_WebPonize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				13E7B95D1AB9BD48003A3AFB /* libwebp */,
-				13EF4E4C1AEA500C003DED37 /* Sparkle.framework */,
 				13E7B9631AB9BDD6003A3AFB /* libwebp.h */,
 				13E7B95A1AB9BBB0003A3AFB /* libwebp.swift */,
 				13BA11E41B384CBA0014AD0C /* gif2webp.swift */,
@@ -175,6 +174,23 @@
 			path = libwebp;
 			sourceTree = "<group>";
 		};
+		169066B50B87ED546FC35329 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94BB569A9661E56342770D66 /* Pods_WebPonize.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA6E06A8F60BFEDBA19E0FB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5AEDEA96D399E38255BC3AB /* Pods-WebPonize.debug.xcconfig */,
+				2277E1B554E3D7F6EA699881 /* Pods-WebPonize.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C7A61A401A846C1200693007 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +218,8 @@
 				C7E945FF1A5FC9940024581F /* WebPonize */,
 				C7E946121A5FC9940024581F /* WebPonizeTests */,
 				C7E945FE1A5FC9940024581F /* Products */,
+				AA6E06A8F60BFEDBA19E0FB4 /* Pods */,
+				169066B50B87ED546FC35329 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -264,11 +282,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7E946191A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPonize" */;
 			buildPhases = (
+				E10D0894AF10C82265FF1ED8 /* 📦 Check Pods Manifest.lock */,
 				C7E945F91A5FC9940024581F /* Sources */,
 				C7E945FA1A5FC9940024581F /* Frameworks */,
 				C7E945FB1A5FC9940024581F /* Resources */,
-				C715CEC11A67B6C4008AD6C7 /* ShellScript */,
 				13EF4E4E1AEA5092003DED37 /* CopyFiles */,
+				42C402D5B277A9877ACC7C5F /* 📦 Embed Pods Frameworks */,
+				42CB5563320FE8D677CCC50E /* 📦 Copy Pods Resources */,
+				C715CEC11A67B6C4008AD6C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -365,6 +386,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		42C402D5B277A9877ACC7C5F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebPonize/Pods-WebPonize-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42CB5563320FE8D677CCC50E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebPonize/Pods-WebPonize-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C715CEC11A67B6C4008AD6C7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,7 +427,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
+		};
+		E10D0894AF10C82265FF1ED8 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -470,7 +536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -507,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -516,8 +582,10 @@
 		};
 		C7E9461A1A5FC9940024581F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5AEDEA96D399E38255BC3AB /* Pods-WebPonize.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -544,8 +612,10 @@
 		};
 		C7E9461B1A5FC9940024581F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2277E1B554E3D7F6EA699881 /* Pods-WebPonize.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
