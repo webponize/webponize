@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }} - webponize.github.io</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/primer.css">
+    <link rel="stylesheet" href="/css/user-content.min.css">
+    <link rel="stylesheet" href="/css/octicons/octicons.css">
+    <style>
+      .header {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .header__logo {
+        float: left;
+        display: inline-block;
+        font-size: 3.0rem;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+      .header__logo img {
+        float: left;
+        margin-right: .5rem;
+        vertical-align: middle;
+      }
+      .header__nav {
+        float: right;
+        margin-top: .5rem;
+        font-size: 1rem;
+      }
+      .share {
+        display: flex;
+        flex-direction: row;
+      }
+      .share__item {
+        padding: 5px;
+      }
+      .footer {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-top: 3rem;
+        line-height: 1.75;
+        color: #7a7a7a;
+        border-top: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        {% include header.html %}
+      </div>
+    </header>
+    <div class="container">
+      <div class="columns">
+        <div class="one-fourth column">
+          {% include menu.html %}
+        </div>
+        <div class="three-fourths column markdown-body">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        {% include footer.html %}
+      </div>
+    </footer>\
+    {% include script.html %}
+  </body>
+</html>

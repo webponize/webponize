@@ -1,0 +1,18 @@
+{
+  "name": "webponize.github.io",
+  "version": "1.0.0",
+  "authors": [
+    "1000ch <shogo.sensui@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "primer-css": "~2.1.0"
+  }
+}

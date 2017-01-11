@@ -1,0 +1,15 @@
+{
+  "name": "webponize.github.io",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "bower install && gulp build"
+  },
+  "author": "1000ch",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "^1.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
