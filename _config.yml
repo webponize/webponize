@@ -1,0 +1,10 @@
+name: WebPonize
+markdown: redcarpet
+highlighter: pygments
+
+exclude:
+  - "node_modules"
+  - "package.json"
+  - "bower_components"
+  - "bower.json"
+  - "gulpfile.js"
