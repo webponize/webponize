@@ -1,6 +1,6 @@
 name: WebPonize
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 
 exclude:
   - "node_modules"
