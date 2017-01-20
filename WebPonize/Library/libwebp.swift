@@ -1,9 +1,8 @@
 import Cocoa
 
 class libwebp: NSObject {
-    
-    var inputFileURL: NSURL
-    var inputData: NSData
+    var inputFileURL: URL
+    var inputData: Data
     var inputImage: NSImage
     var inputBitmap: NSBitmapImageRep
     
@@ -12,16 +11,19 @@ class libwebp: NSObject {
             return inputFileURL.lastPathComponent
         }
     }
-    var inputFolder: NSURL? {
+
+    var inputFolder: URL? {
         get {
-            return inputFileURL.URLByDeletingLastPathComponent
+            return inputFileURL.deletingLastPathComponent()
         }
     }
+
     var inputImageWidth: Int {
         get {
             return inputBitmap.pixelsWide
         }
     }
+
     var inputImageHeight: Int {
         get {
             return inputBitmap.pixelsHigh
@@ -30,39 +32,38 @@ class libwebp: NSObject {
     
     var saveFileName: String? {
         get {
-            guard let pathExtenstion = inputFileURL.pathExtension else {
-                return nil
-            }
-            return inputFileName?.stringByReplacingOccurrencesOfString(
-                pathExtenstion,
-                withString: "webp",
-                options: .CaseInsensitiveSearch,
+            return inputFileName?.replacingOccurrences(
+                of: inputFileURL.pathExtension,
+                with: "webp",
+                options: .caseInsensitive,
                 range: nil
             )
         }
     }
-    var saveFolder: NSURL? {
-        get {
-            return inputFileURL.URLByDeletingLastPathComponent
-        }
+
+    var saveFolder: URL? {
+        return inputFileURL.deletingLastPathComponent()
     }
-    var saveFileURL: NSURL? {
+
+    var saveFileURL: URL? {
         get {
             guard let fileName = saveFileName else {
                 return nil
             }
-            return saveFolder?.URLByAppendingPathComponent(fileName)
+
+            return saveFolder?.appendingPathComponent(fileName)
         }
     }
     
     var beforeByteLength: Int {
         get {
-            return inputData.length
+            return inputData.count
         }
     }
+
     var afterByteLength: Int = 0
     
-    private enum ImageType: String {
+    fileprivate enum ImageType: String {
         case PNG = "image/png"
         case JPEG = "image/jpeg"
         case GIF = "image/gif"
@@ -71,23 +72,21 @@ class libwebp: NSObject {
     }
     
     convenience init(filePath: String) {
-        self.init(fileURL: NSURL.fileURLWithPath(filePath))
+        self.init(fileURL: URL(fileURLWithPath: filePath))
     }
 
-    init(fileURL: NSURL) {
-        
+    init(fileURL: URL) {
         inputFileURL = fileURL
-        inputData = NSData(contentsOfURL: inputFileURL)!
+        inputData = try! Data(contentsOf: inputFileURL)
         inputImage = NSImage(data: inputData)!
         inputBitmap = NSBitmapImageRep(data: inputData)!
 
         super.init()
     }
     
-    private func contentTypeForImageData(data: NSData) -> ImageType {
-        
+    fileprivate func contentTypeForImageData(_ data: Data) -> ImageType {
         var c: UInt8 = 0
-        data.getBytes(&c, length: 1)
+        (data as NSData).getBytes(&c, length: 1)
         
         switch c {
         case 0xFF:
@@ -105,23 +104,21 @@ class libwebp: NSObject {
         }
     }
     
-    private func hasTransparencyForImageData(data: NSData) -> Bool {
-        
+    fileprivate func hasTransparencyForImageData(_ data: Data) -> Bool {
         var c: UInt8 = 0
         let range: NSRange = NSRange(location: 25, length: 1)
 
-        data.getBytes(&c, range: range)
+        (data as NSData).getBytes(&c, range: range)
         
         return (c == 6);
     }
     
-    private func getCGImage(image: NSImage) -> CGImageRef? {
-        
-        guard let imageData = image.TIFFRepresentation else {
+    fileprivate func getCGImage(_ image: NSImage) -> CGImage? {
+        guard let imageData = image.tiffRepresentation else {
             return nil
         }
 
-        guard let source = CGImageSourceCreateWithData(imageData as CFDataRef, nil) else {
+        guard let source = CGImageSourceCreateWithData(imageData as CFData, nil) else {
             return nil
         }
 
@@ -130,22 +127,21 @@ class libwebp: NSObject {
 
     }
 
-    func encode(compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) -> Int {
-        
+    func encode(_ compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) -> Int {
         let image: CGImage? = getCGImage(inputImage)
         let imageType: ImageType = contentTypeForImageData(inputData)
 
-        let provider: CGDataProviderRef? = CGImageGetDataProvider(image)
-        let bitmap: CFDataRef? = CGDataProviderCopyData(provider)
+        let provider: CGDataProvider? = image?.dataProvider
+        let bitmap: CFData? = provider?.data
     
         let rgb: UnsafePointer<UInt8> = CFDataGetBytePtr(bitmap)
         let width: Int32 = Int32(inputImageWidth)
         let height: Int32 = Int32(inputImageHeight)
-        let stride: Int32 = Int32(CGImageGetBytesPerRow(image))
+        let stride: Int32 = Int32(image!.bytesPerRow)
         let qualityFactor: Float = Float(compressionLevel)
 
-        var webp: NSData
-        var output: UnsafeMutablePointer<UInt8> = nil
+        var webp: Data
+        var output: UnsafeMutablePointer<UInt8>? = nil
         var size: size_t = 0
 
         switch imageType {
@@ -158,12 +154,12 @@ class libwebp: NSObject {
                 size = WebPEncodeRGBA(rgb, width, height, stride, qualityFactor, &output)
             }
         case ImageType.GIF:
-            if let inputFilePath = inputFileURL.path, saveFilePath = saveFileURL?.path {
+            if let saveFilePath = saveFileURL?.path {
                 let gifConverter = gif2webp()
-                gifConverter.currentDirectoryPath = (saveFileURL?.URLByDeletingLastPathComponent?.path)!
-                gifConverter.arguments = [inputFilePath, "-o", saveFilePath]
+                gifConverter.currentDirectoryPath = (saveFileURL?.deletingLastPathComponent().path)!
+                gifConverter.arguments = [inputFileURL.path, "-o", saveFilePath]
                 gifConverter.execute()
-                size = NSData(contentsOfFile: saveFilePath)!.length
+                size = (try! Data(contentsOf: URL(fileURLWithPath: saveFilePath))).count
             }
         default:
             if isNoAlpha {
@@ -177,8 +173,8 @@ class libwebp: NSObject {
         
         if imageType != ImageType.GIF {
             if let url = saveFileURL {
-                webp = NSData(bytes: output, length: afterByteLength)
-                webp.writeToURL(url, atomically: true)
+                webp = Data(bytes: UnsafePointer<UInt8>(output!), count: afterByteLength)
+                try? webp.write(to: url, options: [.atomic])
                 free(output)
             }
         }

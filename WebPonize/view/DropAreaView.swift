@@ -1,7 +1,6 @@
 import Cocoa
 
 class DropAreaView: NSImageView {
-
     var dropImage = NSImage(named: "drop-area")
     var dropImageHover = NSImage(named: "drop-area-hover")
 

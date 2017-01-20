@@ -1,7 +1,6 @@
 import Cocoa
 
 class ApplicationConfig: Preference {
-
     enum PreferenceKey: String {
         case isInitialized = "isInitialized"
         case compressionLevel = "compressionLevel"
@@ -13,8 +12,9 @@ class ApplicationConfig: Preference {
         get {
             return getIntValue(PreferenceKey.compressionLevel.rawValue)!
         }
+
         set {
-            setValue(PreferenceKey.compressionLevel.rawValue, value: newValue)
+            setValue(PreferenceKey.compressionLevel.rawValue, value: newValue as AnyObject)
         }
     }
     
@@ -22,8 +22,9 @@ class ApplicationConfig: Preference {
         get {
             return getBoolValue(PreferenceKey.isLossless.rawValue)!
         }
+
         set {
-            self.setValue(PreferenceKey.isLossless.rawValue, value: newValue)
+            self.setValue(PreferenceKey.isLossless.rawValue, value: newValue as AnyObject)
         }
     }
     
@@ -31,8 +32,9 @@ class ApplicationConfig: Preference {
         get {
             return getBoolValue(PreferenceKey.isNoAlpha.rawValue)!
         }
+
         set {
-            setValue(PreferenceKey.isNoAlpha.rawValue, value: newValue)
+            setValue(PreferenceKey.isNoAlpha.rawValue, value: newValue as AnyObject)
         }
     }
 
@@ -43,18 +45,18 @@ class ApplicationConfig: Preference {
     
     func setDefaultValues() {
         if getValue(PreferenceKey.isInitialized.rawValue) == nil {
-            setValue(PreferenceKey.isInitialized.rawValue, value: true)
-            setValue(PreferenceKey.compressionLevel.rawValue, value: 80)
-            setValue(PreferenceKey.isLossless.rawValue, value: true)
-            setValue(PreferenceKey.isNoAlpha.rawValue, value: false)
+            setValue(PreferenceKey.isInitialized.rawValue, value: true as AnyObject)
+            setValue(PreferenceKey.compressionLevel.rawValue, value: 80 as AnyObject)
+            setValue(PreferenceKey.isLossless.rawValue, value: true as AnyObject)
+            setValue(PreferenceKey.isNoAlpha.rawValue, value: false as AnyObject)
         }
     }
 
     func getValues() -> Dictionary<String, AnyObject> {
         var values = Dictionary<String, AnyObject>()
-        values["compressionLevel"] = compressionLevel
-        values["isLossless"] = isLossless
-        values["isNoAlpha"] = isNoAlpha
+        values["compressionLevel"] = compressionLevel as AnyObject?
+        values["isLossless"] = isLossless as AnyObject?
+        values["isNoAlpha"] = isNoAlpha as AnyObject?
         return values
     }
 }

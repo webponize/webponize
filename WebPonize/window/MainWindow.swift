@@ -1,5 +1,3 @@
 import Cocoa
 
-class MainWindow: NSWindow {
-
-}
+class MainWindow: NSWindow {}

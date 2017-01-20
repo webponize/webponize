@@ -1,7 +1,6 @@
 import Cocoa
 
-class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
-    
+class DropViewController: NSViewController {
     @IBOutlet weak var dropView: DropView!
     
     @IBOutlet weak var dropAreaView: DropAreaView!
@@ -12,60 +11,20 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        AppDelegate.operationQueue.addObserver(self, forKeyPath: "operations", options: .New, context: nil)
+        AppDelegate.operationQueue.addObserver(self, forKeyPath: "operations", options: .new, context: nil)
     }
 
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        dispatch_async(dispatch_get_main_queue(), { [weak self] in
-            self?.scrollView.hidden = false
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        DispatchQueue.main.async(execute: { [weak self] in
+            self?.scrollView.isHidden = false
             self?.tableView.reloadData()
         })
     }
     
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return AppDelegate.fileStatusList.count
-    }
-        
-    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row rowIndex: Int) -> AnyObject? {
-        
-        let data: FileStatus =  AppDelegate.fileStatusList[rowIndex]
-        
-        switch tableColumn!.identifier {
-        case "status":
-            var image: NSImage?
-            switch data.status {
-            case FileStatusType.Idle:
-                image = NSImage(named: "progress")
-            case FileStatusType.Processing:
-                image = NSImage(named: "progress")
-            case FileStatusType.Finished:
-                image = NSImage(named: "ok")
-            case FileStatusType.Error:
-                image = NSImage(named: "error")
-            }
-            return image
-        case "filePath":
-            return data.fileURL.path
-        case "fileName":
-            return data.fileName
-        case "beforeByteLength":
-            return data.beforeByteLength
-        case "afterByteLength":
-            if data.afterByteLength == 0 {
-                return ""
-            }
-            return data.afterByteLength
-        case "savings":
-            return data.savings
-        default:
-            return ""
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.hidden = true
+        scrollView.isHidden = true
 
         //set in storyboard
         //tableView.setDataSource(self)
@@ -90,26 +49,24 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
         
     }
     
-    func getDraggedFiles(draggingInfo: NSDraggingInfo) -> [String] {
+    func getDraggedFiles(_ draggingInfo: NSDraggingInfo) -> [String] {
         let pboard = draggingInfo.draggingPasteboard()
-        return pboard.propertyListForType(NSFilenamesPboardType) as! [String]
+        return pboard.propertyList(forType: NSFilenamesPboardType) as! [String]
     }
     
-    func convertFiles(filePaths: [String]) {
-
+    func convertFiles(_ filePaths: [String]) {
         let compressionLevel = AppDelegate.appConfig.compressionLevel
         let isLossless = AppDelegate.appConfig.isLossless
         let isNoAlpha = AppDelegate.appConfig.isNoAlpha
         
         for filePath in filePaths {
-            
-            let fileURL = NSURL.fileURLWithPath(filePath)
-            let uuid = NSUUID().UUIDString
+            let fileURL = URL(fileURLWithPath: filePath)
+            let uuid = UUID().uuidString
             
             AppDelegate.fileStatusList.append(
                 FileStatus(
                     uuid: uuid,
-                    status: FileStatusType.Idle,
+                    status: FileStatusType.idle,
                     fileURL: fileURL,
                     beforeByteLength: 0,
                     afterByteLength: 0
@@ -126,6 +83,47 @@ class DropViewController: NSViewController, NSTableViewDelegate, NSTableViewData
                 isNoAlpha: isNoAlpha)
             
             AppDelegate.operationQueue.addOperation(operation)
+        }
+    }
+}
+
+extension DropViewController: NSTableViewDelegate, NSTableViewDataSource {
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return AppDelegate.fileStatusList.count
+    }
+
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row rowIndex: Int) -> Any? {
+        let data = AppDelegate.fileStatusList[rowIndex]
+        
+        switch tableColumn!.identifier {
+        case "status":
+            var image: NSImage?
+            switch data.status {
+            case FileStatusType.idle:
+                image = NSImage(named: "progress")
+            case FileStatusType.processing:
+                image = NSImage(named: "progress")
+            case FileStatusType.finished:
+                image = NSImage(named: "ok")
+            case FileStatusType.error:
+                image = NSImage(named: "error")
+            }
+            return image
+        case "filePath":
+            return data.fileURL.path
+        case "fileName":
+            return data.fileName
+        case "beforeByteLength":
+            return data.beforeByteLength
+        case "afterByteLength":
+            if data.afterByteLength == 0 {
+                return ""
+            }
+            return data.afterByteLength
+        case "savings":
+            return data.savings
+        default:
+            return ""
         }
     }
 }

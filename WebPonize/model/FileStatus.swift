@@ -1,25 +1,23 @@
 import Cocoa
 
 enum FileStatusType: Int {
-    case Idle
-    case Processing
-    case Finished
-    case Error
+    case idle
+    case processing
+    case finished
+    case error
 }
 
 class FileStatus: NSObject {
     var uuid: String
     var status: FileStatusType
-    var fileURL: NSURL
+    var fileURL: URL
     var fileName: String {
-        get {
-            return fileURL.lastPathComponent!.stringByReplacingOccurrencesOfString(
-                fileURL.pathExtension!,
-                withString: "webp",
-                options: .CaseInsensitiveSearch,
-                range: nil
-            )
-        }
+        return fileURL.lastPathComponent.replacingOccurrences(
+            of: fileURL.pathExtension,
+            with: "webp",
+            options: .caseInsensitive,
+            range: nil
+        )
     }
     var beforeByteLength: Int = 0
     var afterByteLength: Int = 0
@@ -27,15 +25,17 @@ class FileStatus: NSObject {
         if beforeByteLength == 0 {
             return ""
         }
+
         if afterByteLength == 0 {
             return ""
         }
+
         let percent = 100 * Float(afterByteLength) / Float(beforeByteLength)
 
         return String(format:"%.1f％", 100.0 - percent)
     }
     
-    init(uuid: String, status: FileStatusType, fileURL: NSURL, beforeByteLength: Int, afterByteLength: Int) {
+    init(uuid: String, status: FileStatusType, fileURL: URL, beforeByteLength: Int, afterByteLength: Int) {
         self.uuid = uuid
         self.status = status
         self.fileURL = fileURL

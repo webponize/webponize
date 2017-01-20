@@ -1,13 +1,12 @@
 import Cocoa
 
-class ConvertOperation: NSOperation {
-    
-    var fileURL: NSURL
+class ConvertOperation: Operation {
+    var fileURL: URL
     var compressionLevel: Int
     var isLossless: Bool
     var isNoAlpha: Bool
     
-    init(uuid: String, fileURL: NSURL, compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
+    init(uuid: String, fileURL: URL, compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
         self.fileURL = fileURL
         self.compressionLevel = compressionLevel
         self.isLossless = isLossless
@@ -16,11 +15,11 @@ class ConvertOperation: NSOperation {
         super.init()
         
         name = uuid
-        queuePriority = NSOperationQueuePriority.Normal
+        queuePriority = Operation.QueuePriority.normal
     }
 
     override func main() {
-        if self.cancelled {
+        if self.isCancelled {
             return
         }
 
@@ -37,9 +36,9 @@ class ConvertOperation: NSOperation {
         let result = converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
         fileStatus?.afterByteLength = converter.afterByteLength
         if result != 0 {
-            fileStatus?.status = FileStatusType.Finished
+            fileStatus?.status = FileStatusType.finished
         } else {
-            fileStatus?.status = FileStatusType.Error
+            fileStatus?.status = FileStatusType.error
         }
     }
 }

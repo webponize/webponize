@@ -1,7 +1,6 @@
 import Cocoa
 
 class DropView: NSView {
-
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -15,34 +14,34 @@ class DropView: NSView {
             NSFilenamesPboardType
         ] as [String]
 
-        registerForDraggedTypes(acceptDragTypes)
+        register(forDraggedTypes: acceptDragTypes)
     }
     
-    var onPerformDragOperation: ((sender: NSDraggingInfo) -> Void)?
+    var onPerformDragOperation: ((_ sender: NSDraggingInfo) -> Void)?
     
-    var onDraggingEnteredHandler: ((sender: NSDraggingInfo) -> Void)?
+    var onDraggingEnteredHandler: ((_ sender: NSDraggingInfo) -> Void)?
     
-    var onDraggingExitedHandler: ((sender: NSDraggingInfo) -> Void)?
+    var onDraggingExitedHandler: ((_ sender: NSDraggingInfo) -> Void)?
     
-    var onDraggingEndedHandler: ((sender: NSDraggingInfo) -> Void)?
+    var onDraggingEndedHandler: ((_ sender: NSDraggingInfo) -> Void)?
     
-    override func performDragOperation(sender: NSDraggingInfo) -> Bool {
-        onPerformDragOperation?(sender: sender)
+    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        onPerformDragOperation?(sender)
         return true
     }
 }
 
 extension DropView {
-    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation  {
-        onDraggingEnteredHandler?(sender: sender)
-        return NSDragOperation.Copy
+    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation  {
+        onDraggingEnteredHandler?(sender)
+        return NSDragOperation.copy
     }
     
-    override func draggingExited(sender: NSDraggingInfo?) {
-        onDraggingExitedHandler?(sender: sender!)
+    override func draggingExited(_ sender: NSDraggingInfo?) {
+        onDraggingExitedHandler?(sender!)
     }
 
-    override func draggingEnded(sender: NSDraggingInfo?) {
-        onDraggingEndedHandler?(sender: sender!)
+    override func draggingEnded(_ sender: NSDraggingInfo?) {
+        onDraggingEndedHandler?(sender!)
     }
 }

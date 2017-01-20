@@ -7,14 +7,14 @@ class gif2webp: NSObject {
     var arguments: [String]
     
     override init() {
-        let bundle = NSBundle.mainBundle()
-        binaryPath = bundle.pathForResource("gif2webp", ofType: "")!
+        let bundle = Bundle.main
+        binaryPath = bundle.path(forResource: "gif2webp", ofType: "")!
         currentDirectoryPath = ""
         arguments = []
     }
     
-    func execute(arguments: Dictionary<String, String>) -> String {
-        self.arguments.removeAll(keepCapacity: false)
+    func execute(_ arguments: Dictionary<String, String>) -> String {
+        self.arguments.removeAll(keepingCapacity: false)
         for (key, _) in arguments {
             self.arguments.append("\(key)=\(arguments[key])")
         }
@@ -22,8 +22,8 @@ class gif2webp: NSObject {
     }
     
     func execute() -> String {
-        let task = NSTask()
-        let pipe = NSPipe()
+        let task = Process()
+        let pipe = Pipe()
         
         task.launchPath = binaryPath
         task.currentDirectoryPath = currentDirectoryPath
@@ -32,6 +32,6 @@ class gif2webp: NSObject {
         task.launch()
         
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        return NSString(data: data, encoding: NSUTF8StringEncoding)! as String
+        return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
     }
 }

@@ -1,7 +1,6 @@
 import Cocoa
 
 class PreferenceViewController: NSViewController {
-    
     @IBOutlet weak var compressionLevelText: NSTextField!
     
     @IBOutlet weak var compressionLevel: NSSlider!
@@ -29,37 +28,36 @@ class PreferenceViewController: NSViewController {
         guard let window = view.window else {
             return
         }
-        
-        window.styleMask = window.styleMask & ~NSResizableWindowMask
     }
     
-    @IBAction func onCompressionLevelTextChanged(sender: NSTextField) {
+    @IBAction func onCompressionLevelTextChanged(_ sender: NSTextField) {
         let value = Int(sender.intValue)
         compressionLevel.intValue = Int32(value)
         AppDelegate.appConfig.compressionLevel = value
     }
     
-    override func controlTextDidChange(obj: NSNotification) {
+    override func controlTextDidChange(_ obj: Notification) {
         if obj.object as? NSTextField != compressionLevelText {
             return
         }
+
         let value = Int(self.compressionLevelText.intValue)
         compressionLevel.intValue = Int32(value)
         AppDelegate.appConfig.compressionLevel = value
     }
     
-    @IBAction func onCompressionLevelChanged(sender: NSSlider) {
+    @IBAction func onCompressionLevelChanged(_ sender: NSSlider) {
         let value = Int(sender.intValue)
         compressionLevelText.intValue = Int32(value)
         AppDelegate.appConfig.compressionLevel = value
     }
     
-    @IBAction func onLosslessClicked(sender: NSButton) {
+    @IBAction func onLosslessClicked(_ sender: NSButton) {
         let value = Bool(sender.intValue == 1)
         AppDelegate.appConfig.isLossless = value
     }
     
-    @IBAction func onNoAlphaClicked(sender: NSButton) {
+    @IBAction func onNoAlphaClicked(_ sender: NSButton) {
         let value = Bool(sender.intValue == 1)
         AppDelegate.appConfig.isNoAlpha = value
     }

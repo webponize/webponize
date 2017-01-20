@@ -282,13 +282,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7E946191A5FC9940024581F /* Build configuration list for PBXNativeTarget "WebPonize" */;
 			buildPhases = (
-				E10D0894AF10C82265FF1ED8 /* 📦 Check Pods Manifest.lock */,
+				E10D0894AF10C82265FF1ED8 /* [CP] Check Pods Manifest.lock */,
 				C7E945F91A5FC9940024581F /* Sources */,
 				C7E945FA1A5FC9940024581F /* Frameworks */,
 				C7E945FB1A5FC9940024581F /* Resources */,
 				13EF4E4E1AEA5092003DED37 /* CopyFiles */,
-				42C402D5B277A9877ACC7C5F /* 📦 Embed Pods Frameworks */,
-				42CB5563320FE8D677CCC50E /* 📦 Copy Pods Resources */,
+				42C402D5B277A9877ACC7C5F /* [CP] Embed Pods Frameworks */,
+				42CB5563320FE8D677CCC50E /* [CP] Copy Pods Resources */,
 				C715CEC11A67B6C4008AD6C7 /* ShellScript */,
 			);
 			buildRules = (
@@ -326,12 +326,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = 1000ch.net;
 				TargetAttributes = {
 					C7E945FC1A5FC9940024581F = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = NZR22QGKNQ;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -341,6 +342,7 @@
 					C7E9460E1A5FC9940024581F = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = NZR22QGKNQ;
+						LastSwiftMigration = 0820;
 						TestTargetID = C7E945FC1A5FC9940024581F;
 					};
 				};
@@ -386,14 +388,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42C402D5B277A9877ACC7C5F /* 📦 Embed Pods Frameworks */ = {
+		42C402D5B277A9877ACC7C5F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,14 +403,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebPonize/Pods-WebPonize-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		42CB5563320FE8D677CCC50E /* 📦 Copy Pods Resources */ = {
+		42CB5563320FE8D677CCC50E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,19 +431,19 @@
 			shellPath = /bin/sh;
 			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\ncodesign --verbose --force --sign \"$CODE_SIGN_IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
 		};
-		E10D0894AF10C82265FF1ED8 /* 📦 Check Pods Manifest.lock */ = {
+		E10D0894AF10C82265FF1ED8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,8 +515,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Shogo Sensui (NZR22QGKNQ)";
@@ -524,6 +528,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -557,8 +562,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application: Shogo Sensui (NZR22QGKNQ)";
@@ -567,6 +574,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -577,6 +585,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -607,6 +616,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WebPonize/Library/libwebp.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -637,6 +647,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/WebPonize/Library/libwebp.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -660,6 +671,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
 			};
 			name = Debug;
@@ -680,6 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
 			};
 			name = Release;
