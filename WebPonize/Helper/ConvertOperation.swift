@@ -1,10 +1,24 @@
 import Cocoa
+import WebP
 
 class ConvertOperation: Operation {
     var fileURL: URL
     var compressionLevel: Int
     var isLossless: Bool
     var isNoAlpha: Bool
+    
+    var fileName: String {
+        return fileURL.lastPathComponent.replacingOccurrences(
+            of: fileURL.pathExtension,
+            with: "webp",
+            options: .caseInsensitive,
+            range: nil
+        )
+    }
+
+    var folder: URL {
+        return fileURL.deletingLastPathComponent()
+    }
     
     init(uuid: String, fileURL: URL, compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
         self.fileURL = fileURL
@@ -23,19 +37,25 @@ class ConvertOperation: Operation {
             return
         }
 
-        let converter = libwebp(fileURL: self.fileURL)
-        var fileStatus: FileStatus?
+        let encoder = WebPEncoder()
+        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: Float(compressionLevel))
+        config.lossless = isLossless ? 1 : 0
 
+        let input = try! Data(contentsOf: fileURL)
+        let output = try! encoder.encode(NSImage(data: input)!, config: config)
+        NSData(data: output).write(to: folder.appendingPathComponent(fileName), atomically: true)
+        
+        var fileStatus: FileStatus?
         for fs in AppDelegate.fileStatusList {
             if fs.uuid == self.name {
                 fileStatus = fs
             }
         }
+        
+        fileStatus?.beforeByteLength = input.count
+        fileStatus?.afterByteLength = output.count
 
-        fileStatus?.beforeByteLength = converter.beforeByteLength
-        let result = converter.encode(compressionLevel, isLossless: isLossless, isNoAlpha: isNoAlpha)
-        fileStatus?.afterByteLength = converter.afterByteLength
-        if result != 0 {
+        if input.count > output.count {
             fileStatus?.status = FileStatusType.finished
         } else {
             fileStatus?.status = FileStatusType.error
