@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		130281771B33A6CE004B5237 /* libwebpdemux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 130281741B33A6CE004B5237 /* libwebpdemux.a */; };
 		130281781B33A6CE004B5237 /* libwebpmux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 130281751B33A6CE004B5237 /* libwebpmux.a */; };
+		136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; };
 		13BA11E31B384C9A0014AD0C /* gif2webp in Resources */ = {isa = PBXBuildFile; fileRef = 13BA11E21B384C9A0014AD0C /* gif2webp */; };
 		13BA11E51B384CBA0014AD0C /* gif2webp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA11E41B384CBA0014AD0C /* gif2webp.swift */; };
 		13C91AA51B27083A008681BA /* libwebp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E7B9601AB9BD48003A3AFB /* libwebp.a */; };
@@ -57,6 +58,7 @@
 		130281741B33A6CE004B5237 /* libwebpdemux.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebpdemux.a; sourceTree = "<group>"; };
 		130281751B33A6CE004B5237 /* libwebpmux.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebpmux.a; sourceTree = "<group>"; };
 		130281761B33A6CE004B5237 /* mux_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mux_types.h; sourceTree = "<group>"; };
+		136A8CEF1FF7E1460031C7DA /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Carthage/Build/Mac/WebP.framework; sourceTree = "<group>"; };
 		13BA11E21B384C9A0014AD0C /* gif2webp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = gif2webp; sourceTree = "<group>"; };
 		13BA11E41B384CBA0014AD0C /* gif2webp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gif2webp.swift; sourceTree = "<group>"; };
 		13CB33711B1007BE005BB607 /* FileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStatus.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */,
 				130281771B33A6CE004B5237 /* libwebpdemux.a in Frameworks */,
 				13C91AA51B27083A008681BA /* libwebp.a in Frameworks */,
 				130281781B33A6CE004B5237 /* libwebpmux.a in Frameworks */,
@@ -106,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		136A8CEE1FF7E1460031C7DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				136A8CEF1FF7E1460031C7DA /* WebP.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		13C91AA21B270484008681BA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +188,7 @@
 				C7E945FF1A5FC9940024581F /* WebPonize */,
 				C7E946121A5FC9940024581F /* WebPonizeTests */,
 				C7E945FE1A5FC9940024581F /* Products */,
+				136A8CEE1FF7E1460031C7DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,6 +254,7 @@
 				C7E945FA1A5FC9940024581F /* Frameworks */,
 				C7E945FB1A5FC9940024581F /* Resources */,
 				13EF4E4E1AEA5092003DED37 /* CopyFiles */,
+				136A8CF11FF7E1580031C7DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -338,6 +351,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		136A8CF11FF7E1580031C7DA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/WebP.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7E945F91A5FC9940024581F /* Sources */ = {
@@ -488,6 +518,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/WebPonize",
 					"$(PROJECT_DIR)/WebPonize/Library",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -519,6 +550,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/WebPonize",
 					"$(PROJECT_DIR)/WebPonize/Library",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = WebPonize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
