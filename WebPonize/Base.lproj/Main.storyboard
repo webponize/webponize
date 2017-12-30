@@ -345,7 +345,7 @@
         <!--Window Controller-->
         <scene sceneID="7Ti-BI-Kb8">
             <objects>
-                <windowController id="6Iu-oU-O4Z" customClass="PreferenceWindowController" customModule="WebPonize" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="6Iu-oU-O4Z" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="AmF-Op-dF0" customClass="PreferenceWindow" customModule="WebPonize" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
                         <rect key="contentRect" x="200" y="200" width="480" height="270"/>
@@ -536,17 +536,6 @@
                                                         <action selector="onLosslessClicked:" target="5Li-iL-XEd" id="CBe-8v-sMG"/>
                                                     </connections>
                                                 </button>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xg9-UF-VgH">
-                                                    <rect key="frame" x="15" y="150" width="300" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="check" title="Discard any transparency information" bezelStyle="regularSquare" imagePosition="left" inset="2" id="gVz-Gh-4SJ">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="onNoAlphaClicked:" target="5Li-iL-XEd" id="VLT-JQ-afF"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </view>
                                     </tabViewItem>
@@ -558,7 +547,6 @@
                         <outlet property="compressionLevel" destination="7j6-b2-jRM" id="lIk-Bj-Mil"/>
                         <outlet property="compressionLevelText" destination="oJq-RZ-hGO" id="qbz-J2-2XU"/>
                         <outlet property="isLossless" destination="VQK-dd-9Fv" id="hPX-Ne-qEj"/>
-                        <outlet property="isNoAlpha" destination="xg9-UF-VgH" id="H7C-6c-mAN"/>
                     </connections>
                 </viewController>
                 <customObject id="zH1-wn-eMy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

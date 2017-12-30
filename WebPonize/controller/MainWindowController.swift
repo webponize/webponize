@@ -19,8 +19,7 @@ class MainWindowController: NSWindowController {
             }
             
             let compressionLevel = AppDelegate.appConfig.compressionLevel
-            let isLossless = AppDelegate.appConfig.isLossless
-            let isNoAlpha = AppDelegate.appConfig.isNoAlpha
+            let lossless = AppDelegate.appConfig.lossless
 
             for item in panel.urls {
                 let fileURL = URL(string: item.absoluteString as String!)!
@@ -40,8 +39,7 @@ class MainWindowController: NSWindowController {
                     uuid: uuid,
                     fileURL: fileURL,
                     compressionLevel: compressionLevel,
-                    isLossless: isLossless,
-                    isNoAlpha: isNoAlpha)
+                    lossless: lossless)
                 
                 AppDelegate.operationQueue.addOperation(operation)
             }

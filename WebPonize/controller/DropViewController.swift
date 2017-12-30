@@ -51,8 +51,7 @@ class DropViewController: NSViewController {
     
     func convertFiles(_ filePaths: [String]) {
         let compressionLevel = AppDelegate.appConfig.compressionLevel
-        let isLossless = AppDelegate.appConfig.isLossless
-        let isNoAlpha = AppDelegate.appConfig.isNoAlpha
+        let lossless = AppDelegate.appConfig.lossless
         
         for filePath in filePaths {
             let fileURL = URL(fileURLWithPath: filePath)
@@ -74,8 +73,7 @@ class DropViewController: NSViewController {
                 uuid: uuid,
                 fileURL: fileURL,
                 compressionLevel: compressionLevel,
-                isLossless: isLossless,
-                isNoAlpha: isNoAlpha)
+                lossless: lossless)
             
             AppDelegate.operationQueue.addOperation(operation)
         }

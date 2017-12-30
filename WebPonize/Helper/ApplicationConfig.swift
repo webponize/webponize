@@ -4,13 +4,12 @@ class ApplicationConfig: Preference {
     enum PreferenceKey: String {
         case isInitialized = "isInitialized"
         case compressionLevel = "compressionLevel"
-        case isLossless = "isLossless"
-        case isNoAlpha = "isNoAlpha"
+        case lossless = "lossless"
     }
     
-    var compressionLevel: Int {
+    var compressionLevel: Float {
         get {
-            return getIntValue(PreferenceKey.compressionLevel.rawValue)!
+            return getFloatValue(PreferenceKey.compressionLevel.rawValue)!
         }
 
         set {
@@ -18,26 +17,16 @@ class ApplicationConfig: Preference {
         }
     }
     
-    var isLossless: Bool {
+    var lossless: Int {
         get {
-            return getBoolValue(PreferenceKey.isLossless.rawValue)!
+            return getIntValue(PreferenceKey.lossless.rawValue)!
         }
 
         set {
-            self.setValue(PreferenceKey.isLossless.rawValue, value: newValue as AnyObject)
+            setValue(PreferenceKey.lossless.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var isNoAlpha: Bool {
-        get {
-            return getBoolValue(PreferenceKey.isNoAlpha.rawValue)!
-        }
-
-        set {
-            setValue(PreferenceKey.isNoAlpha.rawValue, value: newValue as AnyObject)
-        }
-    }
-
     init() {
         super.init(applicationId: "net.1000ch.WebPonize")
         setDefaultValues()
@@ -47,16 +36,14 @@ class ApplicationConfig: Preference {
         if getValue(PreferenceKey.isInitialized.rawValue) == nil {
             setValue(PreferenceKey.isInitialized.rawValue, value: true as AnyObject)
             setValue(PreferenceKey.compressionLevel.rawValue, value: 80 as AnyObject)
-            setValue(PreferenceKey.isLossless.rawValue, value: true as AnyObject)
-            setValue(PreferenceKey.isNoAlpha.rawValue, value: false as AnyObject)
+            setValue(PreferenceKey.lossless.rawValue, value: 0 as AnyObject)
         }
     }
 
     func getValues() -> Dictionary<String, AnyObject> {
         var values = Dictionary<String, AnyObject>()
         values[PreferenceKey.compressionLevel.rawValue] = compressionLevel as AnyObject?
-        values[PreferenceKey.isLossless.rawValue] = isLossless as AnyObject?
-        values[PreferenceKey.isNoAlpha.rawValue] = isNoAlpha as AnyObject?
+        values[PreferenceKey.lossless.rawValue] = lossless as AnyObject?
         return values
     }
 }

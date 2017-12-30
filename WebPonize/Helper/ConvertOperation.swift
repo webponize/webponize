@@ -3,9 +3,8 @@ import WebP
 
 class ConvertOperation: Operation {
     var fileURL: URL
-    var compressionLevel: Int
-    var isLossless: Bool
-    var isNoAlpha: Bool
+    var compressionLevel: Float
+    var lossless: Int
     
     var fileName: String {
         return fileURL.lastPathComponent.replacingOccurrences(
@@ -20,11 +19,10 @@ class ConvertOperation: Operation {
         return fileURL.deletingLastPathComponent()
     }
     
-    init(uuid: String, fileURL: URL, compressionLevel: Int, isLossless: Bool, isNoAlpha: Bool) {
+    init(uuid: String, fileURL: URL, compressionLevel: Float, lossless: Int) {
         self.fileURL = fileURL
         self.compressionLevel = compressionLevel
-        self.isLossless = isLossless
-        self.isNoAlpha = isNoAlpha
+        self.lossless = lossless
 
         super.init()
         
@@ -38,8 +36,8 @@ class ConvertOperation: Operation {
         }
 
         let encoder = WebPEncoder()
-        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: Float(compressionLevel))
-        config.lossless = isLossless ? 1 : 0
+        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: compressionLevel)
+        config.lossless = lossless
 
         let input = try! Data(contentsOf: fileURL)
         let output = try! encoder.encode(NSImage(data: input)!, config: config)

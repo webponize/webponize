@@ -27,6 +27,10 @@ class Preference: NSObject {
         return getValue(key) as? Int
     }
     
+    func getFloatValue(_ key: String) -> Float? {
+        return getValue(key) as? Float
+    }
+    
     func getBoolValue(_ key: String) -> Bool? {
         return getValue(key) as? Bool
     }
