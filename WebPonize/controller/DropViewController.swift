@@ -25,10 +25,6 @@ class DropViewController: NSViewController {
         super.viewDidLoad()
         
         scrollView.isHidden = true
-
-        //set in storyboard
-        //tableView.setDataSource(self)
-        //tableView.setDelegate(self)
         
         dropView.onPerformDragOperation = { sender -> Void in
             let filePaths = self.getDraggedFiles(sender)
@@ -51,7 +47,7 @@ class DropViewController: NSViewController {
     
     func getDraggedFiles(_ draggingInfo: NSDraggingInfo) -> [String] {
         let pboard = draggingInfo.draggingPasteboard()
-        return pboard.propertyList(forType: NSFilenamesPboardType) as! [String]
+        return pboard.propertyList(forType: NSPasteboard.PasteboardType.fileURL) as! [String]
     }
     
     func convertFiles(_ filePaths: [String]) {
@@ -95,18 +91,18 @@ extension DropViewController: NSTableViewDelegate, NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row rowIndex: Int) -> Any? {
         let data = AppDelegate.fileStatusList[rowIndex]
         
-        switch tableColumn!.identifier {
+        switch tableColumn!.identifier.rawValue {
         case "status":
             var image: NSImage?
             switch data.status {
             case FileStatusType.idle:
-                image = NSImage(named: "progress")
+                image = NSImage(named: NSImage.Name(rawValue: "progress"))
             case FileStatusType.processing:
-                image = NSImage(named: "progress")
+                image = NSImage(named: NSImage.Name(rawValue: "progress"))
             case FileStatusType.finished:
-                image = NSImage(named: "ok")
+                image = NSImage(named: NSImage.Name(rawValue: "ok"))
             case FileStatusType.error:
-                image = NSImage(named: "error")
+                image = NSImage(named: NSImage.Name(rawValue: "error"))
             }
             return image
         case "filePath":

@@ -7,14 +7,13 @@ class DropView: NSView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        let acceptDragTypes = [
-            NSPasteboardTypePNG,
-            NSColorPboardType,
-            NSFilenamesPboardType
-        ] as [String]
-
-        register(forDraggedTypes: acceptDragTypes)
+        
+        registerForDraggedTypes([
+            NSPasteboard.PasteboardType.png,
+            NSPasteboard.PasteboardType.color,
+            NSPasteboard.PasteboardType.fileNameType(forPathExtension: "png"),
+            NSPasteboard.PasteboardType.fileNameType(forPathExtension: "jpg")
+        ])
     }
     
     var onPerformDragOperation: ((_ sender: NSDraggingInfo) -> Void)?
@@ -41,7 +40,7 @@ extension DropView {
         onDraggingExitedHandler?(sender!)
     }
 
-    override func draggingEnded(_ sender: NSDraggingInfo?) {
-        onDraggingEndedHandler?(sender!)
+    override func draggingEnded(_ sender: NSDraggingInfo) {
+        onDraggingEndedHandler?(sender)
     }
 }

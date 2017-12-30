@@ -13,8 +13,8 @@ class MainWindowController: NSWindowController {
         panel.allowsMultipleSelection = true
         panel.allowedFileTypes = ["jpg", "png", "gif"]
         
-        panel.beginSheetModal(for: window!, completionHandler: {(result: Int) in
-            if result != NSModalResponseOK {
+        panel.beginSheetModal(for: window!, completionHandler: {(result: NSApplication.ModalResponse) in
+            if result != NSApplication.ModalResponse.OK {
                 return
             }
             
