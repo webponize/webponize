@@ -2,11 +2,8 @@ import Cocoa
 
 class DropViewController: NSViewController {
     @IBOutlet weak var dropView: DropView!
-    
     @IBOutlet weak var dropAreaView: DropAreaView!
-    
     @IBOutlet weak var scrollView: NSScrollView!
-    
     @IBOutlet weak var tableView: NSTableView!
     
     required init?(coder: NSCoder) {
@@ -47,7 +44,9 @@ class DropViewController: NSViewController {
     
     func getDraggedFiles(_ draggingInfo: NSDraggingInfo) -> [String] {
         let pboard = draggingInfo.draggingPasteboard()
-        return pboard.propertyList(forType: NSPasteboard.PasteboardType.fileURL) as! [String]
+        let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
+
+        return pboard.propertyList(forType: type) as! [String]
     }
     
     func convertFiles(_ filePaths: [String]) {

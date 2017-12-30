@@ -6,14 +6,14 @@ class DropAreaView: NSImageView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.image = dropImage
+        image = dropImage
     }
     
     func setHoverImage() {
-        self.image = dropImageHover
+        image = dropImageHover
     }
     
     func setImage() {
-        self.image = dropImage
+        image = dropImage
     }
 }

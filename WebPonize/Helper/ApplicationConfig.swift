@@ -54,9 +54,9 @@ class ApplicationConfig: Preference {
 
     func getValues() -> Dictionary<String, AnyObject> {
         var values = Dictionary<String, AnyObject>()
-        values["compressionLevel"] = compressionLevel as AnyObject?
-        values["isLossless"] = isLossless as AnyObject?
-        values["isNoAlpha"] = isNoAlpha as AnyObject?
+        values[PreferenceKey.compressionLevel.rawValue] = compressionLevel as AnyObject?
+        values[PreferenceKey.isLossless.rawValue] = isLossless as AnyObject?
+        values[PreferenceKey.isNoAlpha.rawValue] = isNoAlpha as AnyObject?
         return values
     }
 }

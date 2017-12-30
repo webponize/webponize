@@ -2,11 +2,8 @@ import Cocoa
 
 class PreferenceViewController: NSViewController {
     @IBOutlet weak var compressionLevelText: NSTextField!
-    
     @IBOutlet weak var compressionLevel: NSSlider!
-    
     @IBOutlet weak var isLossless: NSButton!
-    
     @IBOutlet weak var isNoAlpha: NSButton!
     
     required init?(coder: NSCoder) {

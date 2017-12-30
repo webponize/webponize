@@ -8,12 +8,7 @@ class DropView: NSView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        registerForDraggedTypes([
-            NSPasteboard.PasteboardType.png,
-            NSPasteboard.PasteboardType.color,
-            NSPasteboard.PasteboardType.fileNameType(forPathExtension: "png"),
-            NSPasteboard.PasteboardType.fileNameType(forPathExtension: "jpg")
-        ])
+        registerForDraggedTypes([.fileURL])
     }
     
     var onPerformDragOperation: ((_ sender: NSDraggingInfo) -> Void)?
@@ -33,7 +28,7 @@ class DropView: NSView {
 extension DropView {
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation  {
         onDraggingEnteredHandler?(sender)
-        return NSDragOperation.copy
+        return NSDragOperation.generic
     }
     
     override func draggingExited(_ sender: NSDraggingInfo?) {
