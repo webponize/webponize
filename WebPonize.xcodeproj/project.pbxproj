@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; };
+		136A8CF51FF8C1A70031C7DA /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */; };
 		13CB33721B1007BE005BB607 /* FileStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* FileStatus.swift */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		136A8CEF1FF7E1460031C7DA /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Carthage/Build/Mac/WebP.framework; sourceTree = "<group>"; };
+		136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		13CB33711B1007BE005BB607 /* FileStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStatus.swift; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				C7A61A501A846CEA00693007 /* DropViewController.swift */,
 				C7A61A511A846CEA00693007 /* PreferenceViewController.swift */,
 				C7A61A531A846CEA00693007 /* MainWindowController.swift */,
+				136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				C7A61A571A846CEA00693007 /* MainWindowController.swift in Sources */,
 				13CB33721B1007BE005BB607 /* FileStatus.swift in Sources */,
 				C7A61A4B1A846CE200693007 /* DropView.swift in Sources */,
+				136A8CF51FF8C1A70031C7DA /* PreferenceWindowController.swift in Sources */,
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,
 				C7D4C1471ABBAC27006254DA /* ConvertOperation.swift in Sources */,

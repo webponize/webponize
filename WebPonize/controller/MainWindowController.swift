@@ -1,10 +1,16 @@
 import Cocoa
 
-class MainWindowController: NSWindowController {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+class MainWindowController: NSWindowController {    
+    override func keyDown(with event: NSEvent) {
+        guard let char = event.charactersIgnoringModifiers else {
+            return
+        }
+        
+        if event.modifierFlags.contains(.command) && char == "w" {
+            close()
+        }
     }
-    
+
     @IBAction func openDocument(_ sender: AnyObject?) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = false

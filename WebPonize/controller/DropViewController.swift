@@ -39,9 +39,8 @@ class DropViewController: NSViewController {
         dropView.onDraggingEndedHandler = { sender -> Void in
             self.dropAreaView.setImage()
         }
-        
     }
-    
+        
     func getDraggedFiles(_ draggingInfo: NSDraggingInfo) -> [String] {
         let pboard = draggingInfo.draggingPasteboard()
         let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")

@@ -16,7 +16,7 @@ class PreferenceViewController: NSViewController {
         compressionLevel.intValue = Int32(AppDelegate.appConfig.compressionLevel)
         isLossless.intValue = Int32(AppDelegate.appConfig.lossless)
     }
-    
+        
     override func cancelOperation(_ sender: Any?) {
         view.window?.performClose(sender)
     }
