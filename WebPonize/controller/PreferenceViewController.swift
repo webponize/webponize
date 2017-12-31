@@ -17,12 +17,8 @@ class PreferenceViewController: NSViewController {
         isLossless.intValue = Int32(AppDelegate.appConfig.lossless)
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        
-        guard let window = view.window else {
-            return
-        }
+    override func cancelOperation(_ sender: Any?) {
+        view.window?.performClose(sender)
     }
     
     @IBAction func onCompressionLevelTextChanged(_ sender: NSTextField) {
