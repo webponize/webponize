@@ -1,15 +1,15 @@
 import Cocoa
 
-enum FileStatusType: Int {
+enum StatusType: Int {
     case idle
     case processing
     case finished
     case error
 }
 
-class FileStatus: NSObject {
+class Status: NSObject {
     var uuid: String
-    var status: FileStatusType
+    var status: StatusType
     var fileURL: URL
     var fileName: String {
         return fileURL.lastPathComponent.replacingOccurrences(
@@ -19,27 +19,27 @@ class FileStatus: NSObject {
             range: nil
         )
     }
-    var beforeByteLength: Int = 0
-    var afterByteLength: Int = 0
+    var beforeByte: Int = 0
+    var afterByte: Int = 0
     var savings: String {
-        if beforeByteLength == 0 {
+        if beforeByte == 0 {
             return ""
         }
 
-        if afterByteLength == 0 {
+        if afterByte == 0 {
             return ""
         }
 
-        let percent = 100 * Float(afterByteLength) / Float(beforeByteLength)
+        let percent = 100 * Float(afterByte) / Float(beforeByte)
 
         return String(format:"%.1f％", 100.0 - percent)
     }
     
-    init(uuid: String, status: FileStatusType, fileURL: URL, beforeByteLength: Int, afterByteLength: Int) {
+    init(uuid: String, status: StatusType, fileURL: URL, beforeByte: Int, afterByte: Int) {
         self.uuid = uuid
         self.status = status
         self.fileURL = fileURL
-        self.beforeByteLength = beforeByteLength
-        self.afterByteLength = afterByteLength
+        self.beforeByte = beforeByte
+        self.afterByte = afterByte
     }
 }

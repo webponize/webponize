@@ -23,31 +23,13 @@ class MainWindowController: NSWindowController {
             if result != NSApplication.ModalResponse.OK {
                 return
             }
-            
-            let compressionLevel = AppDelegate.appConfig.compressionLevel
-            let lossless = AppDelegate.appConfig.lossless
 
             for item in panel.urls {
-                let fileURL = URL(string: item.absoluteString as String!)!
-                let uuid = UUID().uuidString
-
-                AppDelegate.fileStatusList.append(
-                    FileStatus(
-                        uuid: uuid,
-                        status: FileStatusType.idle,
-                        fileURL: fileURL,
-                        beforeByteLength: 0,
-                        afterByteLength: 0
-                    )
-                )
+                guard let fileURL = URL(string: item.absoluteString) else {
+                    continue
+                }
                 
-                let operation = ConvertOperation(
-                    uuid: uuid,
-                    fileURL: fileURL,
-                    compressionLevel: compressionLevel,
-                    lossless: lossless)
-                
-                AppDelegate.operationQueue.addOperation(operation)
+                Convert.addFile(fileURL)
             }
         })
     }

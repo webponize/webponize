@@ -36,9 +36,8 @@ class PreferenceViewController: NSViewController {
     }
     
     @IBAction func onCompressionLevelChanged(_ sender: NSSlider) {
-        let value = Int(sender.intValue)
-        compressionLevelText.intValue = Int32(value)
-        AppDelegate.appConfig.compressionLevel = Float(value)
+        compressionLevelText.intValue = Int32(sender.intValue)
+        AppDelegate.appConfig.compressionLevel = Float(sender.intValue)
     }
     
     @IBAction func onLosslessClicked(_ sender: NSButton) {

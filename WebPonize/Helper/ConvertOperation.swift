@@ -2,6 +2,7 @@ import Cocoa
 import WebP
 
 class ConvertOperation: Operation {
+    var uuid = UUID().uuidString
     var fileURL: URL
     var compressionLevel: Float
     var lossless: Int
@@ -19,19 +20,18 @@ class ConvertOperation: Operation {
         return fileURL.deletingLastPathComponent()
     }
     
-    init(uuid: String, fileURL: URL, compressionLevel: Float, lossless: Int) {
+    init(fileURL: URL, compressionLevel: Float, lossless: Int) {
         self.fileURL = fileURL
         self.compressionLevel = compressionLevel
         self.lossless = lossless
 
         super.init()
         
-        name = uuid
         queuePriority = Operation.QueuePriority.normal
     }
 
     override func main() {
-        if self.isCancelled {
+        if isCancelled {
             return
         }
 
@@ -42,21 +42,15 @@ class ConvertOperation: Operation {
         let input = try! Data(contentsOf: fileURL)
         let output = try! encoder.encode(NSImage(data: input)!, config: config)
         NSData(data: output).write(to: folder.appendingPathComponent(fileName), atomically: true)
-        
-        var fileStatus: FileStatus?
-        for fs in AppDelegate.fileStatusList {
-            if fs.uuid == self.name {
-                fileStatus = fs
-            }
-        }
-        
-        fileStatus?.beforeByteLength = input.count
-        fileStatus?.afterByteLength = output.count
+                
+        let status = AppDelegate.statusList.filter({ $0.uuid == uuid }).first
+        status?.beforeByte = input.count
+        status?.afterByte = output.count
 
         if input.count > output.count {
-            fileStatus?.status = FileStatusType.finished
+            status?.status = StatusType.finished
         } else {
-            fileStatus?.status = FileStatusType.error
+            status?.status = StatusType.error
         }
     }
 }

@@ -7,31 +7,27 @@ class Preference: NSObject {
         self.applicationId = applicationId as CFString
     }
     
-    func setValue(_ key: String, value: AnyObject) {
-        let key = key as CFString
-
-        CFPreferencesSetAppValue(key, value, applicationId)
+    func set(_ key: String, value: AnyObject) {
+        CFPreferencesSetAppValue(key as CFString, value, applicationId)
     }
     
-    func getValue(_ key: String) -> CFPropertyList? {
-        let key = key as CFString
-
-        return CFPreferencesCopyAppValue(key, applicationId)
+    func get(_ key: String) -> CFPropertyList? {
+        return CFPreferencesCopyAppValue(key as CFString, applicationId)
     }
     
-    func getStringValue(_ key: String) -> String? {
-        return getValue(key) as? String
+    func getString(_ key: String) -> String? {
+        return get(key) as? String
     }
     
-    func getIntValue(_ key: String) -> Int? {
-        return getValue(key) as? Int
+    func getInt(_ key: String) -> Int? {
+        return get(key) as? Int
     }
     
-    func getFloatValue(_ key: String) -> Float? {
-        return getValue(key) as? Float
+    func getFloat(_ key: String) -> Float? {
+        return get(key) as? Float
     }
     
-    func getBoolValue(_ key: String) -> Bool? {
-        return getValue(key) as? Bool
+    func getBool(_ key: String) -> Bool? {
+        return get(key) as? Bool
     }
 }

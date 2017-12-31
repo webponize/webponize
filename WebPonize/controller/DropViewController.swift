@@ -8,7 +8,8 @@ class DropViewController: NSViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        AppDelegate.operationQueue.addObserver(self, forKeyPath: "operations", options: .new, context: nil)
+
+        AppDelegate.queue.addObserver(self, forKeyPath: "operations", options: .new, context: nil)
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -24,8 +25,17 @@ class DropViewController: NSViewController {
         scrollView.isHidden = true
         
         dropView.onPerformDragOperation = { sender -> Void in
-            let filePaths = self.getDraggedFiles(sender)
-            self.convertFiles(filePaths)
+            let pboard = sender.draggingPasteboard()
+            let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
+            let filePaths = pboard.propertyList(forType: type) as! [String]
+
+            let fileURLs = filePaths.map { filePath in
+                return URL(fileURLWithPath: filePath)
+            }
+            
+            for fileURL in fileURLs {
+                Convert.addFile(fileURL)
+            }
         }
         
         dropView.onDraggingEnteredHandler = { sender -> Void in
@@ -40,78 +50,34 @@ class DropViewController: NSViewController {
             self.dropAreaView.setImage()
         }
     }
-        
-    func getDraggedFiles(_ draggingInfo: NSDraggingInfo) -> [String] {
-        let pboard = draggingInfo.draggingPasteboard()
-        let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
-
-        return pboard.propertyList(forType: type) as! [String]
-    }
-    
-    func convertFiles(_ filePaths: [String]) {
-        let compressionLevel = AppDelegate.appConfig.compressionLevel
-        let lossless = AppDelegate.appConfig.lossless
-        
-        for filePath in filePaths {
-            let fileURL = URL(fileURLWithPath: filePath)
-            let uuid = UUID().uuidString
-            
-            AppDelegate.fileStatusList.append(
-                FileStatus(
-                    uuid: uuid,
-                    status: FileStatusType.idle,
-                    fileURL: fileURL,
-                    beforeByteLength: 0,
-                    afterByteLength: 0
-                )
-            )
-            
-            tableView.reloadData()
-
-            let operation = ConvertOperation(
-                uuid: uuid,
-                fileURL: fileURL,
-                compressionLevel: compressionLevel,
-                lossless: lossless)
-            
-            AppDelegate.operationQueue.addOperation(operation)
-        }
-    }
 }
 
 extension DropViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return AppDelegate.fileStatusList.count
+        return AppDelegate.statusList.count
     }
 
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row rowIndex: Int) -> Any? {
-        let data = AppDelegate.fileStatusList[rowIndex]
+        let data = AppDelegate.statusList[rowIndex]
         
         switch tableColumn!.identifier.rawValue {
         case "status":
             var image: NSImage?
             switch data.status {
-            case FileStatusType.idle:
+            case StatusType.idle:
                 image = NSImage(named: NSImage.Name(rawValue: "progress"))
-            case FileStatusType.processing:
+            case StatusType.processing:
                 image = NSImage(named: NSImage.Name(rawValue: "progress"))
-            case FileStatusType.finished:
-                image = NSImage(named: NSImage.Name(rawValue: "ok"))
-            case FileStatusType.error:
+            case StatusType.finished:
+                image = NSImage(named: NSImage.Name(rawValue: "OK"))
+            case StatusType.error:
                 image = NSImage(named: NSImage.Name(rawValue: "error"))
             }
             return image
-        case "filePath":
-            return data.fileURL.path
-        case "fileName":
+        case "file":
             return data.fileName
-        case "beforeByteLength":
-            return data.beforeByteLength
-        case "afterByteLength":
-            if data.afterByteLength == 0 {
-                return ""
-            }
-            return data.afterByteLength
+        case "size":
+            return data.afterByte == 0 ? "" : data.afterByte
         case "savings":
             return data.savings
         default:

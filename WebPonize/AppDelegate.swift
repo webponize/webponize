@@ -5,15 +5,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     static var appConfig = ApplicationConfig()
 
-    static var fileStatusList: [FileStatus] = []
+    static var statusList: [Status] = []
     
-    static var operationQueue = OperationQueue()
+    static var queue = OperationQueue()
     
     var mainWindow: NSWindow!
     
     override init() {
         super.init()
-        AppDelegate.operationQueue.maxConcurrentOperationCount = 1
+
+        AppDelegate.queue.maxConcurrentOperationCount = 1
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
