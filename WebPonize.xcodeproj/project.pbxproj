@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1311B2DF1FF921E500BED365 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1311B2DE1FF921E500BED365 /* Sparkle.framework */; };
+		135A2BDE1FFA2B2C00859ABD /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 135A2BDD1FFA2B2C00859ABD /* dsa_pub.pem */; };
 		136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; };
 		136A8CF51FF8C1A70031C7DA /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */; };
 		136A8CF71FF8CF5F0031C7DA /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A8CF61FF8CF5F0031C7DA /* Convert.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		1311B2DE1FF921E500BED365 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
+		135A2BDD1FFA2B2C00859ABD /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		136A8CEF1FF7E1460031C7DA /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Carthage/Build/Mac/WebP.framework; sourceTree = "<group>"; };
 		136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		136A8CF61FF8CF5F0031C7DA /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		135A2BDC1FFA2AB000859ABD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				135A2BDD1FFA2B2C00859ABD /* dsa_pub.pem */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		136A8CEE1FF7E1460031C7DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 		C7E945FF1A5FC9940024581F /* WebPonize */ = {
 			isa = PBXGroup;
 			children = (
+				135A2BDC1FFA2AB000859ABD /* Resources */,
 				13C91AA21B270484008681BA /* Helper */,
 				13CB33701B1006EB005BB607 /* Model */,
 				C7A61A421A846CE200693007 /* View */,
@@ -297,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E946071A5FC9940024581F /* Images.xcassets in Resources */,
+				135A2BDE1FFA2B2C00859ABD /* dsa_pub.pem in Resources */,
 				C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */,
 				C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */,
 			);
