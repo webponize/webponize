@@ -15,3 +15,4 @@ DerivedData
 *.ipa
 *.xcuserstate
 Carthage
+.DS_Store
