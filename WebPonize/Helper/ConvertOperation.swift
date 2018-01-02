@@ -4,7 +4,7 @@ import WebP
 class ConvertOperation: Operation {
     var uuid = UUID().uuidString
     var fileURL: URL
-    var compressionLevel: Float
+    var quality: Float
     var lossless: Int
     
     var fileName: String {
@@ -20,9 +20,9 @@ class ConvertOperation: Operation {
         return fileURL.deletingLastPathComponent()
     }
     
-    init(fileURL: URL, compressionLevel: Float, lossless: Int) {
+    init(fileURL: URL, quality: Float, lossless: Int) {
         self.fileURL = fileURL
-        self.compressionLevel = compressionLevel
+        self.quality = quality
         self.lossless = lossless
 
         super.init()
@@ -36,7 +36,7 @@ class ConvertOperation: Operation {
         }
 
         let encoder = WebPEncoder()
-        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: compressionLevel)
+        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: quality)
         config.lossless = lossless
 
         let input = try! Data(contentsOf: fileURL)

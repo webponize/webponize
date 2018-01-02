@@ -4,7 +4,7 @@ class Convert {
     static func addFile(_ fileURL: URL) {
         let operation = ConvertOperation(
             fileURL: fileURL,
-            compressionLevel: AppDelegate.appConfig.compressionLevel,
+            quality: AppDelegate.appConfig.quality,
             lossless: AppDelegate.appConfig.lossless
         )
         
