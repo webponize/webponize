@@ -4,8 +4,6 @@ import WebP
 class ConvertOperation: Operation {
     var uuid = UUID().uuidString
     var fileURL: URL
-    var quality: Float
-    var lossless: Int
     
     var fileName: String {
         return fileURL.lastPathComponent.replacingOccurrences(
@@ -20,10 +18,8 @@ class ConvertOperation: Operation {
         return fileURL.deletingLastPathComponent()
     }
     
-    init(fileURL: URL, quality: Float, lossless: Int) {
+    init(fileURL: URL) {
         self.fileURL = fileURL
-        self.quality = quality
-        self.lossless = lossless
 
         super.init()
         
@@ -36,8 +32,16 @@ class ConvertOperation: Operation {
         }
 
         let encoder = WebPEncoder()
-        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: quality)
-        config.lossless = lossless
+        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: AppDelegate.appConfig.quality)
+        config.method = AppDelegate.appConfig.speed
+        config.lossless = AppDelegate.appConfig.lossless
+        config.filterStrength = AppDelegate.appConfig.filterStrength
+        config.filterSharpness = AppDelegate.appConfig.filterSharpness
+        config.filterType = AppDelegate.appConfig.filterType
+        config.autofilter = AppDelegate.appConfig.autoFilter
+        config.alphaQuality = AppDelegate.appConfig.alphaQuality
+        config.alphaFiltering = AppDelegate.appConfig.alphaFiltering
+        config.alphaCompression = AppDelegate.appConfig.alphaCompression
 
         let input = try! Data(contentsOf: fileURL)
         let output = try! encoder.encode(NSImage(data: input)!, config: config)

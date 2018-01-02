@@ -2,12 +2,7 @@ import Foundation
 
 class Convert {
     static func addFile(_ fileURL: URL) {
-        let operation = ConvertOperation(
-            fileURL: fileURL,
-            quality: AppDelegate.appConfig.quality,
-            lossless: AppDelegate.appConfig.lossless
-        )
-        
+        let operation = ConvertOperation(fileURL: fileURL)
         let status = Status(
             uuid: operation.uuid,
             status: StatusType.idle,
