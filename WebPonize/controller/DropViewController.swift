@@ -2,9 +2,12 @@ import Cocoa
 
 class DropViewController: NSViewController {
     @IBOutlet weak var dropView: DropView!
-    @IBOutlet weak var dropAreaView: DropAreaView!
+    @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet weak var tableView: NSTableView!
+    
+    var imageDefault = NSImage(named: NSImage.Name(rawValue: "drop-area"))
+    var imageHover = NSImage(named: NSImage.Name(rawValue: "drop-area-hover"))
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -23,6 +26,7 @@ class DropViewController: NSViewController {
         super.viewDidLoad()
         
         scrollView.isHidden = true
+        imageView.image = imageDefault
         
         dropView.onPerformDragOperation = { sender -> Void in
             let pboard = sender.draggingPasteboard()
@@ -39,15 +43,15 @@ class DropViewController: NSViewController {
         }
         
         dropView.onDraggingEnteredHandler = { sender -> Void in
-            self.dropAreaView.setHoverImage()
+            self.imageView.image = self.imageHover
         }
         
         dropView.onDraggingExitedHandler = { sender -> Void in
-            self.dropAreaView.setImage()
+            self.imageView.image = self.imageDefault
         }
         
         dropView.onDraggingEndedHandler = { sender -> Void in
-            self.dropAreaView.setImage()
+            self.imageView.image = self.imageDefault
         }
     }
 }

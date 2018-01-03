@@ -15,7 +15,6 @@
 		13CB33721B1007BE005BB607 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* Status.swift */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
-		C7A61A4A1A846CE200693007 /* DropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A441A846CE200693007 /* DropAreaView.swift */; };
 		C7A61A4B1A846CE200693007 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A451A846CE200693007 /* DropView.swift */; };
 		C7A61A541A846CEA00693007 /* DropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A501A846CEA00693007 /* DropViewController.swift */; };
 		C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A511A846CEA00693007 /* PreferenceViewController.swift */; };
@@ -59,7 +58,6 @@
 		13CB33711B1007BE005BB607 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
-		C7A61A441A846CE200693007 /* DropAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropAreaView.swift; sourceTree = "<group>"; };
 		C7A61A451A846CE200693007 /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 		C7A61A501A846CEA00693007 /* DropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropViewController.swift; sourceTree = "<group>"; };
 		C7A61A511A846CEA00693007 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 		C7A61A421A846CE200693007 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C7A61A441A846CE200693007 /* DropAreaView.swift */,
 				C7A61A451A846CE200693007 /* DropView.swift */,
 			);
 			path = View;
@@ -354,7 +351,6 @@
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,
 				C7D4C1471ABBAC27006254DA /* ConvertOperation.swift in Sources */,
-				C7A61A4A1A846CE200693007 /* DropAreaView.swift in Sources */,
 				C7A61A551A846CEA00693007 /* PreferenceViewController.swift in Sources */,
 				C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */,
 				C7A61A541A846CEA00693007 /* DropViewController.swift in Sources */,
