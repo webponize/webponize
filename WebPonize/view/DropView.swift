@@ -18,6 +18,26 @@ class DropView: NSView {
 }
 
 extension DropView {
+    override var acceptsFirstResponder: Bool {
+        return true
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        guard let char = event.charactersIgnoringModifiers else {
+            return
+        }
+        
+        if event.modifierFlags.contains(.command) && char == "w" {
+            window?.performClose(event)
+        }
+    }
+}
+
+extension DropView {
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         onPerformDragOperation?(sender)
         return true

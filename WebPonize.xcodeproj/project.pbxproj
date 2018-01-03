@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1311B2DF1FF921E500BED365 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1311B2DE1FF921E500BED365 /* Sparkle.framework */; };
+		131B9F041FFCB6F900F86091 /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131B9F031FFCB6F900F86091 /* PreferenceView.swift */; };
 		135A2BDE1FFA2B2C00859ABD /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 135A2BDD1FFA2B2C00859ABD /* dsa_pub.pem */; };
 		136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; };
-		136A8CF51FF8C1A70031C7DA /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */; };
 		136A8CF71FF8CF5F0031C7DA /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A8CF61FF8CF5F0031C7DA /* Convert.swift */; };
 		13CB33721B1007BE005BB607 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* Status.swift */; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
@@ -51,9 +51,9 @@
 
 /* Begin PBXFileReference section */
 		1311B2DE1FF921E500BED365 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
+		131B9F031FFCB6F900F86091 /* PreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
 		135A2BDD1FFA2B2C00859ABD /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		136A8CEF1FF7E1460031C7DA /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = Carthage/Build/Mac/WebP.framework; sourceTree = "<group>"; };
-		136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		136A8CF61FF8CF5F0031C7DA /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		13CB33711B1007BE005BB607 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C76FD97E1A838EBC0036F4BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
@@ -136,7 +136,6 @@
 				C7A61A501A846CEA00693007 /* DropViewController.swift */,
 				C7A61A511A846CEA00693007 /* PreferenceViewController.swift */,
 				C7A61A531A846CEA00693007 /* MainWindowController.swift */,
-				136A8CF41FF8C1A70031C7DA /* PreferenceWindowController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				C7A61A451A846CE200693007 /* DropView.swift */,
+				131B9F031FFCB6F900F86091 /* PreferenceView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 				136A8CF71FF8CF5F0031C7DA /* Convert.swift in Sources */,
 				13CB33721B1007BE005BB607 /* Status.swift in Sources */,
 				C7A61A4B1A846CE200693007 /* DropView.swift in Sources */,
-				136A8CF51FF8C1A70031C7DA /* PreferenceWindowController.swift in Sources */,
+				131B9F041FFCB6F900F86091 /* PreferenceView.swift in Sources */,
 				C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */,
 				C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */,
 				C7D4C1471ABBAC27006254DA /* ConvertOperation.swift in Sources */,

@@ -34,11 +34,7 @@ class PreferenceViewController: NSViewController {
         alphaFiltering.intValue = Int32(AppDelegate.appConfig.alphaFiltering)
         alphaCompression.intValue = Int32(AppDelegate.appConfig.alphaCompression)
     }
-
-    override func cancelOperation(_ sender: Any?) {
-        view.window?.performClose(sender)
-    }
-    
+        
     @IBAction func onQualityChanged(_ sender: NSSlider) {
         AppDelegate.appConfig.quality = Float(sender.intValue)
     }
