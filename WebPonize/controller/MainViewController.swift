@@ -38,7 +38,7 @@ class MainViewController: NSViewController {
             }
             
             for fileURL in fileURLs {
-                Convert.addFile(fileURL)
+                ConvertManager.addFile(fileURL)
             }
         }
         

@@ -19,7 +19,7 @@ class MainWindowController: NSWindowController {
                     continue
                 }
                 
-                Convert.addFile(fileURL)
+                ConvertManager.addFile(fileURL)
             }
         })
     }

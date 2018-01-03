@@ -1,6 +1,6 @@
 import Foundation
 
-class Convert {
+class ConvertManager {
     static func addFile(_ fileURL: URL) {
         let operation = ConvertOperation(fileURL: fileURL)
         let status = Status(

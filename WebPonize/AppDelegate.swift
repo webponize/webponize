@@ -2,11 +2,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
     static var appConfig = ApplicationConfig()
-
     static var statusList: [Status] = []
-    
     static var queue = OperationQueue()
     
     var mainWindow: NSWindow!
