@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="74" y="-38"/>
         </scene>
-        <!--Drop View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="2lQ-yE-iMt">
             <objects>
-                <viewController id="u4e-J6-W0I" customClass="DropViewController" customModule="WebPonize" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u4e-J6-W0I" customClass="MainViewController" customModule="WebPonize" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="D6T-X1-IRe">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -216,7 +216,7 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="VvT-PK-YyK"/>
                             </imageView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LVA-l0-OWP" customClass="DropView" customModule="WebPonize" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LVA-l0-OWP" customClass="MainView" customModule="WebPonize" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vn-hJ-Ee1">
@@ -319,8 +319,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dropView" destination="LVA-l0-OWP" id="5eX-ee-aGk"/>
                         <outlet property="imageView" destination="aJN-WU-dgz" id="Ha7-yD-iNq"/>
+                        <outlet property="mainView" destination="LVA-l0-OWP" id="Pww-uV-ULb"/>
                         <outlet property="scrollView" destination="5vn-hJ-Ee1" id="l6h-si-BVA"/>
                         <outlet property="tableView" destination="Jcr-tG-Dg5" id="gAv-X5-U8I"/>
                     </connections>
@@ -365,7 +365,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="General" identifier="1" id="17w-T3-byb">
-                                        <view key="view" id="Rde-Yx-54H">
+                                        <view key="view" ambiguous="YES" id="Rde-Yx-54H">
                                             <rect key="frame" x="10" y="33" width="189" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -815,7 +815,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Alpha" identifier="" id="fyg-Bc-mlb" userLabel="Alpha">
-                                        <view key="view" ambiguous="YES" id="74w-AU-o7G">
+                                        <view key="view" id="74w-AU-o7G">
                                             <rect key="frame" x="10" y="33" width="440" height="254"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>

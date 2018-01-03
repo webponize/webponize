@@ -1,7 +1,7 @@
 import Cocoa
 
-class DropViewController: NSViewController {
-    @IBOutlet weak var dropView: DropView!
+class MainViewController: NSViewController {
+    @IBOutlet weak var mainView: MainView!
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet weak var tableView: NSTableView!
@@ -28,7 +28,7 @@ class DropViewController: NSViewController {
         scrollView.isHidden = true
         imageView.image = imageDefault
         
-        dropView.onPerformDragOperation = { sender -> Void in
+        mainView.onPerformDragOperation = { sender -> Void in
             let pboard = sender.draggingPasteboard()
             let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
             let filePaths = pboard.propertyList(forType: type) as! [String]
@@ -42,21 +42,21 @@ class DropViewController: NSViewController {
             }
         }
         
-        dropView.onDraggingEnteredHandler = { sender -> Void in
+        mainView.onDraggingEnteredHandler = { sender -> Void in
             self.imageView.image = self.imageHover
         }
         
-        dropView.onDraggingExitedHandler = { sender -> Void in
+        mainView.onDraggingExitedHandler = { sender -> Void in
             self.imageView.image = self.imageDefault
         }
         
-        dropView.onDraggingEndedHandler = { sender -> Void in
+        mainView.onDraggingEndedHandler = { sender -> Void in
             self.imageView.image = self.imageDefault
         }
     }
 }
 
-extension DropViewController: NSTableViewDelegate, NSTableViewDataSource {
+extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return AppDelegate.statusList.count
     }

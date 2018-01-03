@@ -1,6 +1,6 @@
 import Cocoa
 
-class DropView: NSView {
+class MainView: NSView {
     var onPerformDragOperation: ((_ sender: NSDraggingInfo) -> Void)?
     var onDraggingEnteredHandler: ((_ sender: NSDraggingInfo) -> Void)?
     var onDraggingExitedHandler: ((_ sender: NSDraggingInfo) -> Void)?
@@ -17,7 +17,7 @@ class DropView: NSView {
     }
 }
 
-extension DropView {
+extension MainView {
     override var acceptsFirstResponder: Bool {
         return true
     }
@@ -37,7 +37,7 @@ extension DropView {
     }
 }
 
-extension DropView {
+extension MainView {
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         onPerformDragOperation?(sender)
         return true
