@@ -1,8 +1,7 @@
 import Cocoa
 
 class ApplicationConfig: Preference {
-    enum PreferenceKey: String {
-        case initialized = "initialized"
+    enum Key: String {
         case quality = "quality"
         case speed = "speed"
         case lossless = "lossless"
@@ -15,121 +14,80 @@ class ApplicationConfig: Preference {
         case alphaCompression = "alphaCompression"
     }
     
-    var quality: Float {
-        get {
-            return getFloat(PreferenceKey.quality.rawValue)!
-        }
-
-        set {
-            set(PreferenceKey.quality.rawValue, value: newValue as AnyObject)
+    var quality: Float = 80 {
+        willSet {
+            set(Key.quality.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var speed: Int {
-        get {
-            return getInt(PreferenceKey.speed.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.speed.rawValue, value: newValue as AnyObject)
+    var speed: Int = 0 {
+        willSet {
+            set(Key.speed.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var lossless: Int {
-        get {
-            return getInt(PreferenceKey.lossless.rawValue)!
-        }
-
-        set {
-            set(PreferenceKey.lossless.rawValue, value: newValue as AnyObject)
+    var lossless: Int = 0 {
+        willSet {
+            set(Key.lossless.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var filterStrength: Int {
-        get {
-            return getInt(PreferenceKey.filterStrength.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.filterStrength.rawValue, value: newValue as AnyObject)
+    var filterStrength: Int = 0 {
+        willSet {
+            set(Key.filterStrength.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var filterSharpness: Int {
-        get {
-            return getInt(PreferenceKey.filterSharpness.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.filterSharpness.rawValue, value: newValue as AnyObject)
+    var filterSharpness: Int = 0 {
+        willSet {
+            set(Key.filterSharpness.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var filterType: Int {
-        get {
-            return getInt(PreferenceKey.filterType.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.filterType.rawValue, value: newValue as AnyObject)
+    var filterType: Int = 0 {
+        willSet {
+            set(Key.filterType.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var autoFilter: Int {
-        get {
-            return getInt(PreferenceKey.autoFilter.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.autoFilter.rawValue, value: newValue as AnyObject)
+    var autoFilter: Int = 0 {
+        willSet {
+            set(Key.autoFilter.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var alphaQuality: Int {
-        get {
-            return getInt(PreferenceKey.alphaQuality.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.alphaQuality.rawValue, value: newValue as AnyObject)
+    var alphaQuality: Int = 100 {
+        willSet {
+            set(Key.alphaQuality.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var alphaFiltering: Int {
-        get {
-            return getInt(PreferenceKey.alphaFiltering.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.alphaFiltering.rawValue, value: newValue as AnyObject)
+    var alphaFiltering: Int = 1 {
+        willSet {
+            set(Key.alphaFiltering.rawValue, value: newValue as AnyObject)
         }
     }
     
-    var alphaCompression: Int {
-        get {
-            return getInt(PreferenceKey.alphaCompression.rawValue)!
-        }
-        
-        set {
-            set(PreferenceKey.alphaCompression.rawValue, value: newValue as AnyObject)
+    var alphaCompression: Int = 1 {
+        willSet {
+            set(Key.alphaCompression.rawValue, value: newValue as AnyObject)
         }
     }
     
     init() {
         super.init(applicationId: "net.1000ch.WebPonize")
-
-        if get(PreferenceKey.initialized.rawValue) == nil {
-            set(PreferenceKey.initialized.rawValue, value: true as AnyObject)
-            set(PreferenceKey.quality.rawValue, value: 80 as AnyObject)
-            set(PreferenceKey.speed.rawValue, value: 0 as AnyObject)
-            set(PreferenceKey.lossless.rawValue, value: 0 as AnyObject)
-            set(PreferenceKey.filterStrength.rawValue, value: 0 as AnyObject)
-            set(PreferenceKey.filterSharpness.rawValue, value: 0 as AnyObject)
-            set(PreferenceKey.filterType.rawValue, value: 0 as AnyObject)
-            set(PreferenceKey.autoFilter.rawValue, value: 0 as AnyObject)
-            set(PreferenceKey.alphaQuality.rawValue, value: 100 as AnyObject)
-            set(PreferenceKey.alphaFiltering.rawValue, value: 1 as AnyObject)
-            set(PreferenceKey.alphaCompression.rawValue, value: 1 as AnyObject)
-        }
+        
+        quality = has(Key.quality.rawValue) ? get(Key.quality.rawValue) as! Float : quality
+        speed = has(Key.speed.rawValue) ? get(Key.speed.rawValue) as! Int : speed
+        lossless = has(Key.lossless.rawValue) ? get(Key.lossless.rawValue) as! Int : lossless
+        
+        filterStrength = has(Key.filterStrength.rawValue) ? get(Key.filterStrength.rawValue) as! Int : filterStrength
+        filterSharpness = has(Key.filterSharpness.rawValue) ? get(Key.filterSharpness.rawValue) as! Int : filterSharpness
+        filterType = has(Key.filterType.rawValue) ? get(Key.filterType.rawValue) as! Int : filterType
+        autoFilter = has(Key.autoFilter.rawValue) ? get(Key.autoFilter.rawValue) as! Int : autoFilter
+        
+        alphaQuality = has(Key.alphaQuality.rawValue) ? get(Key.alphaQuality.rawValue) as! Int : alphaQuality
+        alphaFiltering = has(Key.alphaFiltering.rawValue) ? get(Key.alphaFiltering.rawValue) as! Int : alphaFiltering
+        alphaCompression = has(Key.alphaCompression.rawValue) ? get(Key.alphaCompression.rawValue) as! Int : alphaCompression
     }
 }

@@ -15,19 +15,7 @@ class Preference: NSObject {
         return CFPreferencesCopyAppValue(key as CFString, applicationId)
     }
     
-    func getString(_ key: String) -> String? {
-        return get(key) as? String
-    }
-    
-    func getInt(_ key: String) -> Int? {
-        return get(key) as? Int
-    }
-    
-    func getFloat(_ key: String) -> Float? {
-        return get(key) as? Float
-    }
-    
-    func getBool(_ key: String) -> Bool? {
-        return get(key) as? Bool
+    func has(_ key: String) -> Bool {
+        return CFPreferencesCopyAppValue(key as CFString, applicationId) != nil
     }
 }
