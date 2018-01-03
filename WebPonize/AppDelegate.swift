@@ -6,7 +6,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     static var statusList: [Status] = []
     static var queue = OperationQueue()
     
-    var mainWindow: NSWindow!
+    var mainWindow: NSWindow?
     
     override init() {
         super.init()
@@ -15,12 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        mainWindow = NSApplication.shared.windows[0] 
+        mainWindow = NSApplication.shared.windows.first
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag {
-            mainWindow.makeKeyAndOrderFront(nil)
+            mainWindow?.makeKeyAndOrderFront(nil)
         }
         
         return true
