@@ -13,10 +13,6 @@ class PreferenceViewController: NSViewController {
     @IBOutlet weak var alphaQuality: NSSlider!
     @IBOutlet weak var alphaFiltering: NSSlider!
     @IBOutlet weak var alphaCompression: NSButton!
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

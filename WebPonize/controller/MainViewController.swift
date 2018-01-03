@@ -9,22 +9,9 @@ class MainViewController: NSViewController {
     var imageDefault = NSImage(named: NSImage.Name(rawValue: "drop-area"))
     var imageHover = NSImage(named: NSImage.Name(rawValue: "drop-area-hover"))
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        AppDelegate.queue.addObserver(self, forKeyPath: "operations", options: .new, context: nil)
-    }
-
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        DispatchQueue.main.async(execute: { [weak self] in
-            self?.scrollView.isHidden = false
-            self?.tableView.reloadData()
-        })
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         scrollView.isHidden = true
         imageView.image = imageDefault
         
@@ -53,6 +40,15 @@ class MainViewController: NSViewController {
         mainView.onDraggingEndedHandler = { sender -> Void in
             self.imageView.image = self.imageDefault
         }
+        
+        AppDelegate.queue.addObserver(self, forKeyPath: "operations", options: .new, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        DispatchQueue.main.async(execute: { [weak self] in
+            self?.scrollView.isHidden = false
+            self?.tableView.reloadData()
+        })
     }
 }
 

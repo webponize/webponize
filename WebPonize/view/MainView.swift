@@ -6,10 +6,6 @@ class MainView: NSView {
     var onDraggingExitedHandler: ((_ sender: NSDraggingInfo) -> Void)?
     var onDraggingEndedHandler: ((_ sender: NSDraggingInfo) -> Void)?
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
