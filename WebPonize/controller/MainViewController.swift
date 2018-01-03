@@ -8,6 +8,9 @@ class MainViewController: NSViewController {
     
     var imageDefault = NSImage(named: NSImage.Name(rawValue: "drop-area"))
     var imageHover = NSImage(named: NSImage.Name(rawValue: "drop-area-hover"))
+    var imageProgress = NSImage(named: NSImage.Name(rawValue: "progress"))
+    var imageOk = NSImage(named: NSImage.Name(rawValue: "OK"))
+    var imageError = NSImage(named: NSImage.Name(rawValue: "error"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,18 +65,16 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
         
         switch tableColumn!.identifier.rawValue {
         case "status":
-            var image: NSImage?
             switch data.status {
             case StatusType.idle:
-                image = NSImage(named: NSImage.Name(rawValue: "progress"))
+                return imageProgress
             case StatusType.processing:
-                image = NSImage(named: NSImage.Name(rawValue: "progress"))
+                return imageProgress
             case StatusType.finished:
-                image = NSImage(named: NSImage.Name(rawValue: "OK"))
+                return imageOk
             case StatusType.error:
-                image = NSImage(named: NSImage.Name(rawValue: "error"))
+                return imageError
             }
-            return image
         case "file":
             return data.fileName
         case "size":
