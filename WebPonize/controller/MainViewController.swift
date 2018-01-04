@@ -44,14 +44,17 @@ class MainViewController: NSViewController {
             self.imageView.image = self.imageDefault
         }
         
-        AppDelegate.queue.addObserver(self, forKeyPath: "operations", options: .new, context: nil)
+        AppDelegate.queue.addObserver(self, forKeyPath: "operationCount", options: .new, context: nil)
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        DispatchQueue.main.async(execute: { [weak self] in
-            self?.scrollView.isHidden = false
-            self?.tableView.reloadData()
-        })
+        DispatchQueue.main.async {
+            if self.scrollView.isHidden {
+                self.scrollView.isHidden = false
+            }
+
+            self.tableView.reloadData()
+        }
     }
 }
 
