@@ -111,17 +111,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		13C91AA21B270484008681BA /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
-				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
-				C7D4C1461ABBAC27006254DA /* ConvertOperation.swift */,
-				136A8CF61FF8CF5F0031C7DA /* ConvertManager.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		13CB33701B1006EB005BB607 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,11 +161,14 @@
 			isa = PBXGroup;
 			children = (
 				135A2BDC1FFA2AB000859ABD /* Resources */,
-				13C91AA21B270484008681BA /* Helper */,
 				13CB33701B1006EB005BB607 /* Model */,
 				C7A61A421A846CE200693007 /* View */,
 				C7A61A401A846C1200693007 /* Controller */,
 				C7E946021A5FC9940024581F /* AppDelegate.swift */,
+				C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */,
+				136A8CF61FF8CF5F0031C7DA /* ConvertManager.swift */,
+				C7D4C1461ABBAC27006254DA /* ConvertOperation.swift */,
+				C76FD97E1A838EBC0036F4BA /* Preference.swift */,
 				C7E946061A5FC9940024581F /* Images.xcassets */,
 				C7E946081A5FC9940024581F /* Main.storyboard */,
 				C7E946001A5FC9940024581F /* Supporting Files */,
