@@ -79,7 +79,7 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
                 return imageError
             }
         case "file":
-            return data.fileName
+            return data.operation.destURL.lastPathComponent
         case "size":
             return data.afterByte == 0 ? "" : data.afterByte
         case "savings":

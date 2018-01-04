@@ -8,17 +8,8 @@ enum StatusType: Int {
 }
 
 class Status: NSObject {
-    var uuid: String
-    var status: StatusType
-    var fileURL: URL
-    var fileName: String {
-        return fileURL.lastPathComponent.replacingOccurrences(
-            of: fileURL.pathExtension,
-            with: "webp",
-            options: .caseInsensitive,
-            range: nil
-        )
-    }
+    var status: StatusType = StatusType.idle
+    var operation: ConvertOperation
     var beforeByte: Int = 0
     var afterByte: Int = 0
     var savings: String {
@@ -35,11 +26,7 @@ class Status: NSObject {
         return String(format:"%.1f％", 100.0 - percent)
     }
     
-    init(uuid: String, status: StatusType, fileURL: URL, beforeByte: Int, afterByte: Int) {
-        self.uuid = uuid
-        self.status = status
-        self.fileURL = fileURL
-        self.beforeByte = beforeByte
-        self.afterByte = afterByte
+    init(_ operation: ConvertOperation) {
+        self.operation = operation
     }
 }

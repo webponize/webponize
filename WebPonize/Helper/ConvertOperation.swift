@@ -4,26 +4,22 @@ import WebP
 class ConvertOperation: Operation {
     var uuid = UUID().uuidString
     var fileURL: URL
-    
-    var fileName: String {
-        return fileURL.lastPathComponent.replacingOccurrences(
+    var destURL: URL {
+        let folder = fileURL.deletingLastPathComponent()
+        let file = fileURL.lastPathComponent.replacingOccurrences(
             of: fileURL.pathExtension,
             with: "webp",
             options: .caseInsensitive,
             range: nil
         )
-    }
 
-    var folder: URL {
-        return fileURL.deletingLastPathComponent()
+        return folder.appendingPathComponent(file)
     }
-    
-    init(fileURL: URL) {
+        
+    init(_ fileURL: URL) {
         self.fileURL = fileURL
 
         super.init()
-        
-        queuePriority = Operation.QueuePriority.normal
     }
 
     override func main() {
@@ -31,7 +27,7 @@ class ConvertOperation: Operation {
             return
         }
 
-        guard let status = AppDelegate.statusList.filter({ $0.uuid == uuid }).first else {
+        guard let status = AppDelegate.statusList.filter({ $0.operation.uuid == uuid }).first else {
             return
         }
 
@@ -50,7 +46,7 @@ class ConvertOperation: Operation {
         do {
             let input = try Data(contentsOf: fileURL)
             let output = try encoder.encode(NSImage(data: input)!, config: config)
-            NSData(data: output).write(to: folder.appendingPathComponent(fileName), atomically: true)
+            NSData(data: output).write(to: destURL, atomically: true)
             
             status.beforeByte = input.count
             status.afterByte = output.count
