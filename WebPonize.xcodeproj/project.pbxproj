@@ -25,7 +25,6 @@
 		C7E946031A5FC9940024581F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946021A5FC9940024581F /* AppDelegate.swift */; };
 		C7E946071A5FC9940024581F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E946061A5FC9940024581F /* Images.xcassets */; };
 		C7E9460A1A5FC9940024581F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7E946081A5FC9940024581F /* Main.storyboard */; };
-		C7E946161A5FC9940024581F /* ApplicationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E946151A5FC9940024581F /* ApplicationConfigTests.swift */; };
 		C7F4ADB71AA720A100F9A696 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C7F4ADB61AA720A100F9A696 /* Credits.html */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		C7E946091A5FC9940024581F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7E9460F1A5FC9940024581F /* WebPonizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebPonizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E946141A5FC9940024581F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7E946151A5FC9940024581F /* ApplicationConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfigTests.swift; sourceTree = "<group>"; };
 		C7F4ADB61AA720A100F9A696 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +188,6 @@
 		C7E946121A5FC9940024581F /* WebPonizeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C7E946151A5FC9940024581F /* ApplicationConfigTests.swift */,
 				C7E946131A5FC9940024581F /* Supporting Files */,
 			);
 			path = WebPonizeTests;
@@ -357,7 +354,6 @@
 			files = (
 				136A39B51FFE81AA00E7A754 /* ApplicationConfig.swift in Sources */,
 				136A39B61FFE81D700E7A754 /* Preference.swift in Sources */,
-				C7E946161A5FC9940024581F /* ApplicationConfigTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
