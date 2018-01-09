@@ -240,7 +240,7 @@
                                                             <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="g8Z-Fc-dXg"/>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
-                                                        <tableColumn identifier="file" editable="NO" width="300" minWidth="120" maxWidth="1000" id="9uh-20-02X">
+                                                        <tableColumn identifier="file" editable="NO" width="300" maxWidth="1000" id="9uh-20-02X">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="File">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -253,7 +253,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
-                                                        <tableColumn identifier="size" width="80" minWidth="40" maxWidth="80" id="PFt-g4-TKc">
+                                                        <tableColumn identifier="size" width="80" minWidth="80" maxWidth="80" id="PFt-g4-TKc">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Size">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -266,7 +266,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                         </tableColumn>
-                                                        <tableColumn identifier="savings" editable="NO" width="80" minWidth="40" maxWidth="80" id="Vm0-g3-WSk">
+                                                        <tableColumn identifier="savings" editable="NO" width="80" minWidth="80" maxWidth="80" id="Vm0-g3-WSk">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Savings">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -302,20 +302,20 @@
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5vn-hJ-Ee1" firstAttribute="top" secondItem="LVA-l0-OWP" secondAttribute="top" id="Ocw-UH-yjs"/>
-                                    <constraint firstAttribute="bottom" secondItem="5vn-hJ-Ee1" secondAttribute="bottom" id="PUa-ro-96c"/>
-                                    <constraint firstAttribute="trailing" secondItem="5vn-hJ-Ee1" secondAttribute="trailing" id="bdU-Qe-0J4"/>
-                                    <constraint firstItem="5vn-hJ-Ee1" firstAttribute="leading" secondItem="LVA-l0-OWP" secondAttribute="leading" id="n9g-ds-5c6"/>
+                                    <constraint firstAttribute="bottom" secondItem="5vn-hJ-Ee1" secondAttribute="bottom" id="BNo-U6-Ngn"/>
+                                    <constraint firstItem="5vn-hJ-Ee1" firstAttribute="leading" secondItem="LVA-l0-OWP" secondAttribute="leading" id="bVP-do-LVT"/>
+                                    <constraint firstItem="5vn-hJ-Ee1" firstAttribute="top" secondItem="LVA-l0-OWP" secondAttribute="top" id="dT4-Ue-pHn"/>
+                                    <constraint firstAttribute="trailing" secondItem="5vn-hJ-Ee1" secondAttribute="trailing" id="uYv-pg-Wef"/>
                                 </constraints>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LVA-l0-OWP" secondAttribute="trailing" id="7k9-Aa-tMu"/>
-                            <constraint firstItem="LVA-l0-OWP" firstAttribute="centerX" secondItem="aJN-WU-dgz" secondAttribute="centerX" id="Ndb-ae-FD4"/>
-                            <constraint firstItem="LVA-l0-OWP" firstAttribute="top" secondItem="D6T-X1-IRe" secondAttribute="top" id="OcM-Fe-tit"/>
-                            <constraint firstAttribute="bottom" secondItem="LVA-l0-OWP" secondAttribute="bottom" id="cLz-kO-WTX"/>
-                            <constraint firstItem="LVA-l0-OWP" firstAttribute="leading" secondItem="D6T-X1-IRe" secondAttribute="leading" id="wcc-Ua-YHe"/>
-                            <constraint firstItem="LVA-l0-OWP" firstAttribute="centerY" secondItem="aJN-WU-dgz" secondAttribute="centerY" id="y3D-tl-be9"/>
+                            <constraint firstAttribute="bottom" secondItem="LVA-l0-OWP" secondAttribute="bottom" id="Hlj-RR-AyD"/>
+                            <constraint firstItem="aJN-WU-dgz" firstAttribute="centerX" secondItem="D6T-X1-IRe" secondAttribute="centerX" id="UgR-ua-qGS"/>
+                            <constraint firstItem="aJN-WU-dgz" firstAttribute="centerY" secondItem="D6T-X1-IRe" secondAttribute="centerY" id="Z3A-bF-VJh"/>
+                            <constraint firstItem="LVA-l0-OWP" firstAttribute="top" secondItem="D6T-X1-IRe" secondAttribute="top" id="Zm0-uZ-eCe"/>
+                            <constraint firstItem="LVA-l0-OWP" firstAttribute="leading" secondItem="D6T-X1-IRe" secondAttribute="leading" id="ar7-0v-Lrp"/>
+                            <constraint firstAttribute="trailing" secondItem="LVA-l0-OWP" secondAttribute="trailing" id="xiT-fd-vj1"/>
                         </constraints>
                     </view>
                     <connections>
