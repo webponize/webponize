@@ -16,7 +16,7 @@ class PreferenceViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         quality.intValue = Int32(AppDelegate.appConfig.quality)
         speed.intValue = Int32(AppDelegate.appConfig.speed)
         lossless.intValue = Int32(AppDelegate.appConfig.lossless)
@@ -29,6 +29,11 @@ class PreferenceViewController: NSViewController {
         alphaQuality.intValue = Int32(AppDelegate.appConfig.alphaQuality)
         alphaFiltering.intValue = Int32(AppDelegate.appConfig.alphaFiltering)
         alphaCompression.intValue = Int32(AppDelegate.appConfig.alphaCompression)
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.styleMask.remove(.resizable)
     }
         
     @IBAction func onQualityChanged(_ sender: NSSlider) {
