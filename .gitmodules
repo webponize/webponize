@@ -1,0 +1,4 @@
+[submodule "Carthage/Checkouts/Sparkle"]
+	url = https://github.com/sparkle-project/Sparkle.git
+[submodule "Carthage/Checkouts/Swift-WebP"]
+	url = https://github.com/ainame/Swift-WebP.git

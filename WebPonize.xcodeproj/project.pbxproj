@@ -212,7 +212,6 @@
 				C7E945FA1A5FC9940024581F /* Frameworks */,
 				C7E945FB1A5FC9940024581F /* Resources */,
 				13EF4E4E1AEA5092003DED37 /* CopyFiles */,
-				136A8CF11FF7E1580031C7DA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -255,7 +254,7 @@
 					C7E945FC1A5FC9940024581F = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = NZR22QGKNQ;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -266,7 +265,7 @@
 					C7E9460E1A5FC9940024581F = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = NZR22QGKNQ;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						TestTargetID = C7E945FC1A5FC9940024581F;
 					};
 				};
@@ -276,6 +275,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -310,24 +310,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		136A8CF11FF7E1580031C7DA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/WebP.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/Sparkle.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C7E945F91A5FC9940024581F /* Sources */ = {
@@ -490,8 +472,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -519,8 +500,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -531,6 +511,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NZR22QGKNQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -544,8 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
 			};
 			name = Debug;
@@ -557,6 +537,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NZR22QGKNQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -566,8 +547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebPonize.app/Contents/MacOS/WebPonize";
 			};
 			name = Release;

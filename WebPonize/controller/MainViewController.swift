@@ -6,11 +6,11 @@ class MainViewController: NSViewController {
     @IBOutlet weak var scrollView: NSScrollView!
     @IBOutlet weak var tableView: NSTableView!
     
-    var imageDefault = NSImage(named: NSImage.Name(rawValue: "drop-area"))
-    var imageHover = NSImage(named: NSImage.Name(rawValue: "drop-area-hover"))
-    var imageProgress = NSImage(named: NSImage.Name(rawValue: "progress"))
-    var imageOk = NSImage(named: NSImage.Name(rawValue: "OK"))
-    var imageError = NSImage(named: NSImage.Name(rawValue: "error"))
+    var imageDefault = NSImage(named: "drop-area")
+    var imageHover = NSImage(named: "drop-area-hover")
+    var imageProgress = NSImage(named: "progress")
+    var imageOk = NSImage(named: "OK")
+    var imageError = NSImage(named: "error")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class MainViewController: NSViewController {
         imageView.image = imageDefault
         
         mainView.onPerformDragOperation = { sender -> Void in
-            let pboard = sender.draggingPasteboard()
+            let pboard = sender.draggingPasteboard
             let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
             let filePaths = pboard.propertyList(forType: type) as! [String]
 
