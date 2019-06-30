@@ -8,6 +8,14 @@
 
 ## Install
 
+### Build
+
+```
+carthage update  --use-submodules --use-ssh --no-use-binaries  --platform Mac
+```
+
+open Xcode and run the project.
+
 ### Archive file
 
 Download the newest from [releases page](https://github.com/webponize/webponize/releases) and unzip it, and move it to /Applications folder.

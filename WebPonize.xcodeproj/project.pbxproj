@@ -12,9 +12,11 @@
 		135A2BDE1FFA2B2C00859ABD /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 135A2BDD1FFA2B2C00859ABD /* dsa_pub.pem */; };
 		136A39B51FFE81AA00E7A754 /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		136A39B61FFE81D700E7A754 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
-		136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; };
 		136A8CF71FF8CF5F0031C7DA /* ConvertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A8CF61FF8CF5F0031C7DA /* ConvertManager.swift */; };
 		13CB33721B1007BE005BB607 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB33711B1007BE005BB607 /* Status.swift */; };
+		88D6078B22C8502300849553 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1311B2DE1FF921E500BED365 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		88D6078C22C8502300849553 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; };
+		88D6078D22C8502300849553 /* WebP.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 136A8CEF1FF7E1460031C7DA /* WebP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C76FD97F1A838EBC0036F4BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD97E1A838EBC0036F4BA /* Preference.swift */; };
 		C76FD9811A838F1B0036F4BA /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FD9801A838F1B0036F4BA /* ApplicationConfig.swift */; };
 		C7A61A4B1A846CE200693007 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A61A451A846CE200693007 /* MainView.swift */; };
@@ -45,6 +47,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				88D6078D22C8502300849553 /* WebP.framework in CopyFiles */,
+				88D6078B22C8502300849553 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88D6078C22C8502300849553 /* WebP.framework in Frameworks */,
 				1311B2DF1FF921E500BED365 /* Sparkle.framework in Frameworks */,
-				136A8CF01FF7E1460031C7DA /* WebP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
