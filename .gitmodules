@@ -1,4 +1,6 @@
 [submodule "Carthage/Checkouts/Sparkle"]
 	url = https://github.com/sparkle-project/Sparkle.git
+	path = Carthage/Checkouts/Sparkle
 [submodule "Carthage/Checkouts/Swift-WebP"]
 	url = https://github.com/ainame/Swift-WebP.git
+	path = Carthage/Checkouts/Swift-WebP
