@@ -25,4 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         return true
     }
+
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        let fileURL = URL(fileURLWithPath: filename)
+        ConvertManager.addFile(fileURL)
+        return true
+    }
 }
