@@ -45,7 +45,11 @@ class ConvertOperation: Operation {
 
         do {
             let input = try Data(contentsOf: fileURL)
-            let output = try encoder.encode(NSImage(data: input)!, config: config)
+            guard let image = NSImage(data: input) else {
+                status.status = StatusType.error
+                return
+            }
+            let output = try encoder.encode(image, config: config)
             NSData(data: output).write(to: destURL, atomically: true)
             
             status.beforeByte = input.count

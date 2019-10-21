@@ -21,3 +21,11 @@ $ brew cask install webponize
 ## Usage
 
 Just drag and drop image files into app.
+
+## Build
+
+```
+carthage update  --use-submodules --use-ssh --no-use-binaries  --platform Mac
+```
+
+open Xcode and run the project.
