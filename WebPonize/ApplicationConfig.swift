@@ -132,6 +132,6 @@ class ApplicationConfig: Preference {
     }
     
     convenience init() {
-        self.init(applicationId: "net.1000ch.WebPonize")
+        self.init(applicationId: "com.shogosensui.WebPonize")
     }
 }

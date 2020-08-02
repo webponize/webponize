@@ -246,7 +246,7 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = 1000ch.net;
+				ORGANIZATIONNAME = shogosensui.com;
 				TargetAttributes = {
 					C7E945FC1A5FC9940024581F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -488,7 +488,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.1000ch.WebPonize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shogosensui.WebPonize;
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -521,7 +521,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.1000ch.WebPonize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shogosensui.WebPonize;
 				PRODUCT_NAME = WebPonize;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -550,7 +550,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shogosensui.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
@@ -574,7 +574,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.1000ch.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shogosensui.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WebPonizeTests;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;

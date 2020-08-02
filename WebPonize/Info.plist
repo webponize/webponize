@@ -21,6 +21,8 @@
 			<array>
 				<string>public.content</string>
 			</array>
+      <key>LSHandlerRank</key>
+      <string>Alternate</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -38,7 +40,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>2.4.0</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>com.shogosensui.WebPonize</string>
 	<key>CFBundleVersion</key>
 	<string>2.4.0</string>
 	<key>LSApplicationCategoryType</key>
