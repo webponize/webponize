@@ -1,5 +1,6 @@
 import Cocoa
 import WebP
+import Defaults
 
 class ConvertOperation: Operation {
     var uuid = UUID().uuidString
@@ -32,16 +33,9 @@ class ConvertOperation: Operation {
         }
 
         let encoder = WebPEncoder()
-        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: AppDelegate.appConfig.quality)
-        config.method = AppDelegate.appConfig.speed
-        config.lossless = AppDelegate.appConfig.lossless
-        config.filterStrength = AppDelegate.appConfig.filterStrength
-        config.filterSharpness = AppDelegate.appConfig.filterSharpness
-        config.filterType = AppDelegate.appConfig.filterType
-        config.autofilter = AppDelegate.appConfig.autoFilter
-        config.alphaQuality = AppDelegate.appConfig.alphaQuality
-        config.alphaFiltering = AppDelegate.appConfig.alphaFiltering
-        config.alphaCompression = AppDelegate.appConfig.alphaCompression
+        var config = WebPEncoderConfig.preset(WebPEncoderConfig.Preset.default, quality: Defaults[.quality])
+        config.method = Defaults[.speed]
+        config.lossless = Defaults[.lossless]
 
         do {
             let input = try Data(contentsOf: fileURL)
