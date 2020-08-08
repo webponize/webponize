@@ -17,21 +17,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         mainWindow = NSApplication.shared.windows.first
     }
-    
-    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        if !flag {
-            mainWindow?.makeKeyAndOrderFront(nil)
-        }
         
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-
-    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        let targetFile = URL(fileURLWithPath: filename)
-        
-        ConvertManager.openSavePanel(for: mainWindow!, target: targetFile)
-        
-        return true
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        ConvertManager.openSavePanel(for: mainWindow!, target: urls)
     }
 }
 
