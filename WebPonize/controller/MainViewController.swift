@@ -23,13 +23,11 @@ class MainViewController: NSViewController {
             let type = NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")
             let filePaths = pboard.propertyList(forType: type) as! [String]
 
-            let fileURLs = filePaths.map { filePath in
+            let droppedFiles = filePaths.map { filePath in
                 return URL(fileURLWithPath: filePath)
             }
             
-            for fileURL in fileURLs {
-                ConvertManager.addFile(fileURL)
-            }
+            ConvertManager.openSavePanel(for: self.view.window!, target: droppedFiles)
         }
         
         mainView.onDraggingEnteredHandler = { sender -> Void in
@@ -79,7 +77,7 @@ extension MainViewController: NSTableViewDelegate, NSTableViewDataSource {
                 return imageError
             }
         case "file":
-            return data.operation.destURL.lastPathComponent
+            return data.operation.destinationFile.lastPathComponent
         case "size":
             return data.afterByte == 0 ? "" : data.afterByte
         case "savings":

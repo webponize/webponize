@@ -4,21 +4,22 @@ import Defaults
 
 class ConvertOperation: Operation {
     var uuid = UUID().uuidString
-    var fileURL: URL
-    var destURL: URL {
-        let folder = fileURL.deletingLastPathComponent()
-        let file = fileURL.lastPathComponent.replacingOccurrences(
-            of: fileURL.pathExtension,
+    var targetFile: URL
+    var destinationFolder: URL
+    var destinationFile: URL {
+        let fileName = targetFile.lastPathComponent.replacingOccurrences(
+            of: targetFile.pathExtension,
             with: "webp",
             options: .caseInsensitive,
             range: nil
         )
 
-        return folder.appendingPathComponent(file)
+        return destinationFolder.appendingPathComponent(fileName)
     }
         
-    init(_ fileURL: URL) {
-        self.fileURL = fileURL
+    init(targetFile: URL, destinationFolder: URL) {
+        self.targetFile = targetFile
+        self.destinationFolder = destinationFolder
 
         super.init()
     }
@@ -38,13 +39,14 @@ class ConvertOperation: Operation {
         config.lossless = Defaults[.lossless]
 
         do {
-            let input = try Data(contentsOf: fileURL)
+            let input = try Data(contentsOf: targetFile)
             guard let image = NSImage(data: input) else {
                 status.status = StatusType.error
                 return
             }
+            
             let output = try encoder.encode(image, config: config)
-            NSData(data: output).write(to: destURL, atomically: true)
+            NSData(data: output).write(to: destinationFile, atomically: true)
             
             status.beforeByte = input.count
             status.afterByte = output.count

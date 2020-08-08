@@ -9,18 +9,12 @@ class MainWindowController: NSWindowController {
         panel.allowsMultipleSelection = true
         panel.allowedFileTypes = ["jpg", "png", "gif"]
         
-        panel.beginSheetModal(for: window!, completionHandler: {(result: NSApplication.ModalResponse) in
-            if result != NSApplication.ModalResponse.OK {
+        panel.beginSheetModal(for: window!, completionHandler: {(response: NSApplication.ModalResponse) in
+            if response != NSApplication.ModalResponse.OK {
                 return
             }
-
-            for item in panel.urls {
-                guard let fileURL = URL(string: item.absoluteString) else {
-                    continue
-                }
-                
-                ConvertManager.addFile(fileURL)
-            }
+            
+            ConvertManager.openSavePanel(for: self.window!, target: panel.urls)
         })
     }
 }

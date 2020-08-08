@@ -27,8 +27,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        let fileURL = URL(fileURLWithPath: filename)
-        ConvertManager.addFile(fileURL)
+        let targetFile = URL(fileURLWithPath: filename)
+        
+        ConvertManager.openSavePanel(for: mainWindow!, target: targetFile)
+        
         return true
     }
 }
