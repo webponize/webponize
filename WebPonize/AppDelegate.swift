@@ -5,8 +5,7 @@ import Defaults
 class AppDelegate: NSObject, NSApplicationDelegate {
     static var statusList: [Status] = []
     static var queue = OperationQueue()
-    
-    var mainWindow: NSWindow?
+    lazy var mainWindowController = MainWindowController()
     
     override init() {
         super.init()
@@ -15,7 +14,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        mainWindow = NSApplication.shared.windows.first
+        mainWindowController.showWindow(self)
+        mainWindowController.alignToCenter()
     }
         
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func application(_ application: NSApplication, open urls: [URL]) {
-        ConvertManager.openSavePanel(for: mainWindow!, target: urls)
+        ConvertManager.openSavePanel(for: mainWindowController.window!, target: urls)
     }
 }
 

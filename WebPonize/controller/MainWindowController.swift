@@ -1,6 +1,10 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
+    func alignToCenter() {
+        window?.center()
+    }
+
     @IBAction func openDocument(_ sender: AnyObject?) {
         let panel = NSOpenPanel()
         panel.canChooseDirectories = false
