@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferenceViewController" customModule="WebPonize" customModuleProvider="target">
+            <connections>
+                <outlet property="lossless" destination="sqH-tJ-qML" id="Is1-br-L9j"/>
+                <outlet property="quality" destination="Zze-K4-2xH" id="wFq-n4-Owv"/>
+                <outlet property="qualityLabel" destination="9hz-3d-TVF" id="SaN-on-1cx"/>
+                <outlet property="speed" destination="9a1-dO-UmL" id="KpO-al-3fJ"/>
+                <outlet property="speedLabel" destination="Zfa-0T-mOK" id="d7k-Iz-Idy"/>
+                <outlet property="view" destination="Gz2-N5-cyx" id="sju-C3-O6r"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" id="Gz2-N5-cyx">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <rows>
+                <gridRow height="32" id="Tn0-1J-ulo"/>
+                <gridRow height="16" id="59g-C9-4e2"/>
+                <gridRow height="16" id="ywQ-d6-NAi"/>
+                <gridRow height="16" id="K4S-Dv-EQO"/>
+                <gridRow height="16" id="IRR-8E-NmK"/>
+                <gridRow height="16" id="lkA-qU-u08"/>
+                <gridRow height="32" id="AeE-Cx-GHV"/>
+            </rows>
+            <columns>
+                <gridColumn width="32" id="qPw-zG-YUR"/>
+                <gridColumn width="64" id="AQ5-ld-41H"/>
+                <gridColumn width="256" id="28f-xR-Zmb"/>
+                <gridColumn width="24" id="OSI-kl-Y7Y"/>
+                <gridColumn width="32" id="deg-EA-hgI"/>
+            </columns>
+            <gridCells>
+                <gridCell row="Tn0-1J-ulo" column="qPw-zG-YUR" id="zBh-h2-dVo"/>
+                <gridCell row="Tn0-1J-ulo" column="AQ5-ld-41H" id="KFP-cF-g4r"/>
+                <gridCell row="Tn0-1J-ulo" column="28f-xR-Zmb" id="DLJ-2f-3mO"/>
+                <gridCell row="Tn0-1J-ulo" column="OSI-kl-Y7Y" id="Tkw-Eq-Hom"/>
+                <gridCell row="Tn0-1J-ulo" column="deg-EA-hgI" id="oC1-1K-BKT"/>
+                <gridCell row="59g-C9-4e2" column="qPw-zG-YUR" id="x9T-7a-Xag"/>
+                <gridCell row="59g-C9-4e2" column="AQ5-ld-41H" id="uro-8w-9qW">
+                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UCl-td-XN0">
+                        <rect key="frame" x="36" y="126" width="47" height="16"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Quality" id="aU3-mf-uVt">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </gridCell>
+                <gridCell row="59g-C9-4e2" column="28f-xR-Zmb" id="zaB-60-vWu">
+                    <slider key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-K4-2xH" userLabel="Quality">
+                        <rect key="frame" x="106" y="125" width="104" height="19"/>
+                        <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="80" tickMarkPosition="below" numberOfTickMarks="21" allowsTickMarkValuesOnly="YES" sliderType="linear" id="YCC-GD-Tzc"/>
+                        <connections>
+                            <action selector="onQualityChanged:" target="-2" id="Wk8-BD-byM"/>
+                        </connections>
+                    </slider>
+                </gridCell>
+                <gridCell row="59g-C9-4e2" column="OSI-kl-Y7Y" id="rR3-I0-Jvi">
+                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-3d-TVF">
+                        <rect key="frame" x="368" y="126" width="28" height="16"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Quality Label" id="Bbl-vk-aJl">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </gridCell>
+                <gridCell row="59g-C9-4e2" column="deg-EA-hgI" id="XqU-Q5-qtw"/>
+                <gridCell row="ywQ-d6-NAi" column="qPw-zG-YUR" id="hBg-qs-aun"/>
+                <gridCell row="ywQ-d6-NAi" column="AQ5-ld-41H" id="S0h-AG-F55"/>
+                <gridCell row="ywQ-d6-NAi" column="28f-xR-Zmb" id="Oxm-yT-0AA"/>
+                <gridCell row="ywQ-d6-NAi" column="OSI-kl-Y7Y" id="BC7-cJ-1xk"/>
+                <gridCell row="ywQ-d6-NAi" column="deg-EA-hgI" id="q1E-Sx-uD2"/>
+                <gridCell row="K4S-Dv-EQO" column="qPw-zG-YUR" id="tr9-78-63V"/>
+                <gridCell row="K4S-Dv-EQO" column="AQ5-ld-41H" id="dTe-fC-vsD">
+                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D58-dz-wmr">
+                        <rect key="frame" x="36" y="82" width="43" height="16"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed" id="DTO-Zb-m7R">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </gridCell>
+                <gridCell row="K4S-Dv-EQO" column="28f-xR-Zmb" id="8Ez-a3-qQo">
+                    <slider key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a1-dO-UmL" userLabel="Speed">
+                        <rect key="frame" x="106" y="81" width="104" height="19"/>
+                        <sliderCell key="cell" alignment="left" maxValue="6" doubleValue="2" tickMarkPosition="below" numberOfTickMarks="7" allowsTickMarkValuesOnly="YES" sliderType="linear" id="grd-HF-POq"/>
+                        <connections>
+                            <action selector="onSpeedChanged:" target="-2" id="NKM-hv-8Vd"/>
+                        </connections>
+                    </slider>
+                </gridCell>
+                <gridCell row="K4S-Dv-EQO" column="OSI-kl-Y7Y" id="2Go-bY-hYI">
+                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zfa-0T-mOK">
+                        <rect key="frame" x="368" y="82" width="28" height="16"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Speed Label" id="Ulj-ua-3nu">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </gridCell>
+                <gridCell row="K4S-Dv-EQO" column="deg-EA-hgI" id="YFm-QH-D7i"/>
+                <gridCell row="IRR-8E-NmK" column="qPw-zG-YUR" id="HmI-AK-aaF"/>
+                <gridCell row="IRR-8E-NmK" column="AQ5-ld-41H" id="Ah5-15-Ioi"/>
+                <gridCell row="IRR-8E-NmK" column="28f-xR-Zmb" id="SfN-Mg-WIh"/>
+                <gridCell row="IRR-8E-NmK" column="OSI-kl-Y7Y" id="Uc4-JI-L00"/>
+                <gridCell row="IRR-8E-NmK" column="deg-EA-hgI" id="Bun-tO-Mbe"/>
+                <gridCell row="lkA-qU-u08" column="qPw-zG-YUR" id="yaH-ku-JkW"/>
+                <gridCell row="lkA-qU-u08" column="AQ5-ld-41H" id="SHj-qg-G0k"/>
+                <gridCell row="lkA-qU-u08" column="28f-xR-Zmb" id="GPS-Ex-zlK">
+                    <button key="contentView" translatesAutoresizingMaskIntoConstraints="NO" id="sqH-tJ-qML">
+                        <rect key="frame" x="106" y="36" width="170" height="18"/>
+                        <buttonCell key="cell" type="check" title="Encode image losslessly" bezelStyle="regularSquare" imagePosition="left" inset="2" id="a2c-br-af2">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onLosslessClicked:" target="-2" id="gxE-0g-5Gh"/>
+                        </connections>
+                    </button>
+                </gridCell>
+                <gridCell row="lkA-qU-u08" column="OSI-kl-Y7Y" id="18E-ag-fo9"/>
+                <gridCell row="lkA-qU-u08" column="deg-EA-hgI" id="Irk-CC-owk"/>
+                <gridCell row="AeE-Cx-GHV" column="qPw-zG-YUR" id="IUB-6g-XZd"/>
+                <gridCell row="AeE-Cx-GHV" column="AQ5-ld-41H" id="TPb-mi-Utq"/>
+                <gridCell row="AeE-Cx-GHV" column="28f-xR-Zmb" id="GUp-EN-5sK"/>
+                <gridCell row="AeE-Cx-GHV" column="OSI-kl-Y7Y" id="vgf-Ym-DHD"/>
+                <gridCell row="AeE-Cx-GHV" column="deg-EA-hgI" id="h8N-yC-aOU"/>
+            </gridCells>
+            <point key="canvasLocation" x="114" y="402"/>
+        </gridView>
+    </objects>
+</document>

@@ -1,10 +1,18 @@
 import Cocoa
+import Preferences
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     static var statusList: [Status] = []
     static var queue = OperationQueue()
+    
     lazy var mainWindowController = MainWindowController()
+    lazy var preferencesWindowController = PreferencesWindowController(
+        preferencePanes: [
+            GeneralPreferenceViewController()
+        ],
+        style: .toolbarItems
+    )
     
     override init() {
         super.init()
@@ -23,6 +31,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func application(_ application: NSApplication, open urls: [URL]) {
         ConvertManager.openSavePanel(for: mainWindowController.window!, target: urls)
+    }
+    
+    @IBAction
+    func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {
+        preferencesWindowController.show()
     }
 }
 
