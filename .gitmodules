@@ -4,3 +4,6 @@
 [submodule "Carthage/Checkouts/Defaults"]
 	path = Carthage/Checkouts/Defaults
 	url = ssh://git@github.com/sindresorhus/Defaults.git
+[submodule "Carthage/Checkouts/Preferences"]
+    path = Carthage/Checkouts/Preferences
+	url = ssh://git@github.com/sindresorhus/Preferences.git
