@@ -23,9 +23,6 @@
                                         </menuItem>
                                         <menuItem title="Check for Updates…" id="L9s-ho-ECe">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="checkForUpdates:" target="re3-Om-JJ4" id="yz7-sB-Lel"/>
-                                            </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
@@ -173,7 +170,6 @@
                     </connections>
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WebPonize" customModuleProvider="target"/>
-                <customObject id="re3-Om-JJ4" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.5" y="-413"/>
